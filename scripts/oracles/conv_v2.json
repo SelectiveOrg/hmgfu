@@ -1,0 +1,507 @@
+{
+ "_doc": "Phase 90.I2 RESERVED conversation set v2 — 24 conversations, 8 families x 3, authored 2026-09-08 AFTER the 90.G/90.H changes were frozen (7ce88be). Every value is synthetic and was checked ABSENT from the live memory (ledger, history, memory points) before sealing; no conversation repeats a conv_v1 turn (similarity control by embedding, flag >= 0.90, run before sealing). Criteria fixed here, before any answer: allowed = values the final reply may state; forbidden_as_current = values it must not state as current; expected_ledger = keys after the turns (prefix match); abstain = the right answer is 'no record'. Run ONCE per arm (defaults; candidate) with the final question in a NEW session on the same memory; never used to tune; never repeated to pick a result.",
+ "value_match": "prefix",
+ "conversations": [
+  {
+   "id": "r01_link_update",
+   "family": "explicit_value_change_by_reference",
+   "lang": "en",
+   "turns": [
+    "the link to locate my car is http://203.0.113.9/track/cccc3333cccc3333cccc3333cccc3333",
+    "here is the new link: http://203.0.113.9/track/dddd4444dddd4444dddd4444dddd4444"
+   ],
+   "question": "what is the link to locate my car?",
+   "allowed": [
+    "dddd4444dddd4444dddd4444dddd4444"
+   ],
+   "forbidden_as_current": [
+    "cccc3333cccc3333cccc3333cccc3333"
+   ],
+   "expected_ledger": {
+    "asset.car_location_link": "http://203.0.113.9/track/dddd4444"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r02_timezone_update",
+   "family": "explicit_value_change_by_reference",
+   "lang": "en",
+   "turns": [
+    "My timezone is Africa/Nairobi.",
+    "I moved, so the timezone I gave you is now Africa/Windhoek."
+   ],
+   "question": "what is my timezone?",
+   "allowed": [
+    "windhoek"
+   ],
+   "forbidden_as_current": [
+    "nairobi"
+   ],
+   "expected_ledger": {
+    "misc.timezone": "Africa/Windhoek"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r03_car_update_pt",
+   "family": "explicit_value_change_by_reference",
+   "lang": "pt",
+   "turns": [
+    "O meu carro é um Nissan Navara.",
+    "Troquei o carro que te disse: agora é um Isuzu D-Max."
+   ],
+   "question": "qual é o meu carro?",
+   "allowed": [
+    "isuzu",
+    "d-max"
+   ],
+   "forbidden_as_current": [
+    "navara"
+   ],
+   "expected_ledger": {
+    "asset.car": "Isuzu D-Max"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r04_project_correction",
+   "family": "explicit_value_change_correction",
+   "lang": "en",
+   "turns": [
+    "My main project is Kuvala, a payments gateway.",
+    "Correction: my main project is the Mapiko app now, not Kuvala."
+   ],
+   "question": "what is my main project?",
+   "allowed": [
+    "mapiko"
+   ],
+   "forbidden_as_current": [
+    "kuvala"
+   ],
+   "expected_ledger": {
+    "project.main": "Mapiko"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r05_employer_correction_pt",
+   "family": "explicit_value_change_correction",
+   "lang": "pt",
+   "turns": [
+    "Trabalho na Tropigália.",
+    "Corrijo: já não trabalho na Tropigália, agora trabalho na Cornelder."
+   ],
+   "question": "onde é que eu trabalho?",
+   "allowed": [
+    "cornelder"
+   ],
+   "forbidden_as_current": [
+    "tropigália",
+    "tropigalia"
+   ],
+   "expected_ledger": {
+    "identity.company": "Cornelder"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r06_alias_correction",
+   "family": "explicit_value_change_correction",
+   "lang": "en",
+   "turns": [
+    "Call me Xavi.",
+    "Actually, please call me Xavier, not Xavi."
+   ],
+   "question": "what should you call me?",
+   "allowed": [
+    "xavier"
+   ],
+   "forbidden_as_current": [
+    "xavi "
+   ],
+   "expected_ledger": {
+    "identity.alias": "Xavier"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r07_pref_food_a_to_b",
+   "family": "preference_A_then_B",
+   "lang": "en",
+   "turns": [
+    "I love cabidela.",
+    "Lately I prefer caril de amendoim over anything else."
+   ],
+   "question": "what is my favourite food?",
+   "allowed": [
+    "caril de amendoim",
+    "amendoim"
+   ],
+   "forbidden_as_current": [
+    "hate cabidela",
+    "dislike cabidela"
+   ],
+   "expected_ledger": {
+    "pref.food": "caril de amendoim"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r08_pref_drink_a_to_b_pt",
+   "family": "preference_A_then_B",
+   "lang": "pt",
+   "turns": [
+    "Gosto de sumo de tamarindo.",
+    "Ultimamente prefiro chá de erva-doce."
+   ],
+   "question": "o que é que eu gosto de beber?",
+   "allowed": [
+    "erva-doce",
+    "erva doce"
+   ],
+   "forbidden_as_current": [
+    "odeio",
+    "não gosto de sumo",
+    "nao gosto de sumo"
+   ],
+   "expected_ledger": {
+    "pref.drink": "chá de erva-doce"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r09_pref_music_a_to_b",
+   "family": "preference_A_then_B",
+   "lang": "en",
+   "turns": [
+    "My favourite music is pandza.",
+    "These days I prefer kizomba."
+   ],
+   "question": "what music do I prefer these days?",
+   "allowed": [
+    "kizomba"
+   ],
+   "forbidden_as_current": [
+    "hate pandza"
+   ],
+   "expected_ledger": {
+    "pref.music": "kizomba"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r10_third_party_job",
+   "family": "third_party_attribution",
+   "lang": "en",
+   "turns": [
+    "My neighbour Ercília works as a midwife at the clinic.",
+    "I work as a surveyor."
+   ],
+   "question": "what is my job?",
+   "allowed": [
+    "surveyor"
+   ],
+   "forbidden_as_current": [
+    "midwife"
+   ],
+   "expected_ledger": {
+    "identity.job": "surveyor"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r11_third_party_city_pt",
+   "family": "third_party_attribution",
+   "lang": "pt",
+   "turns": [
+    "O meu primo Tomé mudou-se para Cuamba.",
+    "Eu continuo a morar em Mocuba."
+   ],
+   "question": "onde é que eu moro?",
+   "allowed": [
+    "mocuba"
+   ],
+   "forbidden_as_current": [
+    "cuamba"
+   ],
+   "expected_ledger": {
+    "identity.location": "Mocuba"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r12_third_party_pet",
+   "family": "third_party_attribution",
+   "lang": "en",
+   "turns": [
+    "My sister's dog is called Pantufa.",
+    "My own dog is called Zeca."
+   ],
+   "question": "what is my dog's name?",
+   "allowed": [
+    "zeca"
+   ],
+   "forbidden_as_current": [
+    "pantufa"
+   ],
+   "expected_ledger": {
+    "pet.dog.name": "Zeca"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r13_past_vs_present_city",
+   "family": "past_vs_present",
+   "lang": "en",
+   "turns": [
+    "Before 2021 I lived in Angoche.",
+    "I live in Montepuez now."
+   ],
+   "question": "where did I live before 2021?",
+   "allowed": [
+    "angoche"
+   ],
+   "forbidden_as_current": [],
+   "expected_ledger": {
+    "identity.location": "Montepuez"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r14_past_vs_present_job_pt",
+   "family": "past_vs_present",
+   "lang": "pt",
+   "turns": [
+    "Dantes era pescador.",
+    "Agora sou electricista."
+   ],
+   "question": "qual é a minha profissão actual?",
+   "allowed": [
+    "electricista",
+    "eletricista"
+   ],
+   "forbidden_as_current": [
+    "pescador"
+   ],
+   "expected_ledger": {
+    "identity.job": "electricista"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r15_past_vs_present_company",
+   "family": "past_vs_present",
+   "lang": "en",
+   "turns": [
+    "I used to work at Lúrio Norte.",
+    "I work at Zambeze Logística now."
+   ],
+   "question": "where do I work now?",
+   "allowed": [
+    "zambeze"
+   ],
+   "forbidden_as_current": [
+    "lúrio norte",
+    "lurio norte"
+   ],
+   "expected_ledger": {
+    "identity.company": "Zambeze Logística"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r16_distributed_name_city",
+   "family": "information_distributed_across_turns",
+   "lang": "en",
+   "turns": [
+    "My name is Ivandro Chissano.",
+    "By the way, I live in Vilankulo."
+   ],
+   "question": "what is my name and where do I live?",
+   "allowed": [
+    "ivandro",
+    "vilankulo"
+   ],
+   "forbidden_as_current": [],
+   "expected_ledger": {
+    "identity.name": "Ivandro Chissano",
+    "identity.location": "Vilankulo"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r17_distributed_pet_colour_pt",
+   "family": "information_distributed_across_turns",
+   "lang": "pt",
+   "turns": [
+    "A minha gata chama-se Nhanga.",
+    "A minha cor favorita é bordô."
+   ],
+   "question": "como se chama a minha gata e qual é a minha cor favorita?",
+   "allowed": [
+    "nhanga",
+    "bordô",
+    "bordo"
+   ],
+   "forbidden_as_current": [],
+   "expected_ledger": {
+    "pet.cat.name": "Nhanga",
+    "pref.color": "bordô"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r18_distributed_birthday_team",
+   "family": "information_distributed_across_turns",
+   "lang": "en",
+   "turns": [
+    "My birthday is 23 October.",
+    "I support Ferroviário de Nampula."
+   ],
+   "question": "when is my birthday and which team do I support?",
+   "allowed": [
+    "23 october",
+    "october 23",
+    "ferroviário",
+    "ferroviario"
+   ],
+   "forbidden_as_current": [],
+   "expected_ledger": {
+    "identity.birthday": "23 October",
+    "pref.team": "Ferroviário de Nampula"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r19_fiction_name",
+   "family": "fiction_hypothesis_quote",
+   "lang": "en",
+   "turns": [
+    "In the story I'm writing, the hero's name is Malaquias and he lives in Lichinga.",
+    "My own name is Zélia Mutemba."
+   ],
+   "question": "what is my name?",
+   "allowed": [
+    "zélia",
+    "zelia"
+   ],
+   "forbidden_as_current": [
+    "malaquias"
+   ],
+   "expected_ledger": {
+    "identity.name": "Zélia Mutemba"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r20_hypothesis_car_pt",
+   "family": "fiction_hypothesis_quote",
+   "lang": "pt",
+   "turns": [
+    "Se ganhasse a lotaria comprava um Land Cruiser.",
+    "O meu carro é um Kia Sportage."
+   ],
+   "question": "qual é o meu carro?",
+   "allowed": [
+    "kia",
+    "sportage"
+   ],
+   "forbidden_as_current": [
+    "land cruiser"
+   ],
+   "expected_ledger": {
+    "asset.car": "Kia Sportage"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r21_quote_drink",
+   "family": "fiction_hypothesis_quote",
+   "lang": "en",
+   "turns": [
+    "My boss keeps saying 'my favourite drink is mazurca'.",
+    "Mine is ginger beer."
+   ],
+   "question": "what is my favourite drink?",
+   "allowed": [
+    "ginger beer"
+   ],
+   "forbidden_as_current": [
+    "mazurca"
+   ],
+   "expected_ledger": {
+    "pref.drink": "ginger beer"
+   },
+   "abstain": false
+  },
+  {
+   "id": "r22_no_evidence_shoe",
+   "family": "question_without_evidence",
+   "lang": "en",
+   "turns": [
+    "My favourite colour is cinza-chumbo."
+   ],
+   "question": "what is my blood type?",
+   "allowed": [],
+   "forbidden_as_current": [
+    "a+",
+    "a-",
+    "b+",
+    "b-",
+    "ab+",
+    "ab-",
+    "o+",
+    "o-"
+   ],
+   "expected_ledger": {
+    "pref.color": "cinza-chumbo"
+   },
+   "abstain": true
+  },
+  {
+   "id": "r23_no_evidence_sister_pt",
+   "family": "question_without_evidence",
+   "lang": "pt",
+   "turns": [
+    "O meu irmão chama-se Bartolomeu."
+   ],
+   "question": "como se chama a minha irmã?",
+   "allowed": [],
+   "forbidden_as_current": [
+    "bartolomeu"
+   ],
+   "expected_ledger": {
+    "family.brother_name": "Bartolomeu"
+   },
+   "abstain": true
+  },
+  {
+   "id": "r24_no_evidence_mother",
+   "family": "question_without_evidence",
+   "lang": "en",
+   "turns": [
+    "My lucky number is 27."
+   ],
+   "question": "what is my mother's name?",
+   "allowed": [],
+   "forbidden_as_current": [
+    "maria",
+    "ana",
+    "rosa",
+    "joana",
+    "petra",
+    "luísa",
+    "luisa",
+    "fátima",
+    "fatima",
+    "babys",
+    "bartolomeu"
+   ],
+   "expected_ledger": {
+    "misc.lucky_number": "27"
+   },
+   "abstain": true,
+   "_note": "family.mother_name is absent from the live ledger; a language question would be answered from the live pref.language"
+  }
+ ]
+}

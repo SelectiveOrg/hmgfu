@@ -1,0 +1,23 @@
+{
+ "_doc": "Phase 72.5 errata for write_set_v1.json — items whose sealed expectation contradicts the set's own canonical-value rule (w027 'A minha gata é a Nina' → 'Nina': a leading article is not part of the value). Sealed file untouched; run_write_set reports the SEALED figure first and the errata-adjusted figure second.",
+ "items": {
+  "w016": {
+   "expect": {
+    "identity.company": "Hidroeléctrica de Cahora Bassa"
+   },
+   "reason": "leading PT article 'a' is not part of the value (cf. w027)"
+  },
+  "w059": {
+   "expect": {
+    "asset.car": "Toyota Hilux"
+   },
+   "reason": "leading EN indefinite article 'a' is not part of the value"
+  },
+  "w107": {
+   "expect": {
+    "pref.team": "Maxaquene"
+   },
+   "reason": "leading PT article 'o' is not part of the value (cf. w027)"
+  }
+ }
+}

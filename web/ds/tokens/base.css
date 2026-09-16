@@ -1,0 +1,70 @@
+/* ============================================================================
+   Personal Agent — base layer: resets, scrollbars, signature utilities.
+   Applied globally by consumers. Kept intentionally small — the app is
+   Tailwind-driven, so this only carries the non-utility primitives.
+   ============================================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: var(--font-features);
+}
+
+/* Custom scrollbar — thin, ghosted, brightens on hover (app default) */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+
+/* ---- Signature utilities (ported from the app's @layer utilities) ---- */
+
+.glass-panel {
+  background: hsl(var(--glass));
+  backdrop-filter: blur(var(--blur-panel));
+  -webkit-backdrop-filter: blur(var(--blur-panel));
+  border: 1px solid hsl(var(--border));
+}
+
+.glow-primary {
+  box-shadow: var(--glow-primary-shadow);
+}
+
+.glow-user {
+  box-shadow: var(--glow-user-shadow);
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(174 80% 65%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Reasoning / pulse glow — used on live status dots */
+@keyframes pa-pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+.animate-pulse-glow { animation: pa-pulse-glow 2s ease-in-out infinite; }
+
+@keyframes pa-slide-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in { animation: pa-slide-in var(--dur-slow) var(--ease-out); }
+
+@keyframes pa-fade-in { from { opacity: 0; } to { opacity: 1; } }
+.animate-fade-in { animation: pa-fade-in var(--dur-base) var(--ease-out); }

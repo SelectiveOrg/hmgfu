@@ -1,0 +1,295 @@
+{
+ "_doc": "Phase 71 held-out set for M2 (receipts / post-conditions). Sealed before the receipts code; run once at 71.7; reported as-is. Phrasings differ from the 4 deferred delta checks.",
+ "shell": [],
+ "turns": [
+  {
+   "id": "read_cannot_certify_write",
+   "family": "receipts",
+   "act": "statement",
+   "messages": [
+    "Create summary.txt with the text HELD-OUT."
+   ],
+   "script": [
+    [
+     "plan_task",
+     {
+      "steps": [
+       "write_file: summary.txt"
+      ]
+     }
+    ],
+    [
+     "list_files",
+     {}
+    ],
+    [
+     "update_plan",
+     {
+      "step": 0,
+      "status": "done"
+     }
+    ],
+    "Done."
+   ],
+   "expect": {
+    "steps": [
+     "active"
+    ],
+    "files_absent": [
+     "summary.txt"
+    ]
+   }
+  },
+  {
+   "id": "one_write_one_step",
+   "family": "receipts",
+   "act": "statement",
+   "messages": [
+    "Write x.txt and y.txt, each containing HELD-OUT."
+   ],
+   "script": [
+    [
+     "plan_task",
+     {
+      "steps": [
+       "write_file: x.txt",
+       "write_file: y.txt"
+      ]
+     }
+    ],
+    [
+     "write_file",
+     {
+      "path": "x.txt",
+      "content": "HELD-OUT"
+     }
+    ],
+    [
+     "update_plan",
+     {
+      "step": 0,
+      "status": "done"
+     }
+    ],
+    [
+     "update_plan",
+     {
+      "step": 1,
+      "status": "done"
+     }
+    ],
+    "Both written."
+   ],
+   "expect": {
+    "steps": [
+     "done",
+     "active"
+    ],
+    "files_present": [
+     "x.txt"
+    ],
+    "files_absent": [
+     "y.txt"
+    ],
+    "plan_status": "active"
+   }
+  },
+  {
+   "id": "wrong_file_is_not_evidence",
+   "family": "receipts",
+   "act": "statement",
+   "messages": [
+    "Create a.txt containing HELD-OUT."
+   ],
+   "script": [
+    [
+     "plan_task",
+     {
+      "steps": [
+       "write_file: a.txt"
+      ]
+     }
+    ],
+    [
+     "write_file",
+     {
+      "path": "b.txt",
+      "content": "HELD-OUT"
+     }
+    ],
+    [
+     "update_plan",
+     {
+      "step": 0,
+      "status": "done"
+     }
+    ],
+    "Created."
+   ],
+   "expect": {
+    "steps": [
+     "active"
+    ],
+    "files_absent": [
+     "a.txt"
+    ],
+    "files_present": [
+     "b.txt"
+    ]
+   }
+  },
+  {
+   "id": "widget_step_verified",
+   "family": "receipts",
+   "act": "statement",
+   "messages": [
+    "Create a note widget called Tasks with the text HELD-OUT."
+   ],
+   "script": [
+    [
+     "plan_task",
+     {
+      "steps": [
+       "create_widget: Tasks"
+      ]
+     }
+    ],
+    [
+     "create_widget",
+     {
+      "type": "note",
+      "title": "Tasks",
+      "props": {
+       "text": "HELD-OUT"
+      }
+     }
+    ],
+    [
+     "update_plan",
+     {
+      "step": 0,
+      "status": "done"
+     }
+    ],
+    "Widget created."
+   ],
+   "expect": {
+    "steps": [
+     "done"
+    ],
+    "widgets": 1,
+    "plan_status": "done"
+   }
+  },
+  {
+   "id": "partial_is_not_done",
+   "family": "receipts",
+   "act": "statement",
+   "messages": [
+    "Write p.txt with HELD-OUT and then q.txt with HELD-OUT."
+   ],
+   "script": [
+    [
+     "plan_task",
+     {
+      "steps": [
+       "write_file: p.txt",
+       "write_file: q.txt"
+      ]
+     }
+    ],
+    [
+     "write_file",
+     {
+      "path": "p.txt",
+      "content": "HELD-OUT"
+     }
+    ],
+    [
+     "update_plan",
+     {
+      "step": 0,
+      "status": "done"
+     }
+    ],
+    [
+     "update_plan",
+     {
+      "step": 1,
+      "status": "failed",
+      "note": "disk full"
+     }
+    ],
+    "Partially done."
+   ],
+   "expect": {
+    "steps": [
+     "done",
+     "failed"
+    ],
+    "plan_status": "partial"
+   }
+  },
+  {
+   "id": "idempotent_rewrite",
+   "family": "receipts",
+   "act": "statement",
+   "messages": [
+    "Write same.txt containing HELD-OUT twice, it must not error."
+   ],
+   "script": [
+    [
+     "write_file",
+     {
+      "path": "same.txt",
+      "content": "HELD-OUT"
+     }
+    ],
+    [
+     "write_file",
+     {
+      "path": "same.txt",
+      "content": "HELD-OUT"
+     }
+    ],
+    "Written."
+   ],
+   "expect": {
+    "files_present": [
+     "same.txt"
+    ],
+    "executed": [
+     "write_file"
+    ],
+    "no_failed": true
+   }
+  },
+  {
+   "id": "materializer_receipt_verifies_step",
+   "family": "receipts",
+   "act": "statement",
+   "messages": [
+    "Make me a page named held.html and mark the plan done."
+   ],
+   "script": [
+    [
+     "plan_task",
+     {
+      "steps": [
+       "write_file: held.html"
+      ]
+     }
+    ],
+    "Here it is.\n```html\n<!doctype html><html><body><h1>T</h1><p>tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt</p></body></html>\n```"
+   ],
+   "expect": {
+    "files_present": [
+     "held.html"
+    ],
+    "steps": [
+     "done"
+    ]
+   }
+  }
+ ]
+}

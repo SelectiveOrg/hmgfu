@@ -1,0 +1,872 @@
+{
+ "_doc": "Phase 72.5 sealed write set (authored 2026-09-05 before measuring). expect = CURRENT first-person facts asserted by `text` after `prior`; expect_clear = slots that must be gone. Negatives have expect {}.",
+ "items": [
+  {
+   "id": "w001",
+   "lang": "en",
+   "text": "My name is Amara Dlamini.",
+   "expect": {
+    "identity.name": "Amara Dlamini"
+   }
+  },
+  {
+   "id": "w002",
+   "lang": "en",
+   "text": "Hi! I'm Joaquim Tembe, nice to meet you.",
+   "expect": {
+    "identity.name": "Joaquim Tembe"
+   }
+  },
+  {
+   "id": "w003",
+   "lang": "pt",
+   "text": "Chamo-me Beatriz Mondlane.",
+   "expect": {
+    "identity.name": "Beatriz Mondlane"
+   }
+  },
+  {
+   "id": "w004",
+   "lang": "pt",
+   "text": "O meu nome é Tomás Sitoe e moro em Xai-Xai.",
+   "expect": {
+    "identity.name": "Tomás Sitoe",
+    "identity.location": "Xai-Xai"
+   }
+  },
+  {
+   "id": "w005",
+   "lang": "en",
+   "text": "Please call me Jo from now on.",
+   "expect": {
+    "identity.alias": "Jo"
+   }
+  },
+  {
+   "id": "w006",
+   "lang": "pt",
+   "text": "Podes tratar-me por Bia.",
+   "expect": {
+    "identity.alias": "Bia"
+   }
+  },
+  {
+   "id": "w007",
+   "lang": "en",
+   "text": "I live in Pemba.",
+   "expect": {
+    "identity.location": "Pemba"
+   }
+  },
+  {
+   "id": "w008",
+   "lang": "en",
+   "text": "I'm living in Quelimane these days.",
+   "expect": {
+    "identity.location": "Quelimane"
+   }
+  },
+  {
+   "id": "w009",
+   "lang": "pt",
+   "text": "Vivo na Matola.",
+   "expect": {
+    "identity.location": "Matola"
+   }
+  },
+  {
+   "id": "w010",
+   "lang": "pt",
+   "text": "Eu moro em Inhambane.",
+   "expect": {
+    "identity.location": "Inhambane"
+   }
+  },
+  {
+   "id": "w011",
+   "lang": "en",
+   "text": "Since 2022 I live in Tete.",
+   "expect": {
+    "identity.location": "Tete"
+   }
+  },
+  {
+   "id": "w012",
+   "lang": "pt",
+   "text": "Desde 2020 resido em Lichinga.",
+   "expect": {
+    "identity.location": "Lichinga"
+   }
+  },
+  {
+   "id": "w013",
+   "lang": "en",
+   "text": "I work as a data engineer.",
+   "expect": {
+    "identity.job": "data engineer"
+   }
+  },
+  {
+   "id": "w014",
+   "lang": "pt",
+   "text": "A minha profissão é enfermeira.",
+   "expect": {
+    "identity.job": "enfermeira"
+   }
+  },
+  {
+   "id": "w015",
+   "lang": "en",
+   "text": "My company is Vodacom.",
+   "expect": {
+    "identity.company": "Vodacom"
+   }
+  },
+  {
+   "id": "w016",
+   "lang": "pt",
+   "text": "A minha empresa é a Hidroeléctrica de Cahora Bassa.",
+   "expect": {
+    "identity.company": "a Hidroeléctrica de Cahora Bassa"
+   }
+  },
+  {
+   "id": "w017",
+   "lang": "en",
+   "text": "My birthday is 14 March.",
+   "expect": {
+    "identity.birthday": "14 March"
+   }
+  },
+  {
+   "id": "w018",
+   "lang": "en",
+   "text": "My brother's name is Kelvin.",
+   "expect": {
+    "family.brother_name": "Kelvin"
+   }
+  },
+  {
+   "id": "w019",
+   "lang": "pt",
+   "text": "O meu irmão chama-se Dário.",
+   "expect": {
+    "family.brother_name": "Dário"
+   }
+  },
+  {
+   "id": "w020",
+   "lang": "en",
+   "text": "My sister is called Neusa.",
+   "expect": {
+    "family.sister_name": "Neusa"
+   }
+  },
+  {
+   "id": "w021",
+   "lang": "en",
+   "text": "My mother's name is Rosa and my father's name is Alberto.",
+   "expect": {
+    "family.mother_name": "Rosa",
+    "family.father_name": "Alberto"
+   }
+  },
+  {
+   "id": "w022",
+   "lang": "pt",
+   "text": "A minha mãe chama-se Glória.",
+   "expect": {
+    "family.mother_name": "Glória"
+   }
+  },
+  {
+   "id": "w023",
+   "lang": "en",
+   "text": "My wife is Carla.",
+   "expect": {
+    "family.partner_name": "Carla"
+   }
+  },
+  {
+   "id": "w024",
+   "lang": "pt",
+   "text": "A minha esposa chama-se Lúcia.",
+   "expect": {
+    "family.partner_name": "Lúcia"
+   }
+  },
+  {
+   "id": "w025",
+   "lang": "en",
+   "text": "My partner's name is Ivo.",
+   "expect": {
+    "family.partner_name": "Ivo"
+   }
+  },
+  {
+   "id": "w026",
+   "lang": "en",
+   "text": "My dog is Rex.",
+   "expect": {
+    "pet.dog.name": "Rex"
+   }
+  },
+  {
+   "id": "w027",
+   "lang": "en",
+   "text": "My cat is called Mimi.",
+   "expect": {
+    "pet.cat.name": "Mimi"
+   }
+  },
+  {
+   "id": "w028",
+   "lang": "pt",
+   "text": "O meu cão chama-se Bolt.",
+   "expect": {
+    "pet.dog.name": "Bolt"
+   }
+  },
+  {
+   "id": "w029",
+   "lang": "pt",
+   "text": "A minha gata é a Nina.",
+   "expect": {
+    "pet.cat.name": "Nina"
+   }
+  },
+  {
+   "id": "w030",
+   "lang": "en",
+   "text": "My pet is Tiko.",
+   "expect": {
+    "pet.name": "Tiko"
+   }
+  },
+  {
+   "id": "w031",
+   "lang": "en",
+   "text": "My cat is Luna and my dog is Max.",
+   "expect": {
+    "pet.cat.name": "Luna",
+    "pet.dog.name": "Max"
+   }
+  },
+  {
+   "id": "w032",
+   "lang": "en",
+   "text": "My dog is Bento and my dog is Teca. They are two different dogs.",
+   "expect": {
+    "pet.dog.name": "Bento",
+    "pet.dog.name.2": "Teca"
+   }
+  },
+  {
+   "id": "w033",
+   "lang": "en",
+   "text": "My dog is Teca, not Bento.",
+   "expect": {
+    "pet.dog.name": "Teca"
+   },
+   "prior": [
+    "My pet is Bento."
+   ],
+   "expect_clear": [
+    "pet.name"
+   ]
+  },
+  {
+   "id": "w034",
+   "lang": "en",
+   "text": "I no longer have a dog.",
+   "expect": {},
+   "prior": [
+    "My dog is Rex.",
+    "My cat is Mimi."
+   ],
+   "expect_clear": [
+    "pet.dog.name"
+   ]
+  },
+  {
+   "id": "w035",
+   "lang": "pt",
+   "text": "Já não tenho gato.",
+   "expect": {},
+   "prior": [
+    "A minha gata é a Nina."
+   ],
+   "expect_clear": [
+    "pet.cat.name"
+   ]
+  },
+  {
+   "id": "w036",
+   "lang": "en",
+   "text": "My favorite color is teal.",
+   "expect": {
+    "pref.color": "teal"
+   }
+  },
+  {
+   "id": "w037",
+   "lang": "en",
+   "text": "My favourite colour is burnt orange.",
+   "expect": {
+    "pref.color": "burnt orange"
+   }
+  },
+  {
+   "id": "w038",
+   "lang": "pt",
+   "text": "A minha cor favorita é lilás.",
+   "expect": {
+    "pref.color": "lilás"
+   }
+  },
+  {
+   "id": "w039",
+   "lang": "en",
+   "text": "My favorite color is black and white.",
+   "expect": {
+    "pref.color": "black and white"
+   }
+  },
+  {
+   "id": "w040",
+   "lang": "en",
+   "text": "My favorite color is red, but my favorite color is blue.",
+   "expect": {
+    "pref.color": "blue"
+   }
+  },
+  {
+   "id": "w041",
+   "lang": "en",
+   "text": "My favorite food is matapa.",
+   "expect": {
+    "pref.food": "matapa"
+   }
+  },
+  {
+   "id": "w042",
+   "lang": "pt",
+   "text": "A minha comida favorita é xima com caril de amendoim.",
+   "expect": {
+    "pref.food": "xima com caril de amendoim"
+   }
+  },
+  {
+   "id": "w043",
+   "lang": "en",
+   "text": "My favorite drink is ginger tea.",
+   "expect": {
+    "pref.drink": "ginger tea"
+   }
+  },
+  {
+   "id": "w044",
+   "lang": "pt",
+   "text": "A minha bebida favorita é sumo de caju.",
+   "expect": {
+    "pref.drink": "sumo de caju"
+   }
+  },
+  {
+   "id": "w045",
+   "lang": "pt",
+   "text": "A minha cor favorita é âmbar e a minha bebida favorita é chá de hibisco.",
+   "expect": {
+    "pref.color": "âmbar",
+    "pref.drink": "chá de hibisco"
+   }
+  },
+  {
+   "id": "w046",
+   "lang": "en",
+   "text": "My favorite music is marrabenta.",
+   "expect": {
+    "pref.music": "marrabenta"
+   }
+  },
+  {
+   "id": "w047",
+   "lang": "pt",
+   "text": "A minha música favorita é pandza.",
+   "expect": {
+    "pref.music": "pandza"
+   }
+  },
+  {
+   "id": "w048",
+   "lang": "en",
+   "text": "My favorite team is Ferroviário de Valencia.",
+   "expect": {
+    "pref.team": "Ferroviário de Valencia"
+   }
+  },
+  {
+   "id": "w049",
+   "lang": "en",
+   "text": "My favorite programming language is Rust.",
+   "expect": {
+    "pref.language": "Rust"
+   }
+  },
+  {
+   "id": "w050",
+   "lang": "pt",
+   "text": "A minha linguagem de programação favorita é Python.",
+   "expect": {
+    "pref.language": "Python"
+   }
+  },
+  {
+   "id": "w051",
+   "lang": "en",
+   "text": "My favorite is Kotlin.",
+   "expect": {
+    "pref.language": "Kotlin"
+   }
+  },
+  {
+   "id": "w052",
+   "lang": "en",
+   "text": "Could you remember that my favorite music is kizomba?",
+   "expect": {
+    "pref.music": "kizomba"
+   }
+  },
+  {
+   "id": "w053",
+   "lang": "pt",
+   "text": "Lembra-te que a minha comida favorita é badjia.",
+   "expect": {
+    "pref.food": "badjia"
+   }
+  },
+  {
+   "id": "w054",
+   "lang": "en",
+   "text": "Remember: my favorite color is violet.",
+   "expect": {
+    "pref.color": "violet"
+   }
+  },
+  {
+   "id": "w055",
+   "lang": "en",
+   "text": "Here is the link for my car location: https://example.test/car/1",
+   "expect": {
+    "asset.car_location_link": "https://example.test/car/1"
+   }
+  },
+  {
+   "id": "w056",
+   "lang": "pt",
+   "text": "Aqui está o link da localização do meu carro: https://example.test/car/2",
+   "expect": {
+    "asset.car_location_link": "https://example.test/car/2"
+   }
+  },
+  {
+   "id": "w057",
+   "lang": "en",
+   "text": "Here's the updated link: https://example.test/car/3",
+   "expect": {
+    "asset.car_location_link": "https://example.test/car/3"
+   },
+   "prior": [
+    "Here is the link for my car location: https://example.test/car/1"
+   ]
+  },
+  {
+   "id": "w058",
+   "lang": "en",
+   "text": "Here is the new recipe link: https://example.test/soup",
+   "expect": {
+    "open.recipe_link": "https://example.test/soup"
+   },
+   "prior": [
+    "Here is the link for my car location: https://example.test/car/1"
+   ]
+  },
+  {
+   "id": "w059",
+   "lang": "en",
+   "text": "My car is a Toyota Hilux.",
+   "expect": {
+    "asset.car": "a Toyota Hilux"
+   }
+  },
+  {
+   "id": "w060",
+   "lang": "en",
+   "text": "My lucky number is 17.",
+   "expect": {
+    "misc.lucky_number": "17"
+   }
+  },
+  {
+   "id": "w061",
+   "lang": "en",
+   "text": "My timezone is Africa/Valencia.",
+   "expect": {
+    "misc.timezone": "Africa/Valencia"
+   }
+  },
+  {
+   "id": "w062",
+   "lang": "en",
+   "text": "Actually, I live in Chimoio now.",
+   "expect": {
+    "identity.location": "Chimoio"
+   },
+   "prior": [
+    "I live in Pemba."
+   ]
+  },
+  {
+   "id": "w063",
+   "lang": "en",
+   "text": "Correction: I'm not Sebastian. My name is Teodoro Ferreira.",
+   "expect": {
+    "identity.name": "Teodoro Ferreira"
+   },
+   "prior": [
+    "My name is Sebastian."
+   ]
+  },
+  {
+   "id": "w064",
+   "lang": "pt",
+   "text": "Na verdade, a minha cor favorita é verde.",
+   "expect": {
+    "pref.color": "verde"
+   },
+   "prior": [
+    "A minha cor favorita é lilás."
+   ]
+  },
+  {
+   "id": "w065",
+   "lang": "en",
+   "text": "My favorite programming language is Java now, not Rust.",
+   "expect": {
+    "pref.language": "Java"
+   },
+   "prior": [
+    "My favorite programming language is Rust."
+   ]
+  },
+  {
+   "id": "w066",
+   "lang": "en",
+   "text": "What is my name?",
+   "expect": {}
+  },
+  {
+   "id": "w067",
+   "lang": "en",
+   "text": "Where do I live?",
+   "expect": {}
+  },
+  {
+   "id": "w068",
+   "lang": "pt",
+   "text": "Qual é a minha cor favorita?",
+   "expect": {}
+  },
+  {
+   "id": "w069",
+   "lang": "en",
+   "text": "Do you remember my dog's name?",
+   "expect": {}
+  },
+  {
+   "id": "w070",
+   "lang": "en",
+   "text": "What if my favorite color is violet?",
+   "expect": {}
+  },
+  {
+   "id": "w071",
+   "lang": "pt",
+   "text": "Sabes onde moro?",
+   "expect": {}
+  },
+  {
+   "id": "w072",
+   "lang": "en",
+   "text": "My friend said \"my name is Oscar\".",
+   "expect": {}
+  },
+  {
+   "id": "w073",
+   "lang": "en",
+   "text": "My friend says 'my name is Oscar'. That is his name, not mine.",
+   "expect": {}
+  },
+  {
+   "id": "w074",
+   "lang": "pt",
+   "text": "A minha amiga disse 'chamo-me Ana'. É o nome dela, não o meu.",
+   "expect": {}
+  },
+  {
+   "id": "w075",
+   "lang": "en",
+   "text": "My brother told me his favorite color is red.",
+   "expect": {}
+  },
+  {
+   "id": "w076",
+   "lang": "pt",
+   "text": "O meu colega diz que a comida favorita dele é frango.",
+   "expect": {}
+  },
+  {
+   "id": "w077",
+   "lang": "en",
+   "text": "In the book, the hero says: my name is Kael.",
+   "expect": {}
+  },
+  {
+   "id": "w078",
+   "lang": "en",
+   "text": "For a fictional character. My name is Oscar.",
+   "expect": {}
+  },
+  {
+   "id": "w079",
+   "lang": "pt",
+   "text": "Para uma personagem do meu romance. Chamo-me Oscar e vivo em Lisboa.",
+   "expect": {}
+  },
+  {
+   "id": "w080",
+   "lang": "en",
+   "text": "If my favorite color were violet, what would you suggest?",
+   "expect": {}
+  },
+  {
+   "id": "w081",
+   "lang": "en",
+   "text": "Hypothetically, suppose I live in Paris.",
+   "expect": {}
+  },
+  {
+   "id": "w082",
+   "lang": "pt",
+   "text": "Imagina que a minha cor favorita é dourado.",
+   "expect": {}
+  },
+  {
+   "id": "w083",
+   "lang": "en",
+   "text": "Let's say my dog is named Zeus for this example.",
+   "expect": {}
+  },
+  {
+   "id": "w084",
+   "lang": "en",
+   "text": "In 2010 I lived in Lisbon; back then my favorite color is blue.",
+   "expect": {}
+  },
+  {
+   "id": "w085",
+   "lang": "pt",
+   "text": "Antigamente morava em Nampula.",
+   "expect": {}
+  },
+  {
+   "id": "w086",
+   "lang": "en",
+   "text": "I used to work as a teacher.",
+   "expect": {}
+  },
+  {
+   "id": "w087",
+   "lang": "pt",
+   "text": "Em 2015 a minha comida favorita era feijoada.",
+   "expect": {}
+  },
+  {
+   "id": "w088",
+   "lang": "en",
+   "text": "Can you create a widget for my links?",
+   "expect": {}
+  },
+  {
+   "id": "w089",
+   "lang": "en",
+   "text": "I am happy to be here.",
+   "expect": {}
+  },
+  {
+   "id": "w090",
+   "lang": "pt",
+   "text": "Estou muito cansado hoje.",
+   "expect": {}
+  },
+  {
+   "id": "w091",
+   "lang": "en",
+   "text": "My point is that the deadline is Friday.",
+   "expect": {}
+  },
+  {
+   "id": "w092",
+   "lang": "en",
+   "text": "My understanding is that you can search the web.",
+   "expect": {}
+  },
+  {
+   "id": "w093",
+   "lang": "en",
+   "text": "Thanks, that is all.",
+   "expect": {}
+  },
+  {
+   "id": "w094",
+   "lang": "pt",
+   "text": "Obrigado, era só isso.",
+   "expect": {}
+  },
+  {
+   "id": "w095",
+   "lang": "en",
+   "text": "The weather in Valencia is 26°C today.",
+   "expect": {}
+  },
+  {
+   "id": "w096",
+   "lang": "en",
+   "text": "Please write a file named notes.txt with my shopping list.",
+   "expect": {}
+  },
+  {
+   "id": "w097",
+   "lang": "en",
+   "text": "I live in Chimoio. What do you know about that city?",
+   "expect": {
+    "identity.location": "Chimoio"
+   }
+  },
+  {
+   "id": "w098",
+   "lang": "pt",
+   "text": "Moro em Quelimane. O que sabes sobre a cidade?",
+   "expect": {
+    "identity.location": "Quelimane"
+   }
+  },
+  {
+   "id": "w099",
+   "lang": "en",
+   "text": "My favorite team is Costa do Sol, by the way. When do they play next?",
+   "expect": {
+    "pref.team": "Costa do Sol"
+   }
+  },
+  {
+   "id": "w100",
+   "lang": "en",
+   "text": "My name is Nadia Costa, I live in Quelimane, and my dog is Bento.",
+   "expect": {
+    "identity.name": "Nadia Costa",
+    "identity.location": "Quelimane",
+    "pet.dog.name": "Bento"
+   }
+  },
+  {
+   "id": "w101",
+   "lang": "pt",
+   "text": "Chamo-me Rui Macie, vivo em Chókwè e a minha gata é a Kika.",
+   "expect": {
+    "identity.name": "Rui Macie",
+    "identity.location": "Chókwè",
+    "pet.cat.name": "Kika"
+   }
+  },
+  {
+   "id": "w102",
+   "lang": "en",
+   "text": "For a story I am writing: my name is Oscar. Anyway, my real name is Nadia Costa.",
+   "expect": {
+    "identity.name": "Nadia Costa"
+   }
+  },
+  {
+   "id": "w103",
+   "lang": "en",
+   "text": "My mother's name is Ana and my favorite color is amber.",
+   "expect": {
+    "family.mother_name": "Ana",
+    "pref.color": "amber"
+   }
+  },
+  {
+   "id": "w104",
+   "lang": "pt",
+   "text": "O meu pai chama-se Armando.",
+   "expect": {
+    "family.father_name": "Armando"
+   }
+  },
+  {
+   "id": "w105",
+   "lang": "pt",
+   "text": "A minha irmã chama-se Yara.",
+   "expect": {
+    "family.sister_name": "Yara"
+   }
+  },
+  {
+   "id": "w106",
+   "lang": "pt",
+   "text": "O meu trabalho é motorista.",
+   "expect": {
+    "identity.job": "motorista"
+   }
+  },
+  {
+   "id": "w107",
+   "lang": "pt",
+   "text": "A minha equipa favorita é o Maxaquene.",
+   "expect": {
+    "pref.team": "o Maxaquene"
+   }
+  },
+  {
+   "id": "w108",
+   "lang": "pt",
+   "text": "O meu número da sorte é 8.",
+   "expect": {}
+  },
+  {
+   "id": "w109",
+   "lang": "en",
+   "text": "My lucky number is 42.",
+   "expect": {
+    "misc.lucky_number": "42"
+   }
+  },
+  {
+   "id": "w110",
+   "lang": "en",
+   "text": "I'm Ana.",
+   "expect": {
+    "identity.name": "Ana"
+   }
+  },
+  {
+   "id": "w111",
+   "lang": "pt",
+   "text": "Eu sou o Paulo Chissano.",
+   "expect": {
+    "identity.name": "Paulo Chissano"
+   }
+  }
+ ]
+}

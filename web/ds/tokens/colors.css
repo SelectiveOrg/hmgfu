@@ -1,0 +1,83 @@
+/* ============================================================================
+   Personal Agent — Color tokens
+   Values are the EXACT HSL triplets from the source app (frontend/src/index.css).
+   Stored as bare "H S% L%" triplets so they compose with hsl(...) and alpha,
+   e.g. hsl(var(--primary)) or hsl(var(--primary) / 0.15).
+   Convenience solid aliases (--c-*) are provided for consumers that want a
+   ready-to-use color value.
+   ============================================================================ */
+:root {
+  /* ---- Base surfaces (dark, blue-grey 228° hue) --- @kind color ---- */
+  --background: 228 12% 8%;      /* @kind color */
+  --foreground: 210 20% 92%;     /* @kind color */
+
+  --card: 228 12% 11%;             /* @kind color */
+  --card-foreground: 210 20% 92%;  /* @kind color */
+  --popover: 228 14% 13%;          /* @kind color */
+  --popover-foreground: 210 20% 92%; /* @kind color */
+
+  /* Agent-specific surface ramp (elevation) — @kind color */
+  --surface: 228 12% 8%;         /* @kind color */
+  --surface-2: 228 12% 11%;      /* @kind color */
+  --surface-3: 228 14% 14%;      /* @kind color */
+  --surface-hover: 228 12% 16%;  /* @kind color */
+
+  /* ---- Brand accent: teal --- @kind color ---- */
+  --primary: 174 62% 47%;          /* @kind color */
+  --primary-foreground: 228 12% 8%; /* @kind color */
+  --accent: 174 62% 47%;           /* @kind color */
+  --accent-foreground: 228 12% 8%; /* @kind color */
+  --ring: 174 62% 47%;             /* @kind color */
+
+  /* ---- Neutrals --- @kind color ---- */
+  --secondary: 228 10% 16%;          /* @kind color */
+  --secondary-foreground: 210 15% 75%; /* @kind color */
+  --muted: 228 10% 14%;              /* @kind color */
+  --muted-foreground: 215 12% 50%;   /* @kind color */
+  --text-dim: 215 12% 50%;           /* @kind color */
+  --border: 228 10% 18%;             /* @kind color */
+  --input: 228 10% 16%;              /* @kind color */
+
+  /* ---- Semantic --- @kind color ---- */
+  --destructive: 0 72% 51%;          /* @kind color */
+  --destructive-foreground: 210 40% 98%; /* @kind color */
+  --user-border: 220 70% 55%;    /* @kind color */
+
+  /* biome = agent "mood" signal — @kind color */
+  --biome-positive: 174 62% 47%;  /* @kind color */
+  --biome-negative: 0 72% 51%;    /* @kind color */
+  --biome-neutral: 220 10% 50%;   /* @kind color */
+
+  /* ---- Sidebar scope --- @kind color ---- */
+  --sidebar-background: 228 12% 7%;  /* @kind color */
+  --sidebar-foreground: 210 15% 75%; /* @kind color */
+  --sidebar-primary: 174 62% 47%;    /* @kind color */
+  --sidebar-primary-foreground: 228 12% 8%; /* @kind color */
+  --sidebar-accent: 228 10% 14%;     /* @kind color */
+  --sidebar-accent-foreground: 210 20% 92%; /* @kind color */
+  --sidebar-border: 228 10% 15%;     /* @kind color */
+  --sidebar-ring: 174 62% 47%;       /* @kind color */
+
+  /* ---- Effect tints (include their own alpha) — @kind color ---- */
+  --glass: 228 12% 11% / 0.8;        /* @kind color */
+  --glow-primary: 174 62% 47% / 0.15; /* @kind color */
+  --glow-user: 220 70% 55% / 0.1;    /* @kind color */
+
+  /* ---- Convenience solid aliases ---- */
+  --c-bg:        hsl(var(--background));
+  --c-surface-2: hsl(var(--surface-2));
+  --c-surface-3: hsl(var(--surface-3));
+  --c-fg:        hsl(var(--foreground));
+  --c-muted:     hsl(var(--muted-foreground));
+  --c-primary:   hsl(var(--primary));
+  --c-border:    hsl(var(--border));
+  --c-danger:    hsl(var(--destructive));
+  --c-user:      hsl(var(--user-border));
+
+  /* status dot palette (used in session/status badges) */
+  --status-active:  hsl(213 90% 62%);  /* blue-400 */
+  --status-working: hsl(43 96% 56%);   /* amber-400 */
+  --status-done:    hsl(142 71% 45%);  /* green-400/500 */
+  --status-error:   hsl(0 72% 60%);    /* red-400 */
+  --thinking:       hsl(270 70% 70%);  /* purple-400 — reasoning */
+}

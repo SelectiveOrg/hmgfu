@@ -1,0 +1,11 @@
+{
+ "_doc": "Phase 72.5 errata for write_set_v2.json — v068 'O meu primo chama-se Tino e o cão dele é o Rex.' was sealed with expect {} because family.cousin_name is not a closed slot; the open-slot design (slots._plausible_open_fact) intentionally records 'my <noun> is <Name>' as open.<noun>. Sealed file untouched; the runner prints the sealed figure first.",
+ "items": {
+  "v068": {
+   "expect": {
+    "open.primo": "Tino"
+   },
+   "reason": "open-slot design records the first-person possessive fact; the clause-cut bug (value 'Tino e o cão dele é') was the real defect and is fixed"
+  }
+ }
+}

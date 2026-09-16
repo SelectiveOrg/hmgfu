@@ -1,0 +1,281 @@
+{
+ "n_requests": 36,
+ "n_unrelated": 12,
+ "plans": [
+  {
+   "id": "p01",
+   "request": "make a widget with my links",
+   "requests": [
+    "make me a widget with my links",
+    "cria o widget dos links outra vez",
+    "I want the links widget rebuilt on the canvas"
+   ],
+   "status": "done",
+   "steps": [
+    {
+     "text": "write the html for the links page",
+     "tool": "write_file"
+    },
+    {
+     "text": "create the links widget",
+     "tool": "create_widget"
+    }
+   ],
+   "title": "Build the links widget"
+  },
+  {
+   "id": "p02",
+   "request": "faz um backup da minha pasta de notas",
+   "requests": [
+    "back up my notes again",
+    "faz backup da pasta de notas",
+    "copy the notes folder to the backup location"
+   ],
+   "status": "done",
+   "steps": [
+    {
+     "text": "list the notes files",
+     "tool": "bash"
+    },
+    {
+     "text": "copy the notes to backup/",
+     "tool": "bash"
+    },
+    {
+     "text": "verify the backup sizes",
+     "tool": "bash"
+    }
+   ],
+   "title": "Back up the notes folder"
+  },
+  {
+   "id": "p03",
+   "request": "convert report.csv into a markdown table",
+   "requests": [
+    "turn the csv report into markdown",
+    "converte o relatório csv para markdown",
+    "I need report.csv as a markdown table"
+   ],
+   "status": "done",
+   "steps": [
+    {
+     "text": "read report.csv",
+     "tool": "read_file"
+    },
+    {
+     "text": "write report.md with a table",
+     "tool": "write_file"
+    }
+   ],
+   "title": "Convert the CSV report to markdown"
+  },
+  {
+   "id": "p04",
+   "request": "prepara a minha nota de revisão semanal",
+   "requests": [
+    "prepare this week's review note",
+    "prepara a nota da revisão semanal",
+    "start the weekly review file for me"
+   ],
+   "status": "done",
+   "steps": [
+    {
+     "text": "create weekly_review.md with the template",
+     "tool": "write_file"
+    },
+    {
+     "text": "add the three standing questions",
+     "tool": "write_file"
+    }
+   ],
+   "title": "Set up the weekly review note"
+  },
+  {
+   "id": "p05",
+   "request": "rename the screenshots so the date is in the name",
+   "requests": [
+    "rename my screenshots by their date again",
+    "renomeia as capturas de ecrã pela data",
+    "put the date in the screenshot file names"
+   ],
+   "status": "partial",
+   "steps": [
+    {
+     "text": "list the screenshots",
+     "tool": "bash"
+    },
+    {
+     "text": "rename each file to its date",
+     "tool": "bash"
+    }
+   ],
+   "title": "Rename the screenshots by date"
+  },
+  {
+   "id": "p06",
+   "request": "quero a minha lista de leitura como widget",
+   "requests": [
+    "show my reading list as a widget",
+    "cria um widget com a minha lista de leitura",
+    "I want the reading list on the canvas"
+   ],
+   "status": "done",
+   "steps": [
+    {
+     "text": "write reading_list.html",
+     "tool": "write_file"
+    },
+    {
+     "text": "create the reading list widget",
+     "tool": "create_widget"
+    }
+   ],
+   "title": "Publish the reading list widget"
+  },
+  {
+   "id": "p07",
+   "request": "clean out the downloads folder",
+   "requests": [
+    "tidy up my downloads folder",
+    "limpa a pasta de downloads",
+    "move the old downloads out of the way"
+   ],
+   "status": "done",
+   "steps": [
+    {
+     "text": "list files older than 30 days",
+     "tool": "bash"
+    },
+    {
+     "text": "move them to downloads/old",
+     "tool": "bash"
+    }
+   ],
+   "title": "Clean the downloads folder"
+  },
+  {
+   "id": "p08",
+   "request": "faz a factura da clínica a partir do registo de horas",
+   "requests": [
+    "draft the clinic invoice again",
+    "faz a factura para a clínica",
+    "prepare an invoice for the clinic from my hours"
+   ],
+   "status": "done",
+   "steps": [
+    {
+     "text": "read the hours log",
+     "tool": "read_file"
+    },
+    {
+     "text": "write invoice_clinic.md",
+     "tool": "write_file"
+    }
+   ],
+   "title": "Draft the invoice for the clinic"
+  },
+  {
+   "id": "p09",
+   "request": "summarise the meeting notes into a file",
+   "requests": [
+    "summarise today's meeting notes",
+    "resume as notas da reunião",
+    "give me a summary file of the meeting notes"
+   ],
+   "status": "done",
+   "steps": [
+    {
+     "text": "read meeting_notes.md",
+     "tool": "read_file"
+    },
+    {
+     "text": "write meeting_summary.md",
+     "tool": "write_file"
+    }
+   ],
+   "title": "Summarise the meeting notes"
+  },
+  {
+   "id": "p10",
+   "request": "vê o espaço em disco e escreve um relatório",
+   "requests": [
+    "check how full the disk is and write it down",
+    "verifica o espaço em disco e faz um relatório",
+    "disk usage report please"
+   ],
+   "status": "done",
+   "steps": [
+    {
+     "text": "run the disk usage command",
+     "tool": "bash"
+    },
+    {
+     "text": "write disk_report.md",
+     "tool": "write_file"
+    }
+   ],
+   "title": "Check disk usage and report"
+  },
+  {
+   "id": "p11",
+   "request": "create a grocery list widget",
+   "requests": [
+    "make the grocery list widget",
+    "cria o widget da lista de compras",
+    "I want a grocery list on the canvas"
+   ],
+   "status": "failed",
+   "steps": [
+    {
+     "text": "write grocery.html",
+     "tool": "write_file"
+    },
+    {
+     "text": "create the grocery widget",
+     "tool": "create_widget"
+    }
+   ],
+   "title": "Create the grocery list widget"
+  },
+  {
+   "id": "p12",
+   "request": "arquiva os logs do mês passado num zip",
+   "requests": [
+    "archive the logs from last month",
+    "arquiva os logs do mês passado",
+    "zip up last month's log files"
+   ],
+   "status": "done",
+   "steps": [
+    {
+     "text": "list last month's log files",
+     "tool": "bash"
+    },
+    {
+     "text": "compress them into logs_archive.zip",
+     "tool": "bash"
+    },
+    {
+     "text": "delete the originals",
+     "tool": "bash"
+    }
+   ],
+   "title": "Archive last month's logs"
+  }
+ ],
+ "unrelated": [
+  "what is my favourite colour?",
+  "qual é o nome do meu irmão?",
+  "tell me a joke about cats",
+  "bom dia, como estás?",
+  "what did I say about the printer last week?",
+  "how tall is Mount Kilimanjaro?",
+  "explain what a mutex is",
+  "translate 'good night' to Portuguese",
+  "what is the weather like today in Valencia?",
+  "quem é o presidente de Spain?",
+  "remind me what my dog is called",
+  "how many days until December?"
+ ],
+ "version": "runbooks_v2"
+}

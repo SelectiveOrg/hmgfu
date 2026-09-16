@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Cowork — HMG-Fu Agent Workspace</title>
+<link rel="icon" href="/ds/favicon.ico" />
+<link rel="stylesheet" href="/ds/styles.css" />
+<style>
+  html, body { height: 100%; margin: 0; overflow: hidden; }
+  /* 95.81: on a phone 100vh counts the retractable address bar and toolbar, so the shell came out
+     60-120px taller than the screen: the settings panel (a percentage of that box) was cropped and the
+     composer sat under the browser's own chrome. 100dvh is the height actually on screen; the plain
+     rule stays first for browsers without it. 100vw counts the scrollbar, so width comes from the
+     parent instead. */
+  #root { height: 100vh; width: 100%; }
+  @supports (height: 100dvh) { #root { height: 100dvh; } }
+  .pa-widget-in { animation: pa-widget-in 0.5s var(--ease-out, ease-out); }
+  @keyframes pa-widget-in { from { opacity: 0; transform: translateY(-8px) scale(0.98); } to { opacity: 1; transform: none; } }
+  .pa-caret { animation: pa-blink 1s steps(1) infinite; }
+  @keyframes pa-blink { 50% { opacity: 0; } }
+  @keyframes pa-pulse-glow { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="/vendor/react.production.min.js"></script>
+<script src="/vendor/react-dom.production.min.js"></script>
+<script src="/vendor/babel.min.js"></script>
+<script src="/vendor/lucide.min.js"></script>
+<script src="/ds/_ds_bundle.js"></script>
+<script src="/ds/pa-ui.js"></script>
+<script src="/app/api.js?v=15"></script>
+<script type="text/babel" src="/app/events.jsx?v=17"></script>
+<script type="text/babel" src="/app/cards.jsx?v=11"></script>
+<script type="text/babel" src="/app/Rail.jsx?v=5"></script>
+<script type="text/babel" src="/app/Transcript.jsx?v=22"></script>
+<script type="text/babel" src="/app/MemoryWidgets.jsx?v=14"></script>
+<script src="/app/HexV3Ports.js?v=2"></script>
+<script src="/app/HexZoomCore.js?v=12"></script>
+<script type="text/babel" src="/app/HexZoom.jsx?v=22"></script>
+<script type="text/babel" src="/app/MemoryPanels.jsx?v=13"></script>
+<script type="text/babel" src="/app/DreamGraderWidgets.jsx?v=10"></script>
+<script type="text/babel" src="/app/AppWidget.jsx?v=1"></script>
+<script type="text/babel" src="/app/Canvas.jsx?v=12"></script>
+<script type="text/babel" src="/app/Connectors.jsx?v=8"></script>
+<script type="text/babel" src="/app/SettingsRows.jsx?v=2"></script>
+<script type="text/babel" src="/app/Settings.jsx?v=21"></script>
+<script type="text/babel" src="/app/CoworkApp.jsx?v=11"></script>
+<script type="text/babel" data-presets="react">
+  const mount = () => {
+    const App = window.CoworkApp;
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  };
+  if (window.CoworkApp) mount(); else window.addEventListener("DOMContentLoaded", mount);
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+ "_doc": "Phase 90.L DEV diagnostic set (NOT a validation set, never reserved): can the write side tell apart a durable state assertion, a correction, a bare current activity, a proposal, an intention, a negation, a third party, a question and a decision to change focus? Authored 2026-09-08 BEFORE running anything. The target slot is `project.main` throughout, so the only thing that varies is the modality of the sentence, not the vocabulary of the slot. `expect_canon` is what the fact ledger must hold for project.main after the message (null = no write); `why` states the rule, never a phrase. PT and EN paraphrases of each class.",
+ "rule": {
+  "write": "a durable state assertion about the USER, evidenced either by the slot's own noun ('project'/'projecto') or by a change-of-state marker the store already recognises (actually / na verdade; used to be ... now; since <year>)",
+  "do_not_write": "proposals (should/devíamos), intentions (want to/going to/quero/vou), bare current activity with no scope or change marker, negations (no new value), third-party sentences, questions",
+  "ambiguous": "bare activity ('we are working on X') — an activity now is not evidence that it is the user's MAIN project; the honest outcome is no canon write and an episode only"
+ },
+ "cases": [
+  {"id": "m01", "class": "state_assertion", "lang": "en", "text": "My main project is Mapiko.", "expect_canon": "Mapiko", "why": "the slot's own noun, present tense, first person"},
+  {"id": "m02", "class": "state_assertion", "lang": "pt", "text": "O meu projecto principal é o Mapiko.", "expect_canon": "Mapiko", "why": "the slot's own noun in PT"},
+  {"id": "m03", "class": "state_assertion", "lang": "en", "text": "The project I work on is Mapiko.", "expect_canon": "Mapiko", "why": "the slot's own noun as the subject"},
+
+  {"id": "m04", "class": "correction", "lang": "en", "text": "Actually my main project is Mapiko, not Kuvala.", "expect_canon": "Mapiko", "why": "correction marker + the slot's noun"},
+  {"id": "m05", "class": "correction", "lang": "pt", "text": "Na verdade estamos a trabalhar no HMG, este sistema de memória.", "expect_canon": "HMG", "why": "correction marker (na verdade) on an activity clause = a stated change of what we work on"},
+  {"id": "m06", "class": "correction", "lang": "en", "text": "we are actually working on HMG, this memory system of yours", "expect_canon": "HMG", "why": "correction marker (actually) on an activity clause"},
+
+  {"id": "m07", "class": "activity_bare", "lang": "en", "text": "We are working on HMG.", "expect_canon": null, "why": "an activity now is not evidence that it is the MAIN project — episode only"},
+  {"id": "m08", "class": "activity_bare", "lang": "pt", "text": "Estamos a trabalhar no HMG.", "expect_canon": null, "why": "same, PT"},
+  {"id": "m09", "class": "activity_bare", "lang": "en", "text": "Today I am working on the parser.", "expect_canon": null, "why": "a day's activity is not a durable fact"},
+
+  {"id": "m10", "class": "proposal", "lang": "en", "text": "We should work on HMG.", "expect_canon": null, "why": "deontic — a proposal is not a fact"},
+  {"id": "m11", "class": "proposal", "lang": "pt", "text": "Devíamos trabalhar no HMG.", "expect_canon": null, "why": "deontic, PT"},
+  {"id": "m12", "class": "proposal", "lang": "en", "text": "Maybe we could work on HMG instead.", "expect_canon": null, "why": "hedged proposal"},
+
+  {"id": "m13", "class": "intention", "lang": "en", "text": "I want to work on HMG now.", "expect_canon": null, "why": "volitive — wanting is not doing"},
+  {"id": "m14", "class": "intention", "lang": "pt", "text": "Quero trabalhar no HMG agora.", "expect_canon": null, "why": "volitive, PT"},
+  {"id": "m15", "class": "intention", "lang": "en", "text": "I'm going to work on HMG tomorrow.", "expect_canon": null, "why": "future intention"},
+  {"id": "m16", "class": "intention", "lang": "pt", "text": "Vou trabalhar no HMG amanhã.", "expect_canon": null, "why": "future intention, PT"},
+  {"id": "m17", "class": "intention", "lang": "en", "text": "I plan to work on HMG.", "expect_canon": null, "why": "a plan is not a state"},
+
+  {"id": "m18", "class": "negation", "lang": "en", "text": "We are not working on HMG any more.", "expect_canon": null, "why": "a negation adds no value; retraction only through the existing retraction contract"},
+  {"id": "m19", "class": "negation", "lang": "pt", "text": "Já não trabalhamos no HMG.", "expect_canon": null, "why": "same, PT"},
+  {"id": "m20", "class": "negation", "lang": "en", "text": "We never worked on HMG.", "expect_canon": null, "why": "denial of the activity"},
+
+  {"id": "m21", "class": "third_party", "lang": "en", "text": "My colleague is working on HMG.", "expect_canon": null, "why": "someone else's activity"},
+  {"id": "m22", "class": "third_party", "lang": "pt", "text": "O meu colega está a trabalhar no HMG.", "expect_canon": null, "why": "same, PT"},
+  {"id": "m23", "class": "third_party", "lang": "en", "text": "My brother's main project is HMG.", "expect_canon": null, "why": "the slot's noun, but the possessor is not the user"},
+
+  {"id": "m24", "class": "question", "lang": "en", "text": "Are we working on HMG?", "expect_canon": null, "why": "interrogative"},
+  {"id": "m25", "class": "question", "lang": "pt", "text": "Estamos a trabalhar no HMG?", "expect_canon": null, "why": "interrogative, PT"},
+
+  {"id": "m26", "class": "focus_change", "lang": "en", "text": "From now on my project is HMG.", "expect_canon": "HMG", "why": "explicit change of state + the slot's noun"},
+  {"id": "m27", "class": "focus_change", "lang": "pt", "text": "A partir de agora o meu projecto é o HMG.", "expect_canon": "HMG", "why": "same, PT"},
+  {"id": "m28", "class": "focus_change", "lang": "en", "text": "My project used to be Kuvala but now it is HMG.", "expect_canon": "HMG", "why": "the transition marker the store already recognises"},
+
+  {"id": "m29", "class": "hypothesis", "lang": "en", "text": "If we worked on HMG we would need more time.", "expect_canon": null, "why": "hypothesis"},
+  {"id": "m30", "class": "fiction", "lang": "en", "text": "In the story I'm writing, the team's main project is HMG.", "expect_canon": null, "why": "fiction"},
+  {"id": "m31", "class": "cite", "lang": "pt", "text": "O meu chefe disse: o nosso projecto principal é o HMG.", "expect_canon": null, "why": "reported speech"},
+  {"id": "m32", "class": "past", "lang": "en", "text": "In 2019 my main project was Kuvala.", "expect_canon": null, "why": "dated past — history, not the current value"}
+ ]
+}

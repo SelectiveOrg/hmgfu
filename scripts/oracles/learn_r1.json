@@ -1,0 +1,185 @@
+{
+ "_doc": "Phase 90.O RESERVED counterpart of learn_v1. Authored ONCE, sealed by the commit that introduces it, and run ONCE against the FROZEN candidate — never during development, never tuned against. Same scenario (teach -> correct -> change subject -> new session -> ask in other words) and the same six families, but different slots, different values, different phrasings and different distractors from the DEV set, so passing it is not a paraphrase of passing learn_v1. Criteria fixed here before any run; all values synthetic.",
+ "conversations": [
+  {
+   "id": "r01_correction_paraphrase_en",
+   "family": "correction_then_paraphrase",
+   "lang": "en",
+   "turns": [
+    "My favourite programming language is Elixir.",
+    "Scratch that — my favourite language is Rust.",
+    "Unrelated: the neighbours are renovating again."
+   ],
+   "question": "which language do I enjoy coding in the most?",
+   "allowed": ["Rust"],
+   "forbidden_as_current": ["Elixir"],
+   "expected_ledger": {"pref.language": "Rust"},
+   "abstain": false
+  },
+  {
+   "id": "r02_correction_paraphrase_pt",
+   "family": "correction_then_paraphrase",
+   "lang": "pt",
+   "turns": [
+    "O meu cão chama-se Bóris.",
+    "Enganei-me: o meu cão chama-se Tarso.",
+    "Sem relação: amanhã tenho consulta no dentista."
+   ],
+   "question": "como se chama o meu cão?",
+   "allowed": ["Tarso"],
+   "forbidden_as_current": ["Bóris"],
+   "expected_ledger": {"pet.dog.name": "Tarso"},
+   "abstain": false
+  },
+  {
+   "id": "r03_employer_correction_en",
+   "family": "correction_then_paraphrase",
+   "lang": "en",
+   "turns": [
+    "I work at Namuli.",
+    "I moved on — I work at Chire now.",
+    "By the way, I repainted the garage over the weekend."
+   ],
+   "question": "who pays my salary these days?",
+   "allowed": ["Chire"],
+   "forbidden_as_current": ["Namuli"],
+   "expected_ledger": {"identity.company": "Chire"},
+   "abstain": false
+  },
+  {
+   "id": "r04_third_party_en",
+   "family": "third_party",
+   "lang": "en",
+   "turns": [
+    "My lucky number is 14.",
+    "My wife's lucky number is 88.",
+    "On another topic, the fridge started making a noise."
+   ],
+   "question": "which number do I consider lucky?",
+   "allowed": ["14"],
+   "forbidden_as_current": ["88"],
+   "expected_ledger": {"misc.lucky_number": "14"},
+   "abstain": false
+  },
+  {
+   "id": "r05_third_party_pt",
+   "family": "third_party",
+   "lang": "pt",
+   "turns": [
+    "A minha bebida preferida é água de coco.",
+    "A bebida preferida do meu pai é vinho verde.",
+    "Outra coisa: preciso de trocar os pneus do carro."
+   ],
+   "question": "o que é que eu gosto de beber?",
+   "allowed": ["água de coco", "coco"],
+   "forbidden_as_current": ["vinho verde"],
+   "expected_ledger": {"pref.drink": "água de coco"},
+   "abstain": false
+  },
+  {
+   "id": "r06_negation_en",
+   "family": "negation",
+   "lang": "en",
+   "turns": [
+    "My favourite sport is handball.",
+    "I don't follow cricket at all.",
+    "Separately, I signed up for a photography course."
+   ],
+   "question": "what sport am I into?",
+   "allowed": ["handball"],
+   "forbidden_as_current": ["cricket"],
+   "expected_ledger": {"pref.sport": "handball"},
+   "abstain": false
+  },
+  {
+   "id": "r07_negation_pt",
+   "family": "negation",
+   "lang": "pt",
+   "turns": [
+    "Moro em Inhambane.",
+    "Não moro na Matola desde 2018.",
+    "À parte disso, comecei a aprender guitarra."
+   ],
+   "question": "em que cidade é que eu tenho casa?",
+   "allowed": ["Inhambane"],
+   "forbidden_as_current": ["Matola"],
+   "expected_ledger": {"identity.location": "Inhambane"},
+   "abstain": false
+  },
+  {
+   "id": "r08_intention_vs_fact_en",
+   "family": "intention_vs_fact",
+   "lang": "en",
+   "turns": [
+    "My main project is Licungo.",
+    "I'd like to switch to Lurio at some point.",
+    "Anyway, the internet has been dropping all morning."
+   ],
+   "question": "what am I mainly building right now?",
+   "allowed": ["Licungo"],
+   "forbidden_as_current": ["Lurio"],
+   "expected_ledger": {"project.main": "Licungo"},
+   "abstain": false
+  },
+  {
+   "id": "r09_proposal_vs_fact_pt",
+   "family": "intention_vs_fact",
+   "lang": "pt",
+   "turns": [
+    "O meu projeto principal é o Licungo.",
+    "Vamos passar para o Lurio no próximo trimestre.",
+    "Mudando de assunto: o gato partiu um vaso."
+   ],
+   "question": "em que é que eu ando a trabalhar principalmente?",
+   "allowed": ["Licungo"],
+   "forbidden_as_current": ["Lurio"],
+   "expected_ledger": {"project.main": "Licungo"},
+   "abstain": false
+  },
+  {
+   "id": "r10_past_vs_present_pt",
+   "family": "time",
+   "lang": "pt",
+   "turns": [
+    "Até 2020 trabalhei na Namuli.",
+    "Desde 2021 trabalho na Chire.",
+    "Já agora, mudei de operadora de telemóvel."
+   ],
+   "question": "qual é a empresa onde estou agora?",
+   "allowed": ["Chire"],
+   "forbidden_as_current": ["Namuli"],
+   "expected_ledger": {"identity.company": "Chire"},
+   "abstain": false
+  },
+  {
+   "id": "r11_ambiguous_never_taught_pt",
+   "family": "ambiguity",
+   "lang": "pt",
+   "turns": [
+    "O meu prato preferido é caril de caranguejo.",
+    "Li um artigo sobre uma cidade chamada Gurué.",
+    "Outra coisa: o comboio atrasou-se duas horas."
+   ],
+   "question": "como se chama a minha irmã?",
+   "allowed": [],
+   "forbidden_as_current": ["Gurué", "caril de caranguejo"],
+   "expected_ledger": {},
+   "abstain": true
+  },
+  {
+   "id": "r12_ambiguous_third_party_en",
+   "family": "ambiguity",
+   "lang": "en",
+   "turns": [
+    "My manager Teresa relocated to Pemba.",
+    "I stayed in Inhambane.",
+    "Changing the subject: I finally fixed the leaking tap."
+   ],
+   "question": "which town do I call home?",
+   "allowed": ["Inhambane"],
+   "forbidden_as_current": ["Pemba"],
+   "expected_ledger": {"identity.location": "Inhambane"},
+   "abstain": false
+  }
+ ]
+}

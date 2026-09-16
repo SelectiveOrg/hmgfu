@@ -1,0 +1,39 @@
+/* ============================================================================
+   Personal Agent — Typography tokens
+   Inter for everything UI; JetBrains Mono for code, tool names, terminal output.
+   The app leans on SMALL, dense type — most UI text is 11–14px.
+   ============================================================================ */
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Inter opentype features used app-wide (from body font-feature-settings) */
+  --font-features: "cv02", "cv03", "cv04", "cv11";
+
+  /* ---- Type scale (px) — matches the app's Tailwind usage ---- */
+  --text-2xs: 9px;     /* micro labels, group counts */
+  --text-xs2: 10px;    /* meta, timestamps, uppercase tags */
+  --text-xs: 11px;     /* pills, chips, secondary meta (text-[11px]) */
+  --text-sm-alt: 12px; /* dense controls (Tailwind text-xs) */
+  --text-sm: 14px;     /* body, messages, inputs (Tailwind text-sm) */
+  --text-base: 16px;
+  --text-lg: 18px;     /* empty-state headline */
+  --text-xl: 20px;     /* login title */
+
+  /* ---- Weights ---- */
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Line-heights ---- */
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* ---- Tracking ---- */
+  --tracking-wider: 0.05em;  /* uppercase section labels */
+  --tracking-normal: 0;
+}

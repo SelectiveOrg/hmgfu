@@ -1,0 +1,4 @@
+/* Personal Agent — Webfonts
+   Both families are Google Fonts, loaded exactly as the source app loads them.
+   Inter — UI / body / display.  JetBrains Mono — code, tool calls, terminal. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');

@@ -1,0 +1,155 @@
+{
+ "_doc": "Phase 90.C DEV conversation set (pilot: six sentinels, one per critical family). DEVELOPMENT/DIAGNOSTIC — never a validation set; the reserved conv_v2 is authored later, by family, and checked with diag_reserved_similarity. Every value is synthetic (the user's private link is replaced). Each conversation fixes BEFORE the run: the turns, the final question, the facts the reply may state (allowed), the facts it must not state as current (forbidden), the ledger keys expected after the turns (expected_ledger, prefix match on value), and whether abstention is the right answer.",
+ "value_match": "prefix",
+ "conversations": [
+  {
+   "id": "c01_live_updated_link",
+   "family": "explicit_value_change_by_reference",
+   "lang": "en",
+   "origin": "live 2026-09-07 turn 7-8 (synthetic values)",
+   "turns": [
+    "the link to locate my car is http://198.51.100.7/ui/sharing/aaaa1111aaaa1111aaaa1111aaaa1111",
+    "heres the updated link: http://198.51.100.7/ui/sharing/bbbb2222bbbb2222bbbb2222bbbb2222"
+   ],
+   "question": "what is the link to locate my car?",
+   "allowed": [
+    "bbbb2222bbbb2222bbbb2222bbbb2222"
+   ],
+   "forbidden_as_current": [
+    "aaaa1111aaaa1111aaaa1111aaaa1111"
+   ],
+   "expected_ledger": {
+    "asset.car_location_link": "http://198.51.100.7/ui/sharing/bbbb2222"
+   },
+   "abstain": false
+  },
+  {
+   "id": "c02_live_working_on_hmg",
+   "family": "explicit_value_change_correction",
+   "lang": "en",
+   "origin": "live 2026-09-07 earlier session turns 3-6",
+   "turns": [
+    "My main project is a Java billing API.",
+    "we are actually working on HMG, this memory system of yours"
+   ],
+   "question": "what are we working on?",
+   "allowed": [
+    "hmg"
+   ],
+   "forbidden_as_current": [
+    "java billing"
+   ],
+   "expected_ledger": {
+    "project.main": "HMG"
+   },
+   "abstain": false
+  },
+  {
+   "id": "c03_pref_a_to_b",
+   "family": "preference_A_then_B",
+   "lang": "pt",
+   "turns": [
+    "Gosto muito de café.",
+    "Ultimamente prefiro chá de gengibre."
+   ],
+   "question": "o que é que eu gosto de beber?",
+   "allowed": [
+    "gengibre"
+   ],
+   "forbidden_as_current": [
+    "odeio",
+    "não gosto de café",
+    "nao gosto de cafe"
+   ],
+   "expected_ledger": {
+    "pref.drink": "chá de gengibre"
+   },
+   "abstain": false
+  },
+  {
+   "id": "c04_third_party",
+   "family": "third_party_attribution",
+   "lang": "en",
+   "turns": [
+    "My colleague Ana moved to Aveiro last month.",
+    "I still live in Valencia."
+   ],
+   "question": "where do I live?",
+   "allowed": [
+    "valencia"
+   ],
+   "forbidden_as_current": [
+    "aveiro"
+   ],
+   "expected_ledger": {
+    "identity.location": "Valencia"
+   },
+   "abstain": false
+  },
+  {
+   "id": "c05_past_vs_present",
+   "family": "past_vs_present",
+   "lang": "en",
+   "turns": [
+    "I lived in Nampula until 2020.",
+    "I live in Valencia now."
+   ],
+   "question": "where did I live before I moved?",
+   "allowed": [
+    "nampula"
+   ],
+   "forbidden_as_current": [],
+   "expected_ledger": {
+    "identity.location": "Valencia"
+   },
+   "abstain": false
+  },
+  {
+   "id": "c06_no_evidence",
+   "family": "question_without_evidence",
+   "lang": "en",
+   "turns": [
+    "My favourite colour is teal."
+   ],
+   "question": "what is my shoe size?",
+   "allowed": [],
+   "forbidden_as_current": [
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45"
+   ],
+   "expected_ledger": {
+    "pref.color": "teal"
+   },
+   "abstain": true
+  },
+  {
+   "id": "c05b_past_vs_present_isolated",
+   "family": "past_vs_present",
+   "lang": "en",
+   "origin": "90.H2: synthetic, isolated from the live location history (Lisbon/Valencia/Chimoio); c05 kept as evidence of the history interference",
+   "turns": [
+    "I lived in Quelimane until 2019.",
+    "I moved to Tete in 2020 and I still live there."
+   ],
+   "question": "where did I live before I moved to Tete?",
+   "allowed": [
+    "quelimane"
+   ],
+   "forbidden_as_current": [
+    "lisbon",
+    "chimoio",
+    "valencia"
+   ],
+   "expected_ledger": {
+    "identity.location": "Tete"
+   },
+   "abstain": false
+  }
+ ]
+}

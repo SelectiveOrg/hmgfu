@@ -1,0 +1,111 @@
+{
+ "facts": [
+  "My name is Teodoro.",
+  "A minha cor favorita é chartreuse.",
+  "I live in Valencia.",
+  "My dog's name is Green.",
+  "A minha linguagem de programação favorita é Java.",
+  "My brother's name is Babys."
+ ],
+ "problems": [
+  {
+   "id": "r01",
+   "later": [
+    "the bank csv import is failing on the dates again",
+    "o script de importação do banco volta a rebentar nas datas"
+   ],
+   "reflection": "The bank CSV mixes dd/mm/yyyy and yyyy-mm-dd; parsing each row with a two-format fallback and normalising to ISO before the import fixed every failure — the naive single-format parse was the culprit, not the encoding.",
+   "request": "The CSV export from the bank has dates in two formats and the import script breaks on them."
+  },
+  {
+   "id": "r02",
+   "later": [
+    "why does the weather widget show old data",
+    "o widget do tempo mostra a previsão de ontem outra vez"
+   ],
+   "reflection": "The widget cached the first forecast response and never refreshed because the cache key had no date in it; adding the local date to the cache key and refreshing at 06:00 solved the stale forecast.",
+   "request": "The weather widget keeps showing yesterday's forecast."
+  },
+  {
+   "id": "r03",
+   "later": [
+    "merge these contact lists and remove the duplicates",
+    "junta as listas de contactos sem duplicados"
+   ],
+   "reflection": "Merging contact lists by exact email produced duplicates because of case and trailing spaces; lowercasing and trimming emails before the merge, then keeping the most complete record per email, removed them all.",
+   "request": "I need to merge three contact lists without duplicates."
+  },
+  {
+   "id": "r04",
+   "later": [
+    "set up the weekly photo backup to the external drive",
+    "faz o backup semanal das fotos para o disco externo"
+   ],
+   "reflection": "A weekly photo backup with a plain copy re-copied everything each time; using a sync that compares size and modification time made the weekly run take minutes instead of an hour and skipped unchanged files.",
+   "request": "Back up my photos folder to the external drive every week."
+  },
+  {
+   "id": "r05",
+   "later": [
+    "turn today's meeting notes into action items",
+    "resume as notas da reunião em acções"
+   ],
+   "reflection": "Meeting notes mix decisions and chatter; extracting only lines with an owner and a verb, then grouping by owner, gave a clean action-item list the user accepted without edits.",
+   "request": "Summarise the meeting notes into action items."
+  },
+  {
+   "id": "r06",
+   "later": [
+    "extract the invoice pdf into a spreadsheet",
+    "converte a factura em pdf para uma folha de cálculo"
+   ],
+   "reflection": "The invoice PDF had a two-column layout that broke text extraction; extracting by table regions instead of raw text kept quantities aligned with descriptions and the totals matched.",
+   "request": "Convert the invoice PDF into a spreadsheet."
+  },
+  {
+   "id": "r07",
+   "later": [
+    "the screenshot rename script misses some files",
+    "o script de renomear capturas salta ficheiros com espaços"
+   ],
+   "reflection": "Files with spaces were skipped because the loop split on whitespace; quoting the variable and iterating over the glob directly renamed every screenshot, spaces included.",
+   "request": "The shell script for renaming screenshots skips files with spaces."
+  },
+  {
+   "id": "r08",
+   "later": [
+    "write the payment reminder to the clinic again",
+    "escreve o lembrete de pagamento para a clínica"
+   ],
+   "reflection": "A reminder to the clinic worked best short: invoice number, amount, due date, one sentence asking for a payment date, no apology; the user sent it as drafted.",
+   "request": "Draft a polite reminder email to the clinic about the unpaid invoice."
+  },
+  {
+   "id": "r09",
+   "later": [
+    "plan this week's meals from the fridge",
+    "planeia as refeições da semana com o que há no frigorífico"
+   ],
+   "reflection": "Meal planning from the fridge inventory works when perishables are used first and each dinner reuses one ingredient from the previous day; the plan needed only two extra items.",
+   "request": "Plan the week's meals with what is in the fridge."
+  },
+  {
+   "id": "r10",
+   "later": [
+    "disk is full again, check what is taking space",
+    "verifica o espaço em disco e limpa os downloads"
+   ],
+   "reflection": "Disk usage was dominated by the downloads folder's old installers; listing files older than 30 days and moving them to an archive folder recovered most of the space without deleting anything.",
+   "request": "Check the disk usage and clean the downloads folder."
+  }
+ ],
+ "user_fact_questions": [
+  "what is my name?",
+  "qual é a minha cor favorita?",
+  "where do I live?",
+  "what is my dog's name?",
+  "qual é a minha linguagem de programação favorita?",
+  "what is my brother's name?"
+ ],
+ "version": "selfrecall_v1"
+}

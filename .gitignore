@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.pyc
+hmgfu.db
+smoke_live.db
+bench_memory.db
+probe_regressions.db
+*_smoke.db
+*_bench.db
+.pytest_cache/
+.vault_key*
+workspace/
+skills/__pycache__/
+
+web/vendor/
+scratch/
+backups/
+reports/
+hmgfu.db.*
+hmgfu.db-*
+*.db.nomic-backup-*
+observation_log.jsonl
+
+# Phase 62.10: personal ground truth + bench/audit outputs are PRIVATE (contain real facts and a private link)
+scripts/truth_set.json
+outputs/
+tmp/

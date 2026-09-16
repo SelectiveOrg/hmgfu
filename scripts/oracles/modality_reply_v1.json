@@ -1,0 +1,96 @@
+{
+  "_doc": "Phase 91.Y criterion C5. The write-set runs prove what reaches the LEDGER. This one closes the loop the directive asks for: what was written, what was retrieved, and what the reply ASSERTS must agree. A denial must not come back as a fact in another session. Six conversations, live engine, one throwaway synthetic base each, question asked in a NEW session (--question-in-new-session). Authored with the DEV set, before the fix.",
+  "value_match": "prefix",
+  "conversations": [
+    {
+      "id": "y01_negation_en",
+      "family": "governing_clause_negation",
+      "lang": "en",
+      "turns": [
+        "My dog is called Rex.",
+        "I never said that Green is my dog.",
+        "Anyway, the rain here has been relentless this week."
+      ],
+      "question": "what is my dog called?",
+      "allowed": ["Rex"],
+      "forbidden_as_current": ["Green"],
+      "expected_ledger": {"pet.dog.name": "Rex"},
+      "abstain": false
+    },
+    {
+      "id": "y02_citation_en",
+      "family": "governing_clause_citation",
+      "lang": "en",
+      "turns": [
+        "My dog is called Rex.",
+        "I was told that Green is my dog.",
+        "Anyway, I finally fixed the kitchen tap."
+      ],
+      "question": "what is my dog called?",
+      "allowed": ["Rex"],
+      "forbidden_as_current": ["Green"],
+      "expected_ledger": {"pet.dog.name": "Rex"},
+      "abstain": false
+    },
+    {
+      "id": "y03_doubt_en",
+      "family": "governing_clause_doubt",
+      "lang": "en",
+      "turns": [
+        "My dog is called Rex.",
+        "I doubt that Green is my dog.",
+        "Anyway, the bus was late again this morning."
+      ],
+      "question": "what is my dog called?",
+      "allowed": ["Rex"],
+      "forbidden_as_current": ["Green"],
+      "expected_ledger": {"pet.dog.name": "Rex"},
+      "abstain": false
+    },
+    {
+      "id": "y04_negation_pt",
+      "family": "governing_clause_negation",
+      "lang": "pt",
+      "turns": [
+        "O meu cão chama-se Rex.",
+        "Eu nunca disse que o Green é o meu cão.",
+        "De resto, tem chovido imenso esta semana."
+      ],
+      "question": "como se chama o meu cão?",
+      "allowed": ["Rex"],
+      "forbidden_as_current": ["Green"],
+      "expected_ledger": {"pet.dog.name": "Rex"},
+      "abstain": false
+    },
+    {
+      "id": "y05_assertion_control_en",
+      "family": "governing_clause_assertion",
+      "lang": "en",
+      "turns": [
+        "My dog is called Rex.",
+        "but you should know that Green is my dog also",
+        "Anyway, the market was packed on Saturday."
+      ],
+      "question": "what is my dog called?",
+      "allowed": ["Green"],
+      "forbidden_as_current": [],
+      "expected_ledger": {"pet.dog.name": "Green"},
+      "abstain": false
+    },
+    {
+      "id": "y06_third_party_en",
+      "family": "governing_clause_third_party",
+      "lang": "en",
+      "turns": [
+        "My dog is called Rex.",
+        "My neighbour says that Green is my dog.",
+        "Anyway, I need to renew my library card."
+      ],
+      "question": "what is my dog called?",
+      "allowed": ["Rex"],
+      "forbidden_as_current": ["Green"],
+      "expected_ledger": {"pet.dog.name": "Rex"},
+      "abstain": false
+    }
+  ]
+}

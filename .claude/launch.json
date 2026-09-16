@@ -1,0 +1,33 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hmgfu-api",
+      "runtimeExecutable": "C:\\Users\\you\\hmg-fu\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": [
+        "-m",
+        "hmgfu.api"
+      ],
+      "cwd": "C:\\Users\\you\\hmg-fu",
+      "port": 8777
+    },
+    {
+      "name": "hmgfu-viz-demo",
+      "runtimeExecutable": "C:\\Users\\you\\hmg-fu\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": [
+        "scripts/run_viz_demo.py"
+      ],
+      "cwd": "C:\\Users\\you\\hmg-fu",
+      "port": 8778
+    },
+    {
+      "name": "hmgfu-api-tailscale",
+      "runtimeExecutable": "C:\\Users\\you\\hmg-fu\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": [
+        "scripts/serve_tailscale.py"
+      ],
+      "cwd": "C:\\Users\\you\\hmg-fu",
+      "port": 8777
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "_doc": "Phase 91.Y RESERVED set. SEALED: authored together with modality_dev_v1.json and before the fix, sharing no sentence, no name and no value with it. It is run ONCE, at the end, to check that the correction generalises beyond the cases it was developed against. It is never tuned against and never used to choose between candidates. Run with scripts/run_write_set.py --set this file (no --mapper). 'expect': {} means the turn must write NOTHING and the prior value must survive.",
+  "items": [
+    {"id": "r001", "lang": "en", "category": "assertion", "prior": ["My cat is called Momo."], "text": "Pepper is my cat.", "expect": {"pet.cat.name": "Pepper"}},
+    {"id": "r002", "lang": "en", "category": "assertion", "prior": ["My cat is called Momo."], "text": "so Pepper is my cat", "expect": {"pet.cat.name": "Pepper"}},
+    {"id": "r003", "lang": "en", "category": "assertion", "prior": [], "text": "and marrabenta is my favourite music", "expect": {"pref.music": "marrabenta"}},
+    {"id": "r004", "lang": "en", "category": "assertion", "prior": ["My cat is called Momo."], "text": "however you should know that Pepper is my cat too", "expect": {"pet.cat.name": "Pepper"}},
+
+    {"id": "r010", "lang": "en", "category": "negation", "prior": ["My cat is called Momo."], "text": "I never claimed that Pepper is my cat.", "expect": {}},
+    {"id": "r011", "lang": "en", "category": "negation", "prior": ["My cat is called Momo."], "text": "I refuse the idea that Pepper is my cat.", "expect": {}},
+    {"id": "r012", "lang": "en", "category": "negation", "prior": ["My cat is called Momo."], "text": "It is false that Pepper is my cat.", "expect": {}},
+
+    {"id": "r020", "lang": "en", "category": "doubt", "prior": ["My cat is called Momo."], "text": "I wonder whether Pepper is my cat.", "expect": {}},
+    {"id": "r021", "lang": "en", "category": "doubt", "prior": ["My cat is called Momo."], "text": "I suppose that Pepper is my cat.", "expect": {}},
+
+    {"id": "r030", "lang": "en", "category": "intention", "prior": ["My cat is called Momo."], "text": "I was about to write that Pepper is my cat.", "expect": {}},
+
+    {"id": "r040", "lang": "en", "category": "citation", "prior": ["My cat is called Momo."], "text": "The vet mentioned that Pepper is my cat.", "expect": {}},
+    {"id": "r041", "lang": "en", "category": "citation", "prior": ["My cat is called Momo."], "text": "I heard that Pepper is my cat.", "expect": {}},
+    {"id": "r042", "lang": "en", "category": "question", "prior": ["My cat is called Momo."], "text": "Did I ever say that Pepper is my cat?", "expect": {}},
+
+    {"id": "r050", "lang": "en", "category": "third_party", "prior": ["My cat is called Momo."], "text": "My colleague's cat is called Pepper.", "expect": {}},
+
+    {"id": "r060", "lang": "en", "category": "correction", "prior": ["My cat is called Momo."], "text": "No, my cat is called Pepper.", "expect": {"pet.cat.name": "Pepper"}},
+    {"id": "r061", "lang": "en", "category": "speech_act_idiom", "prior": ["My name is Bento."], "text": "I should mention that my name is Ilidio.", "expect": {"identity.name": "Ilidio"}},
+
+    {"id": "r070", "lang": "pt", "category": "assertion", "prior": ["O meu gato chama-se Momo."], "text": "O meu gato chama-se Pepper.", "expect": {"pet.cat.name": "Pepper"}},
+    {"id": "r071", "lang": "pt", "category": "negation", "prior": ["O meu gato chama-se Momo."], "text": "Eu nunca afirmei que o Pepper é o meu gato.", "expect": {}},
+    {"id": "r072", "lang": "pt", "category": "doubt", "prior": ["O meu gato chama-se Momo."], "text": "Não tenho a certeza de que o Pepper seja o meu gato.", "expect": {}},
+    {"id": "r073", "lang": "pt", "category": "citation", "prior": ["O meu gato chama-se Momo."], "text": "A veterinária referiu que o Pepper é o meu gato.", "expect": {}},
+    {"id": "r074", "lang": "pt", "category": "question", "prior": ["O meu gato chama-se Momo."], "text": "Alguma vez disse que o Pepper é o meu gato?", "expect": {}},
+    {"id": "r075", "lang": "pt", "category": "third_party", "prior": ["O meu gato chama-se Momo."], "text": "O gato da minha colega chama-se Pepper.", "expect": {}},
+    {"id": "r076", "lang": "pt", "category": "correction", "prior": ["O meu gato chama-se Momo."], "text": "Não, o meu gato chama-se Pepper.", "expect": {"pet.cat.name": "Pepper"}}
+  ]
+}

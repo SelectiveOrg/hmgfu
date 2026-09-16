@@ -1,0 +1,635 @@
+{
+ "_doc": "Phase 72.5 write set v3 — FINAL held-out set authored 2026-09-05 after v1/v2 became dev sets. Run ONCE. expect = CURRENT first-person facts asserted by `text` after `prior`; a leading article is not part of a value.",
+ "items": [
+  {
+   "id": "x001",
+   "lang": "en",
+   "text": "My name is Orlando Macuácua.",
+   "expect": {
+    "identity.name": "Orlando Macuácua"
+   }
+  },
+  {
+   "id": "x002",
+   "lang": "en",
+   "text": "Hey there, I'm Priya Naidoo.",
+   "expect": {
+    "identity.name": "Priya Naidoo"
+   }
+  },
+  {
+   "id": "x003",
+   "lang": "pt",
+   "text": "Chamo-me Delfina Muianga.",
+   "expect": {
+    "identity.name": "Delfina Muianga"
+   }
+  },
+  {
+   "id": "x004",
+   "lang": "pt",
+   "text": "Eu sou o Abel Nhaca.",
+   "expect": {
+    "identity.name": "Abel Nhaca"
+   }
+  },
+  {
+   "id": "x005",
+   "lang": "en",
+   "text": "Just call me Lando.",
+   "expect": {
+    "identity.alias": "Lando"
+   }
+  },
+  {
+   "id": "x006",
+   "lang": "pt",
+   "text": "Podem chamar-me Fina.",
+   "expect": {
+    "identity.alias": "Fina"
+   }
+  },
+  {
+   "id": "x007",
+   "lang": "en",
+   "text": "I live in Vilankulo.",
+   "expect": {
+    "identity.location": "Vilankulo"
+   }
+  },
+  {
+   "id": "x008",
+   "lang": "en",
+   "text": "I'm based in Nampula these days.",
+   "expect": {
+    "identity.location": "Nampula"
+   }
+  },
+  {
+   "id": "x009",
+   "lang": "pt",
+   "text": "Vivo em Marracuene.",
+   "expect": {
+    "identity.location": "Marracuene"
+   }
+  },
+  {
+   "id": "x010",
+   "lang": "pt",
+   "text": "Eu moro na Manhiça.",
+   "expect": {
+    "identity.location": "Manhiça"
+   }
+  },
+  {
+   "id": "x011",
+   "lang": "en",
+   "text": "Since 2023 I live in Dondo.",
+   "expect": {
+    "identity.location": "Dondo"
+   }
+  },
+  {
+   "id": "x012",
+   "lang": "en",
+   "text": "I work as a nurse.",
+   "expect": {
+    "identity.job": "nurse"
+   }
+  },
+  {
+   "id": "x013",
+   "lang": "pt",
+   "text": "Trabalho como contabilista.",
+   "expect": {
+    "identity.job": "contabilista"
+   }
+  },
+  {
+   "id": "x014",
+   "lang": "pt",
+   "text": "A minha profissão é jornalista.",
+   "expect": {
+    "identity.job": "jornalista"
+   }
+  },
+  {
+   "id": "x015",
+   "lang": "en",
+   "text": "My company is Standard Bank.",
+   "expect": {
+    "identity.company": "Standard Bank"
+   }
+  },
+  {
+   "id": "x016",
+   "lang": "pt",
+   "text": "A minha empresa é a Petromoc.",
+   "expect": {
+    "identity.company": "Petromoc"
+   }
+  },
+  {
+   "id": "x017",
+   "lang": "en",
+   "text": "My birthday is 30 June.",
+   "expect": {
+    "identity.birthday": "30 June"
+   }
+  },
+  {
+   "id": "x018",
+   "lang": "en",
+   "text": "My brother's name is Wilson.",
+   "expect": {
+    "family.brother_name": "Wilson"
+   }
+  },
+  {
+   "id": "x019",
+   "lang": "pt",
+   "text": "A minha irmã chama-se Elsa.",
+   "expect": {
+    "family.sister_name": "Elsa"
+   }
+  },
+  {
+   "id": "x020",
+   "lang": "en",
+   "text": "My mother is called Berta.",
+   "expect": {
+    "family.mother_name": "Berta"
+   }
+  },
+  {
+   "id": "x021",
+   "lang": "pt",
+   "text": "O meu pai é o Gil.",
+   "expect": {
+    "family.father_name": "Gil"
+   }
+  },
+  {
+   "id": "x022",
+   "lang": "en",
+   "text": "My wife's name is Sheila.",
+   "expect": {
+    "family.partner_name": "Sheila"
+   }
+  },
+  {
+   "id": "x023",
+   "lang": "pt",
+   "text": "A minha mulher chama-se Ester.",
+   "expect": {
+    "family.partner_name": "Ester"
+   }
+  },
+  {
+   "id": "x024",
+   "lang": "en",
+   "text": "My father is Raul and my mother is Odete.",
+   "expect": {
+    "family.father_name": "Raul",
+    "family.mother_name": "Odete"
+   }
+  },
+  {
+   "id": "x025",
+   "lang": "en",
+   "text": "My dog's name is Bolinha.",
+   "expect": {
+    "pet.dog.name": "Bolinha"
+   }
+  },
+  {
+   "id": "x026",
+   "lang": "pt",
+   "text": "O meu cão chama-se Thor.",
+   "expect": {
+    "pet.dog.name": "Thor"
+   }
+  },
+  {
+   "id": "x027",
+   "lang": "en",
+   "text": "My cat is called Salem.",
+   "expect": {
+    "pet.cat.name": "Salem"
+   }
+  },
+  {
+   "id": "x028",
+   "lang": "pt",
+   "text": "A minha gata é a Pérola.",
+   "expect": {
+    "pet.cat.name": "Pérola"
+   }
+  },
+  {
+   "id": "x029",
+   "lang": "en",
+   "text": "My dog is Bolinha, not Bolota.",
+   "expect": {
+    "pet.dog.name": "Bolinha"
+   },
+   "prior": [
+    "My dog is Bolota."
+   ]
+  },
+  {
+   "id": "x030",
+   "lang": "en",
+   "text": "I no longer have a cat.",
+   "expect": {},
+   "prior": [
+    "My cat is Salem."
+   ],
+   "expect_clear": [
+    "pet.cat.name"
+   ]
+  },
+  {
+   "id": "x031",
+   "lang": "en",
+   "text": "My favorite color is mustard yellow.",
+   "expect": {
+    "pref.color": "mustard yellow"
+   }
+  },
+  {
+   "id": "x032",
+   "lang": "pt",
+   "text": "A minha cor favorita é turquesa.",
+   "expect": {
+    "pref.color": "turquesa"
+   }
+  },
+  {
+   "id": "x033",
+   "lang": "en",
+   "text": "My favorite food is peri-peri chicken.",
+   "expect": {
+    "pref.food": "peri-peri chicken"
+   }
+  },
+  {
+   "id": "x034",
+   "lang": "pt",
+   "text": "A minha comida preferida é mucapata.",
+   "expect": {
+    "pref.food": "mucapata"
+   }
+  },
+  {
+   "id": "x035",
+   "lang": "en",
+   "text": "My favorite drink is passion fruit juice.",
+   "expect": {
+    "pref.drink": "passion fruit juice"
+   }
+  },
+  {
+   "id": "x036",
+   "lang": "pt",
+   "text": "A minha bebida favorita é água de coco.",
+   "expect": {
+    "pref.drink": "água de coco"
+   }
+  },
+  {
+   "id": "x037",
+   "lang": "en",
+   "text": "My favorite music is afrobeat.",
+   "expect": {
+    "pref.music": "afrobeat"
+   }
+  },
+  {
+   "id": "x038",
+   "lang": "pt",
+   "text": "A minha música preferida é marrabenta.",
+   "expect": {
+    "pref.music": "marrabenta"
+   }
+  },
+  {
+   "id": "x039",
+   "lang": "en",
+   "text": "My favorite team is Black Bulls.",
+   "expect": {
+    "pref.team": "Black Bulls"
+   }
+  },
+  {
+   "id": "x040",
+   "lang": "pt",
+   "text": "A minha equipa favorita é o Ferroviário da Aveiro.",
+   "expect": {
+    "pref.team": "Ferroviário da Aveiro"
+   }
+  },
+  {
+   "id": "x041",
+   "lang": "en",
+   "text": "My favorite programming language is Elixir.",
+   "expect": {
+    "pref.language": "Elixir"
+   }
+  },
+  {
+   "id": "x042",
+   "lang": "pt",
+   "text": "A minha linguagem de programação favorita é Kotlin.",
+   "expect": {
+    "pref.language": "Kotlin"
+   }
+  },
+  {
+   "id": "x043",
+   "lang": "en",
+   "text": "Remember that my favorite color is plum.",
+   "expect": {
+    "pref.color": "plum"
+   }
+  },
+  {
+   "id": "x044",
+   "lang": "pt",
+   "text": "Não te esqueças: a minha bebida favorita é chá de limão.",
+   "expect": {
+    "pref.drink": "chá de limão"
+   }
+  },
+  {
+   "id": "x045",
+   "lang": "en",
+   "text": "Here is the link to my car location: https://example.test/car/77",
+   "expect": {
+    "asset.car_location_link": "https://example.test/car/77"
+   }
+  },
+  {
+   "id": "x046",
+   "lang": "pt",
+   "text": "O link da localização do meu carro é https://example.test/car/78",
+   "expect": {
+    "asset.car_location_link": "https://example.test/car/78"
+   }
+  },
+  {
+   "id": "x047",
+   "lang": "en",
+   "text": "My car is a Mazda BT-50.",
+   "expect": {
+    "asset.car": "Mazda BT-50"
+   }
+  },
+  {
+   "id": "x048",
+   "lang": "en",
+   "text": "My lucky number is 9.",
+   "expect": {}
+  },
+  {
+   "id": "x049",
+   "lang": "en",
+   "text": "My timezone is Africa/Johannesburg.",
+   "expect": {
+    "misc.timezone": "Africa/Johannesburg"
+   }
+  },
+  {
+   "id": "x050",
+   "lang": "en",
+   "text": "Actually, my name is Orlando Macuácua Júnior.",
+   "expect": {
+    "identity.name": "Orlando Macuácua Júnior"
+   },
+   "prior": [
+    "My name is Orlando Macuácua."
+   ]
+  },
+  {
+   "id": "x051",
+   "lang": "pt",
+   "text": "Na verdade moro em Boane.",
+   "expect": {
+    "identity.location": "Boane"
+   },
+   "prior": [
+    "Vivo em Marracuene."
+   ]
+  },
+  {
+   "id": "x052",
+   "lang": "en",
+   "text": "My favorite team is Black Bulls now, not Costa do Sol.",
+   "expect": {
+    "pref.team": "Black Bulls"
+   },
+   "prior": [
+    "My favorite team is Costa do Sol."
+   ]
+  },
+  {
+   "id": "x053",
+   "lang": "en",
+   "text": "Where do I work?",
+   "expect": {}
+  },
+  {
+   "id": "x054",
+   "lang": "pt",
+   "text": "Qual é o nome do meu cão?",
+   "expect": {}
+  },
+  {
+   "id": "x055",
+   "lang": "en",
+   "text": "Did I tell you my favorite color?",
+   "expect": {}
+  },
+  {
+   "id": "x056",
+   "lang": "pt",
+   "text": "Achas que a minha cor favorita é turquesa?",
+   "expect": {}
+  },
+  {
+   "id": "x057",
+   "lang": "en",
+   "text": "The client wrote \"my name is Dario\".",
+   "expect": {}
+  },
+  {
+   "id": "x058",
+   "lang": "pt",
+   "text": "O meu chefe disse: chamo-me Vasco.",
+   "expect": {}
+  },
+  {
+   "id": "x059",
+   "lang": "en",
+   "text": "My aunt told me that her favorite food is rice.",
+   "expect": {}
+  },
+  {
+   "id": "x060",
+   "lang": "pt",
+   "text": "A minha tia diz que mora em Nacala.",
+   "expect": {}
+  },
+  {
+   "id": "x061",
+   "lang": "en",
+   "text": "His name is Kevin and he lives in Durban.",
+   "expect": {}
+  },
+  {
+   "id": "x062",
+   "lang": "en",
+   "text": "For this role-play: my name is Zara and my dog is Rocky.",
+   "expect": {}
+  },
+  {
+   "id": "x063",
+   "lang": "pt",
+   "text": "Para uma peça de teatro: chamo-me Zara e o meu cão é o Rocky.",
+   "expect": {}
+  },
+  {
+   "id": "x064",
+   "lang": "en",
+   "text": "Let's pretend my favorite color is silver.",
+   "expect": {}
+  },
+  {
+   "id": "x065",
+   "lang": "pt",
+   "text": "Suponha que vivo em Londres.",
+   "expect": {}
+  },
+  {
+   "id": "x066",
+   "lang": "en",
+   "text": "What if my dog were called Rocky?",
+   "expect": {}
+  },
+  {
+   "id": "x067",
+   "lang": "en",
+   "text": "Back then my favorite team was Maxaquene.",
+   "expect": {}
+  },
+  {
+   "id": "x068",
+   "lang": "pt",
+   "text": "Em 2016 morei em Quelimane.",
+   "expect": {}
+  },
+  {
+   "id": "x069",
+   "lang": "en",
+   "text": "I used to be a teacher.",
+   "expect": {}
+  },
+  {
+   "id": "x070",
+   "lang": "pt",
+   "text": "Antigamente chamavam-me Fininho.",
+   "expect": {}
+  },
+  {
+   "id": "x071",
+   "lang": "en",
+   "text": "I'm exhausted today.",
+   "expect": {}
+  },
+  {
+   "id": "x072",
+   "lang": "pt",
+   "text": "Estou com pressa.",
+   "expect": {}
+  },
+  {
+   "id": "x073",
+   "lang": "en",
+   "text": "My feeling is that we should wait.",
+   "expect": {}
+  },
+  {
+   "id": "x074",
+   "lang": "pt",
+   "text": "A minha opinião é que devíamos esperar.",
+   "expect": {}
+  },
+  {
+   "id": "x075",
+   "lang": "en",
+   "text": "My question is about the invoice.",
+   "expect": {}
+  },
+  {
+   "id": "x076",
+   "lang": "en",
+   "text": "Please create a notes widget for me.",
+   "expect": {}
+  },
+  {
+   "id": "x077",
+   "lang": "pt",
+   "text": "Cria um widget de notas, por favor.",
+   "expect": {}
+  },
+  {
+   "id": "x078",
+   "lang": "en",
+   "text": "The river Zambezi is 2574 km long.",
+   "expect": {}
+  },
+  {
+   "id": "x079",
+   "lang": "en",
+   "text": "I live in Dondo. Any good restaurants there?",
+   "expect": {
+    "identity.location": "Dondo"
+   }
+  },
+  {
+   "id": "x080",
+   "lang": "pt",
+   "text": "Moro na Aveiro. Chove muito lá em Janeiro?",
+   "expect": {
+    "identity.location": "Aveiro"
+   }
+  },
+  {
+   "id": "x081",
+   "lang": "en",
+   "text": "For a game: my name is Zara. Anyway, my real name is Priya Naidoo.",
+   "expect": {
+    "identity.name": "Priya Naidoo"
+   }
+  },
+  {
+   "id": "x082",
+   "lang": "pt",
+   "text": "Chamo-me Abel Nhaca, vivo em Vilankulo e a minha cor favorita é turquesa.",
+   "expect": {
+    "identity.name": "Abel Nhaca",
+    "identity.location": "Vilankulo",
+    "pref.color": "turquesa"
+   }
+  },
+  {
+   "id": "x083",
+   "lang": "en",
+   "text": "My favorite food is mucapata and my favorite drink is passion fruit juice.",
+   "expect": {
+    "pref.food": "mucapata",
+    "pref.drink": "passion fruit juice"
+   }
+  }
+ ]
+}

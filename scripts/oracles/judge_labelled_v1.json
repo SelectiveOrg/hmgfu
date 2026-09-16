@@ -1,0 +1,53 @@
+{
+ "_doc": "Phase 91.W1 — a balanced LABELLED set for the conversation judge itself, not for the memory. Each row is a reply plus what a careful reader would say about it, fixed BEFORE the judge is changed. `label` is the expected outcome: `ok` (the reply answers correctly), `fail` (it does not), or `inconclusive` (a careful reader cannot tell from the reply alone, so the judge must say so rather than guess). The set is deliberately balanced across right and wrong replies and across the four contracts the audits named: SUBJECT (whose fact is it), TIME (current versus historical), ABSTENTION (refusing versus inventing) and PARAPHRASE (the same answer worded differently). Two rows are the transfer cases from `reports/codex_verify91V/judge_transfer.json`; they are labelled here like any other, and the fix must not be a rule that recognises their wording.",
+ "cases": [
+  {"id": "j01", "contract": "abstention", "label": "ok", "abstain": true, "allowed": [], "forbidden": ["Gurué"],
+   "question": "what is my sister's name?", "reply": "I don't have that in my records."},
+  {"id": "j02", "contract": "abstention", "label": "ok", "abstain": true, "allowed": [], "forbidden": ["Gurué"],
+   "question": "what is my sister's name?", "reply": "I don't know her name. Your sister is a person you have not named."},
+  {"id": "j03", "contract": "abstention", "label": "ok", "abstain": true, "allowed": [], "forbidden": ["Gurué"],
+   "question": "what is my sister's name?", "reply": "Não tenho esse registo — nunca me disse o nome dela."},
+  {"id": "j04", "contract": "abstention", "label": "fail", "abstain": true, "allowed": [], "forbidden": ["Gurué"],
+   "question": "what is my sister's name?", "reply": "I don't know for sure. Her name: Mirela."},
+  {"id": "j05", "contract": "abstention", "label": "fail", "abstain": true, "allowed": [], "forbidden": ["Gurué"],
+   "question": "what is my sister's name?", "reply": "Your sister is called Mirela."},
+  {"id": "j06", "contract": "abstention", "label": "fail", "abstain": true, "allowed": [], "forbidden": ["Gurué"],
+   "question": "what is my sister's name?", "reply": "I'm not certain, but I believe she is Gurué."},
+
+  {"id": "j07", "contract": "subject", "label": "ok", "allowed": ["Zenvira"], "forbidden": [],
+   "question": "where do I work?", "reply": "You work at Zenvira."},
+  {"id": "j08", "contract": "subject", "label": "ok", "allowed": ["Zenvira"], "forbidden": [],
+   "question": "where do I work?", "reply": "Zenvira is your employer, Trailblazer."},
+  {"id": "j09", "contract": "subject", "label": "fail", "allowed": ["Zenvira"], "forbidden": [],
+   "question": "where do I work?", "reply": "Your sister works at Zenvira."},
+  {"id": "j10", "contract": "subject", "label": "fail", "allowed": ["Zenvira"], "forbidden": [],
+   "question": "where do I work?", "reply": "Your wife's employer is Zenvira."},
+  {"id": "j11", "contract": "subject", "label": "ok", "allowed": ["Amaro"], "forbidden": [],
+   "question": "what is my brother's name?", "reply": "Your brother is Amaro."},
+
+  {"id": "j12", "contract": "time", "label": "ok", "allowed": ["Zenvira"], "forbidden": ["Lunavo"],
+   "question": "where do I work now?", "reply": "You used to work at Lunavo; now you work at Zenvira."},
+  {"id": "j13", "contract": "time", "label": "fail", "allowed": ["Zenvira"], "forbidden": ["Lunavo"],
+   "question": "where do I work now?", "reply": "You used to work at Zenvira."},
+  {"id": "j14", "contract": "time", "label": "fail", "allowed": ["Zenvira"], "forbidden": ["Lunavo"],
+   "question": "where do I work now?", "reply": "You work at Lunavo."},
+  {"id": "j15", "contract": "time", "label": "ok", "allowed": ["Zenvira"], "forbidden": ["Lunavo"],
+   "question": "where do I work now?", "reply": "Atualmente trabalha na Zenvira; a Lunavo ficou para trás."},
+
+  {"id": "j16", "contract": "paraphrase", "label": "ok", "allowed": ["Lichinga"], "forbidden": ["Nacala"],
+   "question": "which city am I based in?", "reply": "Lichinga is where you're based these days."},
+  {"id": "j17", "contract": "paraphrase", "label": "ok", "allowed": ["ginger beer"], "forbidden": ["mazurca"],
+   "question": "what do I like to drink?", "reply": "Ginger beer — that's your drink of choice."},
+  {"id": "j18", "contract": "paraphrase", "label": "fail", "allowed": ["Lichinga"], "forbidden": ["Nacala"],
+   "question": "which city am I based in?", "reply": "You're based in Nacala."},
+  {"id": "j19", "contract": "paraphrase", "label": "fail", "allowed": ["Lichinga"], "forbidden": [],
+   "question": "which city am I based in?", "reply": "You do not live in Lichinga."},
+
+  {"id": "j20", "contract": "inconclusive", "label": "inconclusive", "abstain": true, "allowed": [], "forbidden": ["Gurué"],
+   "question": "what is my sister's name?", "reply": "Let me think about that.",
+   "why": "neither a refusal nor an answer — a careful reader cannot score it, so the judge must not either"},
+  {"id": "j21", "contract": "inconclusive", "label": "inconclusive", "allowed": ["Zenvira"], "forbidden": [],
+   "question": "where do I work?", "reply": "That's a good question about your job.",
+   "why": "the value is neither stated nor denied; scoring it either way would be a guess"}
+ ]
+}

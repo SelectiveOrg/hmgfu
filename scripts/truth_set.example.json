@@ -1,0 +1,19 @@
+{
+ "_about": "Schema for scripts/truth_set.json (PRIVATE, gitignored). Each case: queries asked; truth = whole-word strings that MUST appear (any one) in the injected context / answer; stale = superseded values that MUST NOT appear; provenance = where the truth was verified.",
+ "cases": [
+  {
+   "id": "name",
+   "slot": "identity.name",
+   "queries": [
+    "what is my name?"
+   ],
+   "truth": [
+    "amara"
+   ],
+   "stale": [
+    "sebastian"
+   ],
+   "provenance": "example only"
+  }
+ ]
+}

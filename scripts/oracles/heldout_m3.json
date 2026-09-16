@@ -1,0 +1,185 @@
+{
+ "_doc": "Phase 72 held-out set for M3 (assertions with entities, modality, time). Sealed before the code; run once at 72.6; reported as-is. Case type 'facts': messages applied to a fresh FactStore; expect.active = exact active dict (or 'active_subset'), expect.render_absent/contains on render_lines().",
+ "shell": [],
+ "turns": [],
+ "facts": [
+  {
+   "id": "single_quote_pt",
+   "family": "quotation",
+   "messages": [
+    "Chamo-me Nadia Costa.",
+    "A minha amiga disse 'chamo-me Ana'. É o nome dela."
+   ],
+   "expect": {
+    "active": {
+     "identity.name": "Nadia Costa"
+    }
+   }
+  },
+  {
+   "id": "single_quote_en_says",
+   "family": "quotation",
+   "messages": [
+    "My name is Nadia Costa.",
+    "My colleague says 'my name is Oscar' every morning."
+   ],
+   "expect": {
+    "active": {
+     "identity.name": "Nadia Costa"
+    }
+   }
+  },
+  {
+   "id": "fiction_carry_over_pt",
+   "family": "fiction",
+   "messages": [
+    "Chamo-me Nadia Costa.",
+    "Para uma personagem do meu romance. Chamo-me Oscar e vivo em Lisboa."
+   ],
+   "expect": {
+    "active": {
+     "identity.name": "Nadia Costa"
+    }
+   }
+  },
+  {
+   "id": "fiction_marker_then_real",
+   "family": "fiction",
+   "messages": [
+    "For a story I am writing: my name is Oscar. Anyway, my real name is Nadia Costa."
+   ],
+   "expect": {
+    "active": {
+     "identity.name": "Nadia Costa"
+    }
+   }
+  },
+  {
+   "id": "since_year_pt_current",
+   "family": "since",
+   "messages": [
+    "Desde 2019 vivo na Aveiro."
+   ],
+   "expect": {
+    "active": {
+     "identity.location": "Aveiro"
+    }
+   }
+  },
+  {
+   "id": "since_year_en_current",
+   "family": "since",
+   "messages": [
+    "Since 2021 I live in Nampula."
+   ],
+   "expect": {
+    "active": {
+     "identity.location": "Nampula"
+    }
+   }
+  },
+  {
+   "id": "unrelated_link_pt",
+   "family": "update_subject",
+   "messages": [
+    "Aqui está o link da localização do meu carro: https://example.test/car",
+    "Aqui está o novo link da receita: https://example.test/soup"
+   ],
+   "expect": {
+    "active_subset": {
+     "asset.car_location_link": "https://example.test/car"
+    },
+    "active_absent_values": [
+     "https://example.test/soup@asset.car_location_link"
+    ]
+   }
+  },
+  {
+   "id": "generic_link_still_binds",
+   "family": "update_subject",
+   "messages": [
+    "Here is the link for my car location: https://example.test/old",
+    "Here is the updated link: https://example.test/new"
+   ],
+   "expect": {
+    "active": {
+     "asset.car_location_link": "https://example.test/new"
+    }
+   }
+  },
+  {
+   "id": "mapper_clause_reversed",
+   "family": "mapper",
+   "mapper": {
+    "slot": "family.mother_name",
+    "value": "teal"
+   },
+   "messages": [
+    "My favorite color is teal and my mother's name is Rosa."
+   ],
+   "expect": {
+    "active_absent_values": [
+     "teal@family.mother_name"
+    ]
+   }
+  },
+  {
+   "id": "two_cats_one_message",
+   "family": "cardinality",
+   "messages": [
+    "My cat is Luna and my cat is Sol. They are two different cats."
+   ],
+   "expect": {
+    "active_values_contain": [
+     "Luna",
+     "Sol"
+    ]
+   }
+  },
+  {
+   "id": "one_dog_then_correction",
+   "family": "cardinality",
+   "messages": [
+    "My dog is Bento.",
+    "My dog is Teca."
+   ],
+   "expect": {
+    "active": {
+     "pet.dog.name": "Teca"
+    }
+   }
+  },
+  {
+   "id": "legacy_pet_named_negation",
+   "family": "legacy",
+   "messages": [
+    "My pet is Bento.",
+    "My dog is Teca, not Bento."
+   ],
+   "expect": {
+    "render_absent": [
+     "Bento"
+    ],
+    "render_contains": [
+     "Teca"
+    ]
+   }
+  },
+  {
+   "id": "history_view_after_move",
+   "family": "history",
+   "messages": [
+    "I live in Lisbon.",
+    "I live in Chimoio now."
+   ],
+   "expect": {
+    "active": {
+     "identity.location": "Chimoio"
+    },
+    "history_contains": [
+     "Lisbon"
+    ]
+   }
+  }
+ ]
+}

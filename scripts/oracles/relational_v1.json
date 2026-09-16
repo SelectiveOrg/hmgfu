@@ -1,0 +1,2150 @@
+{
+ "_doc": "Phase 74 relational corpus v1 — deterministic (seed 74), sealed before the first run. Every question carries GOLD message ids; truth/stale are the CURRENT value / retired values where relevant.",
+ "seed": 74,
+ "messages": [
+  {
+   "id": "m001",
+   "session": "s00",
+   "day": 0,
+   "ts": "2026-02-02T10:00:00+00:00",
+   "text": "I started project Echo, the podcast studio, because the old spreadsheet kept breaking.",
+   "kind": "event",
+   "project": "Echo"
+  },
+  {
+   "id": "m040",
+   "session": "s00",
+   "day": 0,
+   "ts": "2026-02-02T13:00:00+00:00",
+   "text": "Went for a run along the bay this morning.",
+   "kind": "filler"
+  },
+  {
+   "id": "m052",
+   "session": "s00",
+   "day": 1,
+   "ts": "2026-02-03T16:00:00+00:00",
+   "text": "Reorganizei a estante da sala.",
+   "kind": "filler"
+  },
+  {
+   "id": "m064",
+   "session": "s00",
+   "day": 2,
+   "ts": "2026-02-04T10:00:00+00:00",
+   "text": "The power went out for two hours tonight. (day 2)",
+   "kind": "filler"
+  },
+  {
+   "id": "m002",
+   "session": "s00",
+   "day": 3,
+   "ts": "2026-02-05T11:00:00+00:00",
+   "text": "For Echo I am writing everything in Kotlin.",
+   "kind": "fact",
+   "project": "Echo"
+  },
+  {
+   "id": "m076",
+   "session": "s00",
+   "day": 3,
+   "ts": "2026-02-05T13:00:00+00:00",
+   "text": "Planted tomatoes in the back garden. (day 3)",
+   "kind": "filler"
+  },
+  {
+   "id": "m088",
+   "session": "s01",
+   "day": 4,
+   "ts": "2026-02-06T16:00:00+00:00",
+   "text": "Traffic was terrible on the way back. (day 4)",
+   "kind": "filler"
+  },
+  {
+   "id": "m029",
+   "session": "s01",
+   "day": 5,
+   "ts": "2026-02-07T11:00:00+00:00",
+   "text": "My favorite drink is hibiscus tea.",
+   "kind": "fact",
+   "slot": "drink"
+  },
+  {
+   "id": "m100",
+   "session": "s01",
+   "day": 5,
+   "ts": "2026-02-07T10:00:00+00:00",
+   "text": "Went for a run along the bay this morning. (day 5)",
+   "kind": "filler"
+  },
+  {
+   "id": "m030",
+   "session": "s01",
+   "day": 6,
+   "ts": "2026-02-08T12:00:00+00:00",
+   "text": "A minha cor favorita é amber.",
+   "kind": "fact",
+   "slot": "color"
+  },
+  {
+   "id": "m112",
+   "session": "s01",
+   "day": 6,
+   "ts": "2026-02-08T13:00:00+00:00",
+   "text": "Reorganizei a estante da sala. (day 6)",
+   "kind": "filler"
+  },
+  {
+   "id": "m031",
+   "session": "s01",
+   "day": 7,
+   "ts": "2026-02-09T13:00:00+00:00",
+   "text": "My favorite food is peri-peri chicken.",
+   "kind": "fact",
+   "slot": "food"
+  },
+  {
+   "id": "m124",
+   "session": "s01",
+   "day": 7,
+   "ts": "2026-02-09T16:00:00+00:00",
+   "text": "The power went out for two hours tonight. (day 7)",
+   "kind": "filler"
+  },
+  {
+   "id": "m032",
+   "session": "s02",
+   "day": 8,
+   "ts": "2026-02-10T14:00:00+00:00",
+   "text": "I live in Inhambane.",
+   "kind": "fact",
+   "slot": "city"
+  },
+  {
+   "id": "m136",
+   "session": "s02",
+   "day": 8,
+   "ts": "2026-02-10T10:00:00+00:00",
+   "text": "Planted tomatoes in the back garden. (day 8)",
+   "kind": "filler"
+  },
+  {
+   "id": "m003",
+   "session": "s02",
+   "day": 9,
+   "ts": "2026-02-11T12:00:00+00:00",
+   "text": "Met Dário today while working on Echo; they run a shop in Nampula.",
+   "kind": "event",
+   "project": "Echo",
+   "person": "Dário",
+   "place": "Nampula"
+  },
+  {
+   "id": "m148",
+   "session": "s02",
+   "day": 9,
+   "ts": "2026-02-11T13:00:00+00:00",
+   "text": "Traffic was terrible on the way back. (day 9)",
+   "kind": "filler"
+  },
+  {
+   "id": "m041",
+   "session": "s03",
+   "day": 13,
+   "ts": "2026-02-15T14:00:00+00:00",
+   "text": "Fixed the kitchen tap, finally.",
+   "kind": "filler"
+  },
+  {
+   "id": "m004",
+   "session": "s03",
+   "day": 14,
+   "ts": "2026-02-16T13:00:00+00:00",
+   "text": "Marta joined me on Echo to help with the testing.",
+   "kind": "event",
+   "project": "Echo",
+   "person": "Marta"
+  },
+  {
+   "id": "m053",
+   "session": "s03",
+   "day": 14,
+   "ts": "2026-02-16T17:00:00+00:00",
+   "text": "Tomei café com um vizinho novo.",
+   "kind": "filler"
+  },
+  {
+   "id": "m065",
+   "session": "s03",
+   "day": 15,
+   "ts": "2026-02-17T11:00:00+00:00",
+   "text": "Tried a new bakery near the office. (day 15)",
+   "kind": "filler"
+  },
+  {
+   "id": "m077",
+   "session": "s04",
+   "day": 16,
+   "ts": "2026-02-18T14:00:00+00:00",
+   "text": "The cat next door keeps visiting. (day 16)",
+   "kind": "filler"
+  },
+  {
+   "id": "m089",
+   "session": "s04",
+   "day": 17,
+   "ts": "2026-02-19T17:00:00+00:00",
+   "text": "Backed up my photos to the external drive. (day 17)",
+   "kind": "filler"
+  },
+  {
+   "id": "m101",
+   "session": "s04",
+   "day": 18,
+   "ts": "2026-02-20T11:00:00+00:00",
+   "text": "Fixed the kitchen tap, finally. (day 18)",
+   "kind": "filler"
+  },
+  {
+   "id": "m113",
+   "session": "s04",
+   "day": 19,
+   "ts": "2026-02-21T14:00:00+00:00",
+   "text": "Tomei café com um vizinho novo. (day 19)",
+   "kind": "filler"
+  },
+  {
+   "id": "m005",
+   "session": "s05",
+   "day": 20,
+   "ts": "2026-02-22T14:00:00+00:00",
+   "text": "Echo got stuck for a week because the printer failed.",
+   "kind": "event",
+   "project": "Echo"
+  },
+  {
+   "id": "m125",
+   "session": "s05",
+   "day": 20,
+   "ts": "2026-02-22T17:00:00+00:00",
+   "text": "Tried a new bakery near the office. (day 20)",
+   "kind": "filler"
+  },
+  {
+   "id": "m137",
+   "session": "s05",
+   "day": 21,
+   "ts": "2026-02-23T11:00:00+00:00",
+   "text": "The cat next door keeps visiting. (day 21)",
+   "kind": "filler"
+  },
+  {
+   "id": "m149",
+   "session": "s05",
+   "day": 22,
+   "ts": "2026-02-24T14:00:00+00:00",
+   "text": "Backed up my photos to the external drive. (day 22)",
+   "kind": "filler"
+  },
+  {
+   "id": "m042",
+   "session": "s06",
+   "day": 26,
+   "ts": "2026-02-28T15:00:00+00:00",
+   "text": "Watched a documentary about deep-sea fish.",
+   "kind": "filler"
+  },
+  {
+   "id": "m054",
+   "session": "s06",
+   "day": 27,
+   "ts": "2026-03-01T09:00:00+00:00",
+   "text": "Ajustei os travões da bicicleta.",
+   "kind": "filler"
+  },
+  {
+   "id": "m066",
+   "session": "s07",
+   "day": 28,
+   "ts": "2026-03-02T12:00:00+00:00",
+   "text": "Read forty pages of a history book before bed. (day 28)",
+   "kind": "filler"
+  },
+  {
+   "id": "m078",
+   "session": "s07",
+   "day": 29,
+   "ts": "2026-03-03T15:00:00+00:00",
+   "text": "Renewed my library card. (day 29)",
+   "kind": "filler"
+  },
+  {
+   "id": "m007",
+   "session": "s07",
+   "day": 30,
+   "ts": "2026-03-04T16:00:00+00:00",
+   "text": "Had lunch with Dário — we talked about football, nothing about work.",
+   "kind": "distractor",
+   "person": "Dário"
+  },
+  {
+   "id": "m090",
+   "session": "s07",
+   "day": 30,
+   "ts": "2026-03-04T09:00:00+00:00",
+   "text": "Fui ao mercado comprar peixe fresco. (day 30)",
+   "kind": "filler"
+  },
+  {
+   "id": "m102",
+   "session": "s07",
+   "day": 31,
+   "ts": "2026-03-05T12:00:00+00:00",
+   "text": "Watched a documentary about deep-sea fish. (day 31)",
+   "kind": "filler"
+  },
+  {
+   "id": "m114",
+   "session": "s08",
+   "day": 32,
+   "ts": "2026-03-06T15:00:00+00:00",
+   "text": "Ajustei os travões da bicicleta. (day 32)",
+   "kind": "filler"
+  },
+  {
+   "id": "m126",
+   "session": "s08",
+   "day": 33,
+   "ts": "2026-03-07T09:00:00+00:00",
+   "text": "Read forty pages of a history book before bed. (day 33)",
+   "kind": "filler"
+  },
+  {
+   "id": "m006",
+   "session": "s08",
+   "day": 34,
+   "ts": "2026-03-08T15:00:00+00:00",
+   "text": "Finished Echo today. Next I want something completely different.",
+   "kind": "event",
+   "project": "Echo"
+  },
+  {
+   "id": "m138",
+   "session": "s08",
+   "day": 34,
+   "ts": "2026-03-08T12:00:00+00:00",
+   "text": "Renewed my library card. (day 34)",
+   "kind": "filler"
+  },
+  {
+   "id": "m150",
+   "session": "s08",
+   "day": 35,
+   "ts": "2026-03-09T15:00:00+00:00",
+   "text": "Fui ao mercado comprar peixe fresco. (day 35)",
+   "kind": "filler"
+  },
+  {
+   "id": "m043",
+   "session": "s09",
+   "day": 39,
+   "ts": "2026-03-13T16:00:00+00:00",
+   "text": "Called my aunt; she is well.",
+   "kind": "filler"
+  },
+  {
+   "id": "m008",
+   "session": "s10",
+   "day": 40,
+   "ts": "2026-03-14T17:00:00+00:00",
+   "text": "I started project Atlas, a data pipeline for the clinic, because a client asked for it.",
+   "kind": "event",
+   "project": "Atlas"
+  },
+  {
+   "id": "m055",
+   "session": "s10",
+   "day": 40,
+   "ts": "2026-03-14T10:00:00+00:00",
+   "text": "Assisti ao jogo com amigos, empate.",
+   "kind": "filler"
+  },
+  {
+   "id": "m067",
+   "session": "s10",
+   "day": 41,
+   "ts": "2026-03-15T13:00:00+00:00",
+   "text": "Cleaned the balcony and repotted the basil. (day 41)",
+   "kind": "filler"
+  },
+  {
+   "id": "m079",
+   "session": "s10",
+   "day": 42,
+   "ts": "2026-03-16T16:00:00+00:00",
+   "text": "Long walk after dinner, clear sky. (day 42)",
+   "kind": "filler"
+  },
+  {
+   "id": "m009",
+   "session": "s10",
+   "day": 43,
+   "ts": "2026-03-17T09:00:00+00:00",
+   "text": "For Atlas I am writing everything in Rust.",
+   "kind": "fact",
+   "project": "Atlas"
+  },
+  {
+   "id": "m091",
+   "session": "s10",
+   "day": 43,
+   "ts": "2026-03-17T10:00:00+00:00",
+   "text": "Choveu toda a tarde, fiquei em casa. (day 43)",
+   "kind": "filler"
+  },
+  {
+   "id": "m103",
+   "session": "s11",
+   "day": 44,
+   "ts": "2026-03-18T13:00:00+00:00",
+   "text": "Called my aunt; she is well. (day 44)",
+   "kind": "filler"
+  },
+  {
+   "id": "m115",
+   "session": "s11",
+   "day": 45,
+   "ts": "2026-03-19T16:00:00+00:00",
+   "text": "Assisti ao jogo com amigos, empate. (day 45)",
+   "kind": "filler"
+  },
+  {
+   "id": "m127",
+   "session": "s11",
+   "day": 46,
+   "ts": "2026-03-20T10:00:00+00:00",
+   "text": "Cleaned the balcony and repotted the basil. (day 46)",
+   "kind": "filler"
+  },
+  {
+   "id": "m139",
+   "session": "s11",
+   "day": 47,
+   "ts": "2026-03-21T13:00:00+00:00",
+   "text": "Long walk after dinner, clear sky. (day 47)",
+   "kind": "filler"
+  },
+  {
+   "id": "m151",
+   "session": "s12",
+   "day": 48,
+   "ts": "2026-03-22T16:00:00+00:00",
+   "text": "Choveu toda a tarde, fiquei em casa. (day 48)",
+   "kind": "filler"
+  },
+  {
+   "id": "m010",
+   "session": "s12",
+   "day": 49,
+   "ts": "2026-03-23T10:00:00+00:00",
+   "text": "Met Nelson today while working on Atlas; they run a shop in Matola.",
+   "kind": "event",
+   "project": "Atlas",
+   "person": "Nelson",
+   "place": "Matola"
+  },
+  {
+   "id": "m044",
+   "session": "s13",
+   "day": 52,
+   "ts": "2026-03-26T17:00:00+00:00",
+   "text": "The power went out for two hours tonight.",
+   "kind": "filler"
+  },
+  {
+   "id": "m056",
+   "session": "s13",
+   "day": 53,
+   "ts": "2026-03-27T11:00:00+00:00",
+   "text": "Planted tomatoes in the back garden.",
+   "kind": "filler"
+  },
+  {
+   "id": "m011",
+   "session": "s13",
+   "day": 54,
+   "ts": "2026-03-28T11:00:00+00:00",
+   "text": "Celso joined me on Atlas to help with the testing.",
+   "kind": "event",
+   "project": "Atlas",
+   "person": "Celso"
+  },
+  {
+   "id": "m068",
+   "session": "s13",
+   "day": 54,
+   "ts": "2026-03-28T14:00:00+00:00",
+   "text": "Traffic was terrible on the way back. (day 54)",
+   "kind": "filler"
+  },
+  {
+   "id": "m080",
+   "session": "s13",
+   "day": 55,
+   "ts": "2026-03-29T17:00:00+00:00",
+   "text": "Went for a run along the bay this morning. (day 55)",
+   "kind": "filler"
+  },
+  {
+   "id": "m092",
+   "session": "s14",
+   "day": 56,
+   "ts": "2026-03-30T11:00:00+00:00",
+   "text": "Reorganizei a estante da sala. (day 56)",
+   "kind": "filler"
+  },
+  {
+   "id": "m104",
+   "session": "s14",
+   "day": 57,
+   "ts": "2026-03-31T14:00:00+00:00",
+   "text": "The power went out for two hours tonight. (day 57)",
+   "kind": "filler"
+  },
+  {
+   "id": "m116",
+   "session": "s14",
+   "day": 58,
+   "ts": "2026-04-01T17:00:00+00:00",
+   "text": "Planted tomatoes in the back garden. (day 58)",
+   "kind": "filler"
+  },
+  {
+   "id": "m128",
+   "session": "s14",
+   "day": 59,
+   "ts": "2026-04-02T11:00:00+00:00",
+   "text": "Traffic was terrible on the way back. (day 59)",
+   "kind": "filler"
+  },
+  {
+   "id": "m012",
+   "session": "s15",
+   "day": 60,
+   "ts": "2026-04-03T12:00:00+00:00",
+   "text": "Atlas got stuck for a week because the server failed.",
+   "kind": "event",
+   "project": "Atlas"
+  },
+  {
+   "id": "m140",
+   "session": "s15",
+   "day": 60,
+   "ts": "2026-04-03T14:00:00+00:00",
+   "text": "Went for a run along the bay this morning. (day 60)",
+   "kind": "filler"
+  },
+  {
+   "id": "m033",
+   "session": "s15",
+   "day": 61,
+   "ts": "2026-04-04T15:00:00+00:00",
+   "text": "Actually my favorite drink is passion fruit juice now, not hibiscus tea.",
+   "kind": "correction",
+   "slot": "drink"
+  },
+  {
+   "id": "m152",
+   "session": "s15",
+   "day": 61,
+   "ts": "2026-04-04T17:00:00+00:00",
+   "text": "Reorganizei a estante da sala. (day 61)",
+   "kind": "filler"
+  },
+  {
+   "id": "m045",
+   "session": "s16",
+   "day": 65,
+   "ts": "2026-04-08T09:00:00+00:00",
+   "text": "Tried a new bakery near the office.",
+   "kind": "filler"
+  },
+  {
+   "id": "m057",
+   "session": "s16",
+   "day": 66,
+   "ts": "2026-04-09T12:00:00+00:00",
+   "text": "The cat next door keeps visiting.",
+   "kind": "filler"
+  },
+  {
+   "id": "m069",
+   "session": "s16",
+   "day": 67,
+   "ts": "2026-04-10T15:00:00+00:00",
+   "text": "Backed up my photos to the external drive. (day 67)",
+   "kind": "filler"
+  },
+  {
+   "id": "m081",
+   "session": "s17",
+   "day": 68,
+   "ts": "2026-04-11T09:00:00+00:00",
+   "text": "Fixed the kitchen tap, finally. (day 68)",
+   "kind": "filler"
+  },
+  {
+   "id": "m093",
+   "session": "s17",
+   "day": 69,
+   "ts": "2026-04-12T12:00:00+00:00",
+   "text": "Tomei café com um vizinho novo. (day 69)",
+   "kind": "filler"
+  },
+  {
+   "id": "m014",
+   "session": "s17",
+   "day": 70,
+   "ts": "2026-04-13T14:00:00+00:00",
+   "text": "Had lunch with Nelson — we talked about football, nothing about work.",
+   "kind": "distractor",
+   "person": "Nelson"
+  },
+  {
+   "id": "m037",
+   "session": "s17",
+   "day": 70,
+   "ts": "2026-04-13T10:00:00+00:00",
+   "text": "Celso says their favorite drink is hibiscus tea.",
+   "kind": "distractor"
+  },
+  {
+   "id": "m105",
+   "session": "s17",
+   "day": 70,
+   "ts": "2026-04-13T15:00:00+00:00",
+   "text": "Tried a new bakery near the office. (day 70)",
+   "kind": "filler"
+  },
+  {
+   "id": "m117",
+   "session": "s17",
+   "day": 71,
+   "ts": "2026-04-14T09:00:00+00:00",
+   "text": "The cat next door keeps visiting. (day 71)",
+   "kind": "filler"
+  },
+  {
+   "id": "m129",
+   "session": "s18",
+   "day": 72,
+   "ts": "2026-04-15T12:00:00+00:00",
+   "text": "Backed up my photos to the external drive. (day 72)",
+   "kind": "filler"
+  },
+  {
+   "id": "m141",
+   "session": "s18",
+   "day": 73,
+   "ts": "2026-04-16T15:00:00+00:00",
+   "text": "Fixed the kitchen tap, finally. (day 73)",
+   "kind": "filler"
+  },
+  {
+   "id": "m013",
+   "session": "s18",
+   "day": 74,
+   "ts": "2026-04-17T13:00:00+00:00",
+   "text": "Finished Atlas today. Next I want something completely different.",
+   "kind": "event",
+   "project": "Atlas"
+  },
+  {
+   "id": "m153",
+   "session": "s18",
+   "day": 74,
+   "ts": "2026-04-17T09:00:00+00:00",
+   "text": "Tomei café com um vizinho novo. (day 74)",
+   "kind": "filler"
+  },
+  {
+   "id": "m046",
+   "session": "s19",
+   "day": 78,
+   "ts": "2026-04-21T10:00:00+00:00",
+   "text": "Read forty pages of a history book before bed.",
+   "kind": "filler"
+  },
+  {
+   "id": "m058",
+   "session": "s19",
+   "day": 79,
+   "ts": "2026-04-22T13:00:00+00:00",
+   "text": "Renewed my library card.",
+   "kind": "filler"
+  },
+  {
+   "id": "m015",
+   "session": "s20",
+   "day": 80,
+   "ts": "2026-04-23T15:00:00+00:00",
+   "text": "I started project Bolt, the delivery app, because my brother needed it for his shop.",
+   "kind": "event",
+   "project": "Bolt"
+  },
+  {
+   "id": "m070",
+   "session": "s20",
+   "day": 80,
+   "ts": "2026-04-23T16:00:00+00:00",
+   "text": "Fui ao mercado comprar peixe fresco. (day 80)",
+   "kind": "filler"
+  },
+  {
+   "id": "m082",
+   "session": "s20",
+   "day": 81,
+   "ts": "2026-04-24T10:00:00+00:00",
+   "text": "Watched a documentary about deep-sea fish. (day 81)",
+   "kind": "filler"
+  },
+  {
+   "id": "m094",
+   "session": "s20",
+   "day": 82,
+   "ts": "2026-04-25T13:00:00+00:00",
+   "text": "Ajustei os travões da bicicleta. (day 82)",
+   "kind": "filler"
+  },
+  {
+   "id": "m016",
+   "session": "s20",
+   "day": 83,
+   "ts": "2026-04-26T16:00:00+00:00",
+   "text": "For Bolt I am writing everything in Python.",
+   "kind": "fact",
+   "project": "Bolt"
+  },
+  {
+   "id": "m106",
+   "session": "s20",
+   "day": 83,
+   "ts": "2026-04-26T16:00:00+00:00",
+   "text": "Read forty pages of a history book before bed. (day 83)",
+   "kind": "filler"
+  },
+  {
+   "id": "m118",
+   "session": "s21",
+   "day": 84,
+   "ts": "2026-04-27T10:00:00+00:00",
+   "text": "Renewed my library card. (day 84)",
+   "kind": "filler"
+  },
+  {
+   "id": "m130",
+   "session": "s21",
+   "day": 85,
+   "ts": "2026-04-28T13:00:00+00:00",
+   "text": "Fui ao mercado comprar peixe fresco. (day 85)",
+   "kind": "filler"
+  },
+  {
+   "id": "m142",
+   "session": "s21",
+   "day": 86,
+   "ts": "2026-04-29T16:00:00+00:00",
+   "text": "Watched a documentary about deep-sea fish. (day 86)",
+   "kind": "filler"
+  },
+  {
+   "id": "m154",
+   "session": "s21",
+   "day": 87,
+   "ts": "2026-04-30T10:00:00+00:00",
+   "text": "Ajustei os travões da bicicleta. (day 87)",
+   "kind": "filler"
+  },
+  {
+   "id": "m017",
+   "session": "s22",
+   "day": 89,
+   "ts": "2026-05-02T17:00:00+00:00",
+   "text": "Met Rui today while working on Bolt; they run a shop in Aveiro.",
+   "kind": "event",
+   "project": "Bolt",
+   "person": "Rui",
+   "place": "Aveiro"
+  },
+  {
+   "id": "m047",
+   "session": "s22",
+   "day": 91,
+   "ts": "2026-05-04T11:00:00+00:00",
+   "text": "Cleaned the balcony and repotted the basil.",
+   "kind": "filler"
+  },
+  {
+   "id": "m059",
+   "session": "s23",
+   "day": 92,
+   "ts": "2026-05-05T14:00:00+00:00",
+   "text": "Long walk after dinner, clear sky.",
+   "kind": "filler"
+  },
+  {
+   "id": "m071",
+   "session": "s23",
+   "day": 93,
+   "ts": "2026-05-06T17:00:00+00:00",
+   "text": "Choveu toda a tarde, fiquei em casa. (day 93)",
+   "kind": "filler"
+  },
+  {
+   "id": "m018",
+   "session": "s23",
+   "day": 94,
+   "ts": "2026-05-07T09:00:00+00:00",
+   "text": "Yara joined me on Bolt to help with the testing.",
+   "kind": "event",
+   "project": "Bolt",
+   "person": "Yara"
+  },
+  {
+   "id": "m083",
+   "session": "s23",
+   "day": 94,
+   "ts": "2026-05-07T11:00:00+00:00",
+   "text": "Called my aunt; she is well. (day 94)",
+   "kind": "filler"
+  },
+  {
+   "id": "m034",
+   "session": "s23",
+   "day": 95,
+   "ts": "2026-05-08T16:00:00+00:00",
+   "text": "Comprei tinta burgundy para o quarto — é a minha cor favorita.",
+   "kind": "implicit",
+   "slot": "color"
+  },
+  {
+   "id": "m095",
+   "session": "s23",
+   "day": 95,
+   "ts": "2026-05-08T14:00:00+00:00",
+   "text": "Assisti ao jogo com amigos, empate. (day 95)",
+   "kind": "filler"
+  },
+  {
+   "id": "m107",
+   "session": "s24",
+   "day": 96,
+   "ts": "2026-05-09T17:00:00+00:00",
+   "text": "Cleaned the balcony and repotted the basil. (day 96)",
+   "kind": "filler"
+  },
+  {
+   "id": "m119",
+   "session": "s24",
+   "day": 97,
+   "ts": "2026-05-10T11:00:00+00:00",
+   "text": "Long walk after dinner, clear sky. (day 97)",
+   "kind": "filler"
+  },
+  {
+   "id": "m131",
+   "session": "s24",
+   "day": 98,
+   "ts": "2026-05-11T14:00:00+00:00",
+   "text": "Choveu toda a tarde, fiquei em casa. (day 98)",
+   "kind": "filler"
+  },
+  {
+   "id": "m143",
+   "session": "s24",
+   "day": 99,
+   "ts": "2026-05-12T17:00:00+00:00",
+   "text": "Called my aunt; she is well. (day 99)",
+   "kind": "filler"
+  },
+  {
+   "id": "m019",
+   "session": "s25",
+   "day": 100,
+   "ts": "2026-05-13T10:00:00+00:00",
+   "text": "Bolt got stuck for a week because the API key failed.",
+   "kind": "event",
+   "project": "Bolt"
+  },
+  {
+   "id": "m038",
+   "session": "s25",
+   "day": 100,
+   "ts": "2026-05-13T11:00:00+00:00",
+   "text": "If my favorite color were teal I would repaint the car.",
+   "kind": "distractor"
+  },
+  {
+   "id": "m155",
+   "session": "s25",
+   "day": 100,
+   "ts": "2026-05-13T11:00:00+00:00",
+   "text": "Assisti ao jogo com amigos, empate. (day 100)",
+   "kind": "filler"
+  },
+  {
+   "id": "m048",
+   "session": "s26",
+   "day": 104,
+   "ts": "2026-05-17T12:00:00+00:00",
+   "text": "Traffic was terrible on the way back.",
+   "kind": "filler"
+  },
+  {
+   "id": "m060",
+   "session": "s26",
+   "day": 105,
+   "ts": "2026-05-18T15:00:00+00:00",
+   "text": "Went for a run along the bay this morning. (day 105)",
+   "kind": "filler"
+  },
+  {
+   "id": "m072",
+   "session": "s26",
+   "day": 106,
+   "ts": "2026-05-19T09:00:00+00:00",
+   "text": "Reorganizei a estante da sala. (day 106)",
+   "kind": "filler"
+  },
+  {
+   "id": "m084",
+   "session": "s26",
+   "day": 107,
+   "ts": "2026-05-20T12:00:00+00:00",
+   "text": "The power went out for two hours tonight. (day 107)",
+   "kind": "filler"
+  },
+  {
+   "id": "m096",
+   "session": "s27",
+   "day": 108,
+   "ts": "2026-05-21T15:00:00+00:00",
+   "text": "Planted tomatoes in the back garden. (day 108)",
+   "kind": "filler"
+  },
+  {
+   "id": "m108",
+   "session": "s27",
+   "day": 109,
+   "ts": "2026-05-22T09:00:00+00:00",
+   "text": "Traffic was terrible on the way back. (day 109)",
+   "kind": "filler"
+  },
+  {
+   "id": "m021",
+   "session": "s27",
+   "day": 110,
+   "ts": "2026-05-23T12:00:00+00:00",
+   "text": "Had lunch with Rui — we talked about football, nothing about work.",
+   "kind": "distractor",
+   "person": "Rui"
+  },
+  {
+   "id": "m120",
+   "session": "s27",
+   "day": 110,
+   "ts": "2026-05-23T12:00:00+00:00",
+   "text": "Went for a run along the bay this morning. (day 110)",
+   "kind": "filler"
+  },
+  {
+   "id": "m132",
+   "session": "s27",
+   "day": 111,
+   "ts": "2026-05-24T15:00:00+00:00",
+   "text": "Reorganizei a estante da sala. (day 111)",
+   "kind": "filler"
+  },
+  {
+   "id": "m144",
+   "session": "s28",
+   "day": 112,
+   "ts": "2026-05-25T09:00:00+00:00",
+   "text": "The power went out for two hours tonight. (day 112)",
+   "kind": "filler"
+  },
+  {
+   "id": "m156",
+   "session": "s28",
+   "day": 113,
+   "ts": "2026-05-26T12:00:00+00:00",
+   "text": "Planted tomatoes in the back garden. (day 113)",
+   "kind": "filler"
+  },
+  {
+   "id": "m020",
+   "session": "s28",
+   "day": 114,
+   "ts": "2026-05-27T11:00:00+00:00",
+   "text": "Finished Bolt today. Next I want something completely different.",
+   "kind": "event",
+   "project": "Bolt"
+  },
+  {
+   "id": "m049",
+   "session": "s29",
+   "day": 117,
+   "ts": "2026-05-30T13:00:00+00:00",
+   "text": "Backed up my photos to the external drive.",
+   "kind": "filler"
+  },
+  {
+   "id": "m061",
+   "session": "s29",
+   "day": 118,
+   "ts": "2026-05-31T16:00:00+00:00",
+   "text": "Fixed the kitchen tap, finally. (day 118)",
+   "kind": "filler"
+  },
+  {
+   "id": "m073",
+   "session": "s29",
+   "day": 119,
+   "ts": "2026-06-01T10:00:00+00:00",
+   "text": "Tomei café com um vizinho novo. (day 119)",
+   "kind": "filler"
+  },
+  {
+   "id": "m022",
+   "session": "s30",
+   "day": 120,
+   "ts": "2026-06-02T13:00:00+00:00",
+   "text": "I started project Delta, a farm sensor network, because the school had no site at all.",
+   "kind": "event",
+   "project": "Delta"
+  },
+  {
+   "id": "m085",
+   "session": "s30",
+   "day": 120,
+   "ts": "2026-06-02T13:00:00+00:00",
+   "text": "Tried a new bakery near the office. (day 120)",
+   "kind": "filler"
+  },
+  {
+   "id": "m097",
+   "session": "s30",
+   "day": 121,
+   "ts": "2026-06-03T16:00:00+00:00",
+   "text": "The cat next door keeps visiting. (day 121)",
+   "kind": "filler"
+  },
+  {
+   "id": "m109",
+   "session": "s30",
+   "day": 122,
+   "ts": "2026-06-04T10:00:00+00:00",
+   "text": "Backed up my photos to the external drive. (day 122)",
+   "kind": "filler"
+  },
+  {
+   "id": "m023",
+   "session": "s30",
+   "day": 123,
+   "ts": "2026-06-05T14:00:00+00:00",
+   "text": "For Delta I am writing everything in TypeScript.",
+   "kind": "fact",
+   "project": "Delta"
+  },
+  {
+   "id": "m121",
+   "session": "s30",
+   "day": 123,
+   "ts": "2026-06-05T13:00:00+00:00",
+   "text": "Fixed the kitchen tap, finally. (day 123)",
+   "kind": "filler"
+  },
+  {
+   "id": "m133",
+   "session": "s31",
+   "day": 124,
+   "ts": "2026-06-06T16:00:00+00:00",
+   "text": "Tomei café com um vizinho novo. (day 124)",
+   "kind": "filler"
+  },
+  {
+   "id": "m145",
+   "session": "s31",
+   "day": 125,
+   "ts": "2026-06-07T10:00:00+00:00",
+   "text": "Tried a new bakery near the office. (day 125)",
+   "kind": "filler"
+  },
+  {
+   "id": "m157",
+   "session": "s31",
+   "day": 126,
+   "ts": "2026-06-08T13:00:00+00:00",
+   "text": "The cat next door keeps visiting. (day 126)",
+   "kind": "filler"
+  },
+  {
+   "id": "m024",
+   "session": "s32",
+   "day": 129,
+   "ts": "2026-06-11T15:00:00+00:00",
+   "text": "Met Sónia today while working on Delta; they run a shop in Quelimane.",
+   "kind": "event",
+   "project": "Delta",
+   "person": "Sónia",
+   "place": "Quelimane"
+  },
+  {
+   "id": "m035",
+   "session": "s32",
+   "day": 130,
+   "ts": "2026-06-12T17:00:00+00:00",
+   "text": "Since March I live in Nampula; the commute to Inhambane was killing me.",
+   "kind": "implicit",
+   "slot": "city"
+  },
+  {
+   "id": "m050",
+   "session": "s32",
+   "day": 130,
+   "ts": "2026-06-12T14:00:00+00:00",
+   "text": "Fui ao mercado comprar peixe fresco.",
+   "kind": "filler"
+  },
+  {
+   "id": "m062",
+   "session": "s32",
+   "day": 131,
+   "ts": "2026-06-13T17:00:00+00:00",
+   "text": "Watched a documentary about deep-sea fish. (day 131)",
+   "kind": "filler"
+  },
+  {
+   "id": "m074",
+   "session": "s33",
+   "day": 132,
+   "ts": "2026-06-14T11:00:00+00:00",
+   "text": "Ajustei os travões da bicicleta. (day 132)",
+   "kind": "filler"
+  },
+  {
+   "id": "m086",
+   "session": "s33",
+   "day": 133,
+   "ts": "2026-06-15T14:00:00+00:00",
+   "text": "Read forty pages of a history book before bed. (day 133)",
+   "kind": "filler"
+  },
+  {
+   "id": "m025",
+   "session": "s33",
+   "day": 134,
+   "ts": "2026-06-16T16:00:00+00:00",
+   "text": "Inês joined me on Delta to help with the testing.",
+   "kind": "event",
+   "project": "Delta",
+   "person": "Inês"
+  },
+  {
+   "id": "m098",
+   "session": "s33",
+   "day": 134,
+   "ts": "2026-06-16T17:00:00+00:00",
+   "text": "Renewed my library card. (day 134)",
+   "kind": "filler"
+  },
+  {
+   "id": "m110",
+   "session": "s33",
+   "day": 135,
+   "ts": "2026-06-17T11:00:00+00:00",
+   "text": "Fui ao mercado comprar peixe fresco. (day 135)",
+   "kind": "filler"
+  },
+  {
+   "id": "m122",
+   "session": "s34",
+   "day": 136,
+   "ts": "2026-06-18T14:00:00+00:00",
+   "text": "Watched a documentary about deep-sea fish. (day 136)",
+   "kind": "filler"
+  },
+  {
+   "id": "m134",
+   "session": "s34",
+   "day": 137,
+   "ts": "2026-06-19T17:00:00+00:00",
+   "text": "Ajustei os travões da bicicleta. (day 137)",
+   "kind": "filler"
+  },
+  {
+   "id": "m146",
+   "session": "s34",
+   "day": 138,
+   "ts": "2026-06-20T11:00:00+00:00",
+   "text": "Read forty pages of a history book before bed. (day 138)",
+   "kind": "filler"
+  },
+  {
+   "id": "m158",
+   "session": "s34",
+   "day": 139,
+   "ts": "2026-06-21T14:00:00+00:00",
+   "text": "Renewed my library card. (day 139)",
+   "kind": "filler"
+  },
+  {
+   "id": "m026",
+   "session": "s35",
+   "day": 140,
+   "ts": "2026-06-22T17:00:00+00:00",
+   "text": "Delta got stuck for a week because the sensor failed.",
+   "kind": "event",
+   "project": "Delta"
+  },
+  {
+   "id": "m039",
+   "session": "s35",
+   "day": 140,
+   "ts": "2026-06-22T12:00:00+00:00",
+   "text": "My sister's favorite food is mucapata.",
+   "kind": "distractor"
+  },
+  {
+   "id": "m051",
+   "session": "s35",
+   "day": 143,
+   "ts": "2026-06-25T15:00:00+00:00",
+   "text": "Choveu toda a tarde, fiquei em casa.",
+   "kind": "filler"
+  },
+  {
+   "id": "m063",
+   "session": "s36",
+   "day": 144,
+   "ts": "2026-06-26T09:00:00+00:00",
+   "text": "Called my aunt; she is well. (day 144)",
+   "kind": "filler"
+  },
+  {
+   "id": "m075",
+   "session": "s36",
+   "day": 145,
+   "ts": "2026-06-27T12:00:00+00:00",
+   "text": "Assisti ao jogo com amigos, empate. (day 145)",
+   "kind": "filler"
+  },
+  {
+   "id": "m087",
+   "session": "s36",
+   "day": 146,
+   "ts": "2026-06-28T15:00:00+00:00",
+   "text": "Cleaned the balcony and repotted the basil. (day 146)",
+   "kind": "filler"
+  },
+  {
+   "id": "m099",
+   "session": "s36",
+   "day": 147,
+   "ts": "2026-06-29T09:00:00+00:00",
+   "text": "Long walk after dinner, clear sky. (day 147)",
+   "kind": "filler"
+  },
+  {
+   "id": "m111",
+   "session": "s37",
+   "day": 148,
+   "ts": "2026-06-30T12:00:00+00:00",
+   "text": "Choveu toda a tarde, fiquei em casa. (day 148)",
+   "kind": "filler"
+  },
+  {
+   "id": "m123",
+   "session": "s37",
+   "day": 149,
+   "ts": "2026-07-01T15:00:00+00:00",
+   "text": "Called my aunt; she is well. (day 149)",
+   "kind": "filler"
+  },
+  {
+   "id": "m028",
+   "session": "s37",
+   "day": 150,
+   "ts": "2026-07-02T10:00:00+00:00",
+   "text": "Had lunch with Sónia — we talked about football, nothing about work.",
+   "kind": "distractor",
+   "person": "Sónia"
+  },
+  {
+   "id": "m036",
+   "session": "s37",
+   "day": 150,
+   "ts": "2026-07-02T09:00:00+00:00",
+   "text": "Ordered maheu again — it has been my favorite drink for weeks now.",
+   "kind": "implicit",
+   "slot": "drink"
+  },
+  {
+   "id": "m135",
+   "session": "s37",
+   "day": 150,
+   "ts": "2026-07-02T09:00:00+00:00",
+   "text": "Assisti ao jogo com amigos, empate. (day 150)",
+   "kind": "filler"
+  },
+  {
+   "id": "m147",
+   "session": "s37",
+   "day": 151,
+   "ts": "2026-07-03T12:00:00+00:00",
+   "text": "Cleaned the balcony and repotted the basil. (day 151)",
+   "kind": "filler"
+  },
+  {
+   "id": "m159",
+   "session": "s38",
+   "day": 152,
+   "ts": "2026-07-04T15:00:00+00:00",
+   "text": "Long walk after dinner, clear sky. (day 152)",
+   "kind": "filler"
+  },
+  {
+   "id": "m027",
+   "session": "s38",
+   "day": 154,
+   "ts": "2026-07-06T09:00:00+00:00",
+   "text": "Finished Delta today. Next I want something completely different.",
+   "kind": "event",
+   "project": "Delta"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q001",
+   "family": "relational",
+   "text": "Who helped me test Echo?",
+   "gold": [
+    "m004"
+   ],
+   "truth": [
+    "Marta"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q002",
+   "family": "relational",
+   "text": "Which place is linked to project Echo?",
+   "gold": [
+    "m003"
+   ],
+   "truth": [
+    "Nampula"
+   ],
+   "stale": [],
+   "note": "the place appears only in the meeting message"
+  },
+  {
+   "id": "q003",
+   "family": "temporal",
+   "text": "O que bloqueou o Echo antes de terminar?",
+   "gold": [
+    "m005"
+   ],
+   "truth": [
+    "printer"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q004",
+   "family": "relational",
+   "text": "What project was I working on when I met Dário?",
+   "gold": [
+    "m001",
+    "m003"
+   ],
+   "truth": [
+    "Echo"
+   ],
+   "stale": [],
+   "note": "gold = the project start + the meeting; the meeting alone names it too"
+  },
+  {
+   "id": "q005",
+   "family": "relational",
+   "text": "Why did I start Echo?",
+   "gold": [
+    "m001"
+   ],
+   "truth": [
+    "Echo"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q006",
+   "family": "relational",
+   "text": "Which language was I using when Marta joined me?",
+   "gold": [
+    "m002",
+    "m004"
+   ],
+   "truth": [
+    "Kotlin"
+   ],
+   "stale": [],
+   "note": "answer lives in a DIFFERENT message than the one naming the helper"
+  },
+  {
+   "id": "q007",
+   "family": "relational",
+   "text": "Where does Dário run their shop?",
+   "gold": [
+    "m003"
+   ],
+   "truth": [
+    "Nampula"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q008",
+   "family": "temporal",
+   "text": "What blocked Echo before it was finished?",
+   "gold": [
+    "m005"
+   ],
+   "truth": [
+    "printer"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q009",
+   "family": "relational",
+   "text": "Em que projecto estava quando conheci Dário?",
+   "gold": [
+    "m001",
+    "m003"
+   ],
+   "truth": [
+    "Echo"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q010",
+   "family": "relational",
+   "text": "Who helped me test Atlas?",
+   "gold": [
+    "m011"
+   ],
+   "truth": [
+    "Celso"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q011",
+   "family": "relational",
+   "text": "Which place is linked to project Atlas?",
+   "gold": [
+    "m010"
+   ],
+   "truth": [
+    "Matola"
+   ],
+   "stale": [],
+   "note": "the place appears only in the meeting message"
+  },
+  {
+   "id": "q012",
+   "family": "temporal",
+   "text": "O que bloqueou o Atlas antes de terminar?",
+   "gold": [
+    "m012"
+   ],
+   "truth": [
+    "server"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q013",
+   "family": "relational",
+   "text": "What project was I working on when I met Nelson?",
+   "gold": [
+    "m008",
+    "m010"
+   ],
+   "truth": [
+    "Atlas"
+   ],
+   "stale": [],
+   "note": "gold = the project start + the meeting; the meeting alone names it too"
+  },
+  {
+   "id": "q014",
+   "family": "relational",
+   "text": "Why did I start Atlas?",
+   "gold": [
+    "m008"
+   ],
+   "truth": [
+    "Atlas"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q015",
+   "family": "relational",
+   "text": "Which language was I using when Celso joined me?",
+   "gold": [
+    "m009",
+    "m011"
+   ],
+   "truth": [
+    "Rust"
+   ],
+   "stale": [],
+   "note": "answer lives in a DIFFERENT message than the one naming the helper"
+  },
+  {
+   "id": "q016",
+   "family": "relational",
+   "text": "Where does Nelson run their shop?",
+   "gold": [
+    "m010"
+   ],
+   "truth": [
+    "Matola"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q017",
+   "family": "temporal",
+   "text": "What blocked Atlas before it was finished?",
+   "gold": [
+    "m012"
+   ],
+   "truth": [
+    "server"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q018",
+   "family": "relational",
+   "text": "Em que projecto estava quando conheci Nelson?",
+   "gold": [
+    "m008",
+    "m010"
+   ],
+   "truth": [
+    "Atlas"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q019",
+   "family": "relational",
+   "text": "Who helped me test Bolt?",
+   "gold": [
+    "m018"
+   ],
+   "truth": [
+    "Yara"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q020",
+   "family": "relational",
+   "text": "Which place is linked to project Bolt?",
+   "gold": [
+    "m017"
+   ],
+   "truth": [
+    "Aveiro"
+   ],
+   "stale": [],
+   "note": "the place appears only in the meeting message"
+  },
+  {
+   "id": "q021",
+   "family": "temporal",
+   "text": "O que bloqueou o Bolt antes de terminar?",
+   "gold": [
+    "m019"
+   ],
+   "truth": [
+    "API key"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q022",
+   "family": "relational",
+   "text": "What project was I working on when I met Rui?",
+   "gold": [
+    "m015",
+    "m017"
+   ],
+   "truth": [
+    "Bolt"
+   ],
+   "stale": [],
+   "note": "gold = the project start + the meeting; the meeting alone names it too"
+  },
+  {
+   "id": "q023",
+   "family": "relational",
+   "text": "Why did I start Bolt?",
+   "gold": [
+    "m015"
+   ],
+   "truth": [
+    "Bolt"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q024",
+   "family": "relational",
+   "text": "Which language was I using when Yara joined me?",
+   "gold": [
+    "m016",
+    "m018"
+   ],
+   "truth": [
+    "Python"
+   ],
+   "stale": [],
+   "note": "answer lives in a DIFFERENT message than the one naming the helper"
+  },
+  {
+   "id": "q025",
+   "family": "relational",
+   "text": "Where does Rui run their shop?",
+   "gold": [
+    "m017"
+   ],
+   "truth": [
+    "Aveiro"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q026",
+   "family": "temporal",
+   "text": "What blocked Bolt before it was finished?",
+   "gold": [
+    "m019"
+   ],
+   "truth": [
+    "API key"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q027",
+   "family": "relational",
+   "text": "Em que projecto estava quando conheci Rui?",
+   "gold": [
+    "m015",
+    "m017"
+   ],
+   "truth": [
+    "Bolt"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q028",
+   "family": "relational",
+   "text": "Who helped me test Delta?",
+   "gold": [
+    "m025"
+   ],
+   "truth": [
+    "Inês"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q029",
+   "family": "relational",
+   "text": "Which place is linked to project Delta?",
+   "gold": [
+    "m024"
+   ],
+   "truth": [
+    "Quelimane"
+   ],
+   "stale": [],
+   "note": "the place appears only in the meeting message"
+  },
+  {
+   "id": "q030",
+   "family": "temporal",
+   "text": "O que bloqueou o Delta antes de terminar?",
+   "gold": [
+    "m026"
+   ],
+   "truth": [
+    "sensor"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q031",
+   "family": "relational",
+   "text": "What project was I working on when I met Sónia?",
+   "gold": [
+    "m022",
+    "m024"
+   ],
+   "truth": [
+    "Delta"
+   ],
+   "stale": [],
+   "note": "gold = the project start + the meeting; the meeting alone names it too"
+  },
+  {
+   "id": "q032",
+   "family": "relational",
+   "text": "Why did I start Delta?",
+   "gold": [
+    "m022"
+   ],
+   "truth": [
+    "Delta"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q033",
+   "family": "relational",
+   "text": "Which language was I using when Inês joined me?",
+   "gold": [
+    "m023",
+    "m025"
+   ],
+   "truth": [
+    "TypeScript"
+   ],
+   "stale": [],
+   "note": "answer lives in a DIFFERENT message than the one naming the helper"
+  },
+  {
+   "id": "q034",
+   "family": "relational",
+   "text": "Where does Sónia run their shop?",
+   "gold": [
+    "m024"
+   ],
+   "truth": [
+    "Quelimane"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q035",
+   "family": "temporal",
+   "text": "What blocked Delta before it was finished?",
+   "gold": [
+    "m026"
+   ],
+   "truth": [
+    "sensor"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q036",
+   "family": "relational",
+   "text": "Em que projecto estava quando conheci Sónia?",
+   "gold": [
+    "m022",
+    "m024"
+   ],
+   "truth": [
+    "Delta"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q037",
+   "family": "temporal",
+   "text": "What did I work on right before Atlas?",
+   "gold": [
+    "m001",
+    "m006"
+   ],
+   "truth": [
+    "Echo"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q038",
+   "family": "temporal",
+   "text": "Which project came after Echo?",
+   "gold": [
+    "m008"
+   ],
+   "truth": [
+    "Atlas"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q039",
+   "family": "temporal",
+   "text": "What did I work on right before Bolt?",
+   "gold": [
+    "m008",
+    "m013"
+   ],
+   "truth": [
+    "Atlas"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q040",
+   "family": "temporal",
+   "text": "Which project came after Atlas?",
+   "gold": [
+    "m015"
+   ],
+   "truth": [
+    "Bolt"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q041",
+   "family": "temporal",
+   "text": "What did I work on right before Delta?",
+   "gold": [
+    "m015",
+    "m020"
+   ],
+   "truth": [
+    "Bolt"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q042",
+   "family": "temporal",
+   "text": "Which project came after Bolt?",
+   "gold": [
+    "m022"
+   ],
+   "truth": [
+    "Delta"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q043",
+   "family": "temporal",
+   "text": "What was the first project I started this year?",
+   "gold": [
+    "m001"
+   ],
+   "truth": [
+    "Echo"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q044",
+   "family": "temporal",
+   "text": "What was the last project I finished?",
+   "gold": [
+    "m027"
+   ],
+   "truth": [
+    "Delta"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q045",
+   "family": "implicit_revision",
+   "text": "What is my favorite drink?",
+   "gold": [
+    "m036"
+   ],
+   "truth": [
+    "maheu"
+   ],
+   "stale": [
+    "hibiscus tea",
+    "passion fruit juice"
+   ],
+   "note": ""
+  },
+  {
+   "id": "q046",
+   "family": "implicit_revision",
+   "text": "Qual é a minha cor favorita?",
+   "gold": [
+    "m034"
+   ],
+   "truth": [
+    "burgundy"
+   ],
+   "stale": [
+    "amber"
+   ],
+   "note": ""
+  },
+  {
+   "id": "q047",
+   "family": "implicit_revision",
+   "text": "Where do I live?",
+   "gold": [
+    "m035"
+   ],
+   "truth": [
+    "Nampula"
+   ],
+   "stale": [
+    "Inhambane"
+   ],
+   "note": ""
+  },
+  {
+   "id": "q048",
+   "family": "implicit_revision",
+   "text": "What is my favourite colour?",
+   "gold": [
+    "m034"
+   ],
+   "truth": [
+    "burgundy"
+   ],
+   "stale": [
+    "amber"
+   ],
+   "note": ""
+  },
+  {
+   "id": "q049",
+   "family": "implicit_revision",
+   "text": "Which drink do I like most these days?",
+   "gold": [
+    "m036"
+   ],
+   "truth": [
+    "maheu"
+   ],
+   "stale": [
+    "hibiscus tea",
+    "passion fruit juice"
+   ],
+   "note": ""
+  },
+  {
+   "id": "q050",
+   "family": "temporal",
+   "text": "What was my favorite drink before I switched to passion fruit juice?",
+   "gold": [
+    "m029"
+   ],
+   "truth": [
+    "hibiscus tea"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q051",
+   "family": "temporal",
+   "text": "Where did I live before?",
+   "gold": [
+    "m032"
+   ],
+   "truth": [
+    "Inhambane"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q052",
+   "family": "temporal",
+   "text": "Qual era a minha cor favorita antes?",
+   "gold": [
+    "m030"
+   ],
+   "truth": [
+    "amber"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q053",
+   "family": "non_interference",
+   "text": "What is my favorite food?",
+   "gold": [
+    "m031"
+   ],
+   "truth": [
+    "peri-peri chicken"
+   ],
+   "stale": [
+    "mucapata"
+   ],
+   "note": ""
+  },
+  {
+   "id": "q054",
+   "family": "non_interference",
+   "text": "Qual é a minha comida favorita?",
+   "gold": [
+    "m031"
+   ],
+   "truth": [
+    "peri-peri chicken"
+   ],
+   "stale": [
+    "mucapata"
+   ],
+   "note": ""
+  },
+  {
+   "id": "q055",
+   "family": "non_interference",
+   "text": "Which language did I use for Echo?",
+   "gold": [
+    "m002"
+   ],
+   "truth": [
+    "Kotlin"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q056",
+   "family": "non_interference",
+   "text": "Which language did I use for Delta?",
+   "gold": [
+    "m023"
+   ],
+   "truth": [
+    "TypeScript"
+   ],
+   "stale": [],
+   "note": ""
+  },
+  {
+   "id": "q057",
+   "family": "distractor",
+   "text": "What did Dário and I talk about at lunch?",
+   "gold": [
+    "m007"
+   ],
+   "truth": [
+    "football"
+   ],
+   "stale": [],
+   "note": "the lunch message, not the project meeting"
+  },
+  {
+   "id": "q058",
+   "family": "distractor",
+   "text": "Whose favorite drink is hibiscus tea?",
+   "gold": [
+    "m037"
+   ],
+   "truth": [
+    "Celso"
+   ],
+   "stale": [
+    "my"
+   ],
+   "note": "a third person's preference, not the user's"
+  },
+  {
+   "id": "q059",
+   "family": "distractor",
+   "text": "Is teal my favorite color?",
+   "gold": [
+    "m034"
+   ],
+   "truth": [
+    "burgundy"
+   ],
+   "stale": [
+    "teal"
+   ],
+   "note": "a hypothetical about the user's own color; the current value answers"
+  },
+  {
+   "id": "q060",
+   "family": "distractor",
+   "text": "What is my sister's favorite food?",
+   "gold": [
+    "m039"
+   ],
+   "truth": [
+    "mucapata"
+   ],
+   "stale": [],
+   "note": "the sister's, not the user's"
+  }
+ ],
+ "families": {
+  "relational": 28,
+  "temporal": 19,
+  "implicit_revision": 5,
+  "non_interference": 4,
+  "distractor": 4
+ }
+}

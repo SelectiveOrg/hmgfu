@@ -1,0 +1,141 @@
+# PLAN — The Living Memory (three missing pieces, built in order)
+
+Origin: first-principles dialogue with Trailblazer, 2026-07-09. The design came from him
+describing how his own memory works; this plan maps it onto the system that measurement
+already validated, builds ONLY what is missing, and gates every piece.
+
+Translation table (the dialogue's words -> the system's mechanisms):
+
+| Dialogue concept | System mechanism | Status |
+|---|---|---|
+| "a gravacao" (exact words, sacred) | verbatim turn provenance on every derived memory | MISSING (P1) |
+| "a linha" (timeline per subject, never cut) | keyed-fact supersession chains, read as history | chains EXIST; reader MISSING (P2) |
+| "o dedo" (points at what is valid NOW) | canon keyed current-value | EXISTS (B6, live) |
+| "forca da fonte" (info enters with source strength) | I1 lifecycle tiers + source field | I1 EXISTS; source tiers PARTIAL (P3) |
+| "reabrir o caso" (contradiction reopens, never blind-cuts) | tension + ask-user on cross-tier conflict | MISSING (P3) |
+| "nao arrancar folhas" (annotate, never remove) | supersession as annotation, dates surfaced | PROVEN (E.2-P/E.2-A lesson) |
+| "resumo + gravacao" (processed layer over raw layer) | derived facts linked to raw turns | the LINK is P1 |
+
+Already proven and NOT rebuilt: cosine ranking (bge-m3), D.3 dates-everywhere (2x external),
+I1 anti-poisoning (E.3), perceiver with KNOWN-FACTS lens (P-AUDIT 1.000/0), keyed canon with
+targeted supersede (B6), annotation-over-removal (E.2). This plan composes them; it does not
+reopen them.
+
+---
+
+## P0 — Preconditions (already authorized, do first)
+
+1. Action-skip fix on the deferred detection path (the router ACTION-classifying corrections
+   skips B5 fields; detection is now deferred/post-turn, so the original multi-task
+   justification no longer applies). Guard: verify the deferred call shares NOTHING with the
+   primary turn beyond the queue (no prompt context, no GPU slot during next-turn
+   generation); test includes next-turn latency non-regression.
+2. The production flip: HMGFU_CHAT_CORRECTION_SIGNAL=1, HMGFU_REGULATOR_ENABLED=1,
+   OBSERVE_FIRST_N=50. Operator act, reversible, observation window armed.
+
+Everything below rides on the perceiver being live.
+
+## P1 — The Provenance Spine ("a gravacao")
+
+**What:** every derived memory (canon fact, correction event, lifecycle ledger entry)
+stores a link to the exact source turn: source_turn_id + the verbatim user text span.
+Raw turns are already stored; the LINK from derived to raw is what is missing. Additive
+columns only; nothing rewritten.
+
+**Why first:** it is the cheapest piece, it is foundational (P2 and P3 both annotate
+their outputs with provenance), and it is zero-risk (write-path only, no behavior change).
+It also delivers a user-visible feature immediately: "what did I say exactly?"
+
+**Gate G1 (pre-registered before build):**
+- 10 scripted memories -> query "what exactly did I say about X" returns the verbatim
+  original for 10/10, via the existing retrieval path (no new search machinery).
+- Viz: fact detail panel shows "source: <verbatim quote> (date)" for every canon entry.
+- Flag-OFF byte-identical maintained; suite green.
+Falsifier: any derived memory that cannot resolve to its source turn is a G1 failure;
+fix the write path, never backfill by guess.
+
+## P2 — The Timeline Reader ("a linha")
+
+**What:** the supersession chains already link old->new keyed facts. Build the READ path:
+temporal-history intent ("what was it before", "when did I change", "how long have I")
+routes to a chain-walk that returns the ordered history with dates, instead of only the
+current value. Uses the EXISTING intent router (constrained decoding, proven) with one new
+intent class: history. Answer layer stays D.3-style: surface the dated chain, let the model
+compose the answer. No new storage; the chain IS the timeline.
+
+**Why second:** it needs P1 (history answers cite provenance), it reuses two proven
+mechanisms (chains + intent router), and it is the piece the dialogue proved users
+actually need (the azul->verde "e antes?" question).
+
+**Gate G2 (pre-registered mini-bench, n>=20, committed before build):**
+- Current-value questions: unchanged accuracy (the pointer still answers; no regression).
+- "Before/previous" questions: answered from the chain (target >=0.9 on scripted set).
+- The A-B-A return case (vegetarian -> not -> again): "how long" answered as
+  "since <last change>, previously also between <t1>-<t2>" or equivalent; the chain
+  preserves the loop, n>=4 items of this shape.
+- The split-fact case (coffee morning vs night): two keys coexist; querying one does not
+  supersede the other; n>=4 items.
+Falsifier: if chain-walk answers degrade current-value accuracy, the routing is wrong
+(history intent leaking into present intent); fix the router class, not the chain.
+
+## P3 — Source Strength + Reopen-on-Contradiction ("forca da fonte" + "reabrir o caso")
+
+**What:** two changes, one mechanism.
+1. Source tiers on ingest: USER_STATED (max, moves the pointer immediately as
+   provisional-leading; confirmation seals per I1), EXTERNAL_TOLD (what third parties/tools
+   report: enters as provisional, never seals without user word), AGENT_INFERRED (weakest;
+   capped exactly as I1 already caps it). The dialogue's rule: a lie is believed at the
+   strength of its source until contradiction arrives.
+2. Reopen instead of blind-cut: when the perceiver detects a contradiction, behavior
+   depends on the tier pair:
+   - user-now vs user-past (same subject): targeted supersede with chain, as today (proven).
+   - weaker tier contradicts stronger (external/inferred vs user-stated): DO NOT supersede.
+     Record tension, keep the stronger value at the pointer, and ASK the user at the next
+     natural opportunity ("X told me Y, but you said Z — which holds?"). The user's answer
+     moves the pointer and seals. This is the dialogue's "analisar, validar e questionar"
+     made mechanical, and it is the anti-poisoning hierarchy extended to the world.
+   - ambiguous target (cannot resolve which fact is contradicted): no supersede, log
+     ambiguity (existing guard, kept).
+
+**Why third:** it touches live behavior the most, so it goes last, after the observation
+window has real data on how corrections behave in the wild.
+
+**Gate G3 (pre-registered):**
+- Scripted source-conflict beat sheet (new, committed before run): user-vs-user supersedes
+  (>=0.9), weaker-vs-stronger asks instead of superseding (0 silent overwrites of a
+  USER_STATED value by a weaker tier — hard bar, the absorbing-signal rule applied to
+  sources), ambiguity logged not guessed.
+- The ask-user prompt fires at most once per tension (no nagging), and the user's reply
+  routes through the normal perceiver path.
+Falsifier: one silent overwrite of user-stated by a weaker source = G3 FAIL, no
+threshold-tuning; the tier check is a state-machine property like I1, fix structurally.
+
+## P4 — Ecological Review (the umbrella gate)
+
+At observation_log n=50 real corrections: recall/ghost/supersede audited on real usage
+(asymmetric attention: ghosts are the danger, misses are recoverable), P1 provenance
+spot-checked on real memories, P2 history questions tried organically, P3 tension events
+reviewed. THEN declare the core done in PROBLEM_AND_POSITION and PROJECT_ID.
+
+## Anti-goals (so scope cannot creep)
+
+- No deletion, compaction, or forgetting mechanism: append-only until a MEASURED retrieval
+  or cost degradation exists. "Full notebook" is a hypothesis; it earns a gate only when a
+  number shows it.
+- No new ranking machinery, no graph scores, no embedder change.
+- E.4 typed routing and E.5 wormholes stay dormant hypotheses (prior against; Trailblazer's
+  call, separate gates if ever).
+- Haystack (longmemeval_s) optional tail, unchanged.
+- No abstention mitigation inside these phases (own gate later; known cost stands).
+
+## Rules traceability
+
+R1/R2: each phase opens by reading the current write/read paths before touching them.
+R3: gates pre-registered with falsifiers; no tuning after numbers. R5: chains, router,
+perceiver, canon, ledger all reused; the only new storage is the provenance link. R6/7/8:
+this plan enters the ROADMAP first; each phase updates it with evidence. R11: all changes
+additive; flag-OFF byte-identical at every phase. R12: G1/G2/G3/P4 define done. R13: each
+falsifier names the layer that owns the failure. R14: production untouched except through
+gates; backups before any write-path change.
+
+One change, one measurement, until the memory is alive.

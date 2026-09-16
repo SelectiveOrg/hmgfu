@@ -1,0 +1,47 @@
+{
+  "_doc": "Phase 91.Y DEV set. Does the regex write path preserve SOURCE, SUBJECT, RELATION, VALUE, MODALITY and TIME when a proposition is embedded under a governing clause? Written BEFORE the fix, from the pre-registered criteria in ROADMAP 91.Y2. This set is DEV: it may be iterated against. The sealed counterpart is modality_reserved_v1.json, which shares no sentence with it. Run with scripts/run_write_set.py --set this file (no --mapper: this isolates the regex path the regression lives in). 'expect': {} means the turn must write NOTHING and the prior value must survive.",
+  "items": [
+    {"id": "m001", "lang": "en", "category": "assertion", "prior": ["My dog is called Rex."], "text": "Green is my dog.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "m002", "lang": "en", "category": "assertion", "prior": ["My dog is called Rex."], "text": "Actually Green is my dog.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "m003", "lang": "en", "category": "assertion", "prior": ["My dog is called Rex."], "text": "but Green is my dog", "expect": {"pet.dog.name": "Green"}},
+    {"id": "m004", "lang": "en", "category": "assertion", "prior": ["My dog is called Rex."], "text": "but you should know that green is my dog also", "expect": {"pet.dog.name": "green"}},
+    {"id": "m005", "lang": "en", "category": "assertion", "prior": [], "text": "and blue is my favourite colour", "expect": {"pref.color": "blue"}},
+
+    {"id": "m010", "lang": "en", "category": "negation", "prior": ["My dog is called Rex."], "text": "I never said that Green is my dog.", "expect": {}},
+    {"id": "m011", "lang": "en", "category": "negation", "prior": ["My dog is called Rex."], "text": "I deny that Green is my dog.", "expect": {}},
+    {"id": "m012", "lang": "en", "category": "negation", "prior": ["My dog is called Rex."], "text": "Not that Green is my dog.", "expect": {}},
+    {"id": "m013", "lang": "en", "category": "negation", "prior": ["My dog is called Rex."], "text": "It is not true that Green is my dog.", "expect": {}},
+    {"id": "m014", "lang": "en", "category": "negation", "prior": ["My dog is called Rex."], "text": "I did not say that Green is my dog.", "expect": {}},
+
+    {"id": "m020", "lang": "en", "category": "doubt", "prior": ["My dog is called Rex."], "text": "I doubt that Green is my dog.", "expect": {}},
+    {"id": "m021", "lang": "en", "category": "doubt", "prior": ["My dog is called Rex."], "text": "I am not sure that Green is my dog.", "expect": {}},
+    {"id": "m022", "lang": "en", "category": "doubt", "prior": ["My dog is called Rex."], "text": "Maybe Green is my dog.", "expect": {}},
+
+    {"id": "m030", "lang": "en", "category": "intention", "prior": ["My dog is called Rex."], "text": "I was going to say that Green is my dog.", "expect": {}},
+    {"id": "m031", "lang": "en", "category": "intention", "prior": ["My dog is called Rex."], "text": "I want Green to be my dog.", "expect": {}},
+
+    {"id": "m040", "lang": "en", "category": "citation", "prior": ["My dog is called Rex."], "text": "I was told that Green is my dog.", "expect": {}},
+    {"id": "m041", "lang": "en", "category": "citation", "prior": ["My dog is called Rex."], "text": "My neighbour says that Green is my dog.", "expect": {}},
+    {"id": "m042", "lang": "en", "category": "citation", "prior": ["My dog is called Rex."], "text": "She wrote that Green is my dog.", "expect": {}},
+    {"id": "m043", "lang": "en", "category": "question", "prior": ["My dog is called Rex."], "text": "Who said that Green is my dog?", "expect": {}},
+    {"id": "m044", "lang": "en", "category": "question", "prior": ["My dog is called Rex."], "text": "Is Green my dog?", "expect": {}},
+
+    {"id": "m050", "lang": "en", "category": "third_party", "prior": ["My dog is called Rex."], "text": "My neighbour's dog is called Green.", "expect": {}},
+    {"id": "m051", "lang": "en", "category": "third_party", "prior": ["My dog is called Rex."], "text": "My brother told me his dog is called Green.", "expect": {}},
+
+    {"id": "m060", "lang": "en", "category": "correction", "prior": ["My dog is called Rex."], "text": "No, my dog is called Green.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "m061", "lang": "en", "category": "correction", "prior": ["My name is Rui."], "text": "Actually my name is Amaro.", "expect": {"identity.name": "Amaro"}},
+    {"id": "m062", "lang": "en", "category": "speech_act_idiom", "prior": ["My name is Rui."], "text": "I want to tell you that my name is Amaro.", "expect": {"identity.name": "Amaro"}},
+
+    {"id": "m070", "lang": "pt", "category": "assertion", "prior": ["O meu cão chama-se Rex."], "text": "O meu cão chama-se Green.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "m071", "lang": "pt", "category": "assertion", "prior": ["O meu nome é Rui."], "text": "Na verdade o meu nome é Amaro.", "expect": {"identity.name": "Amaro"}},
+    {"id": "m072", "lang": "pt", "category": "negation", "prior": ["O meu cão chama-se Rex."], "text": "Eu nunca disse que o Green é o meu cão.", "expect": {}},
+    {"id": "m073", "lang": "pt", "category": "negation", "prior": ["O meu cão chama-se Rex."], "text": "Não é verdade que o Green seja o meu cão.", "expect": {}},
+    {"id": "m074", "lang": "pt", "category": "doubt", "prior": ["O meu cão chama-se Rex."], "text": "Duvido que o Green seja o meu cão.", "expect": {}},
+    {"id": "m075", "lang": "pt", "category": "citation", "prior": ["O meu cão chama-se Rex."], "text": "Disseram-me que o Green é o meu cão.", "expect": {}},
+    {"id": "m076", "lang": "pt", "category": "citation", "prior": ["O meu cão chama-se Rex."], "text": "O meu vizinho diz que o Green é o meu cão.", "expect": {}},
+    {"id": "m077", "lang": "pt", "category": "question", "prior": ["O meu cão chama-se Rex."], "text": "Quem disse que o Green é o meu cão?", "expect": {}},
+    {"id": "m078", "lang": "pt", "category": "third_party", "prior": ["O meu cão chama-se Rex."], "text": "O cão do meu vizinho chama-se Green.", "expect": {}},
+    {"id": "m079", "lang": "pt", "category": "correction", "prior": ["O meu cão chama-se Rex."], "text": "Não, o meu cão chama-se Green.", "expect": {"pet.dog.name": "Green"}}
+  ]
+}

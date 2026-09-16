@@ -1,0 +1,599 @@
+{
+ "_doc": "Phase 81.2 judge set — author-written replies with the verdict a careful reader would give (correct = the reply commits to the gold value and does not negate it; on abstention items correct = a decline with no hedged guess). Used to audit the LongMemEval harness judge (v1 = word presence + abstention cues; v2 = negation window + hedge refusal). Author-labelled, not an external human panel — said plainly.",
+ "items": [
+  {
+   "id": "j001",
+   "kind": "plain",
+   "lang": "en",
+   "reply": "Your favourite colour is amber.",
+   "gold": "amber",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j002",
+   "kind": "plain",
+   "lang": "en",
+   "reply": "You adopted the dog on 12 March 2023.",
+   "gold": "12 March 2023",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j003",
+   "kind": "plain",
+   "lang": "pt",
+   "reply": "A tua cor favorita é o roxo.",
+   "gold": "roxo",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j004",
+   "kind": "plain",
+   "lang": "en",
+   "reply": "You bought four cows from Peter.",
+   "gold": "4",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j005",
+   "kind": "plain",
+   "lang": "en",
+   "reply": "That was three times in the past two weeks.",
+   "gold": "3",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j006",
+   "kind": "plain",
+   "lang": "en",
+   "reply": "The total came to $2,500.",
+   "gold": "$2,500",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j007",
+   "kind": "plain",
+   "lang": "en",
+   "reply": "You live in Matola now.",
+   "gold": "Matola",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j008",
+   "kind": "plain",
+   "lang": "en",
+   "reply": "Your sister's name is Rute.",
+   "gold": "Rute",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j009",
+   "kind": "plain",
+   "lang": "pt",
+   "reply": "Mudaste-te para a Aveiro em Maio.",
+   "gold": "Aveiro",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j010",
+   "kind": "plain",
+   "lang": "en",
+   "reply": "Your dog is called Bolt; he is a beagle.",
+   "gold": "Bolt",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j011",
+   "kind": "paraphrase",
+   "lang": "en",
+   "reply": "From what you told me, the colour you always pick is amber, though you once liked teal.",
+   "gold": "amber",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j012",
+   "kind": "paraphrase",
+   "lang": "en",
+   "reply": "You mentioned moving twice; the current city is Matola.",
+   "gold": "Matola",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j013",
+   "kind": "paraphrase",
+   "lang": "pt",
+   "reply": "Pelo que sei, o teu cão chama-se Bolt.",
+   "gold": "Bolt",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j014",
+   "kind": "paraphrase",
+   "lang": "en",
+   "reply": "You said the shelter dog is named Bolt, right?",
+   "gold": "Bolt",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j015",
+   "kind": "paraphrase",
+   "lang": "en",
+   "reply": "The count I have is 4 — four separate purchases.",
+   "gold": "4",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j016",
+   "kind": "negated",
+   "lang": "en",
+   "reply": "It is not amber; you told me your favourite colour is teal.",
+   "gold": "amber",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j017",
+   "kind": "negated",
+   "lang": "en",
+   "reply": "You no longer live in Matola — you moved to Aveiro.",
+   "gold": "Matola",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j018",
+   "kind": "negated",
+   "lang": "en",
+   "reply": "Your dog isn't called Bolt, it's Kika.",
+   "gold": "Bolt",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j019",
+   "kind": "negated",
+   "lang": "pt",
+   "reply": "Não é o roxo; a tua cor favorita é o verde.",
+   "gold": "roxo",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j020",
+   "kind": "negated",
+   "lang": "en",
+   "reply": "You never bought four cows; it was two.",
+   "gold": "4",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j021",
+   "kind": "negated",
+   "lang": "en",
+   "reply": "Rather than Rute, your sister is named Ana.",
+   "gold": "Rute",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j022",
+   "kind": "negated",
+   "lang": "en",
+   "reply": "Instead of Matola, you now live in Valencia.",
+   "gold": "Matola",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j023",
+   "kind": "negated",
+   "lang": "pt",
+   "reply": "Já não moras na Aveiro, moras em Nampula.",
+   "gold": "Aveiro",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j024",
+   "kind": "negated",
+   "lang": "en",
+   "reply": "I don't think it was Bolt — you said Kika.",
+   "gold": "Bolt",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j025",
+   "kind": "negated",
+   "lang": "en",
+   "reply": "It wasn't $2,500; the total was $1,900.",
+   "gold": "$2,500",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j026",
+   "kind": "contradiction",
+   "lang": "en",
+   "reply": "You said amber once, but your favourite colour is teal.",
+   "gold": "amber",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j027",
+   "kind": "contradiction",
+   "lang": "en",
+   "reply": "Matola came up, but your home is Aveiro.",
+   "gold": "Matola",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j028",
+   "kind": "contradiction",
+   "lang": "en",
+   "reply": "The name Bolt appears in your notes, though your dog is Kika.",
+   "gold": "Bolt",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j029",
+   "kind": "selfcorrect",
+   "lang": "en",
+   "reply": "You live in Aveiro — sorry, I mean Matola, you moved there last month.",
+   "gold": "Matola",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j030",
+   "kind": "selfcorrect",
+   "lang": "en",
+   "reply": "It's teal… no, amber. Your favourite colour is amber.",
+   "gold": "amber",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j031",
+   "kind": "wrong",
+   "lang": "en",
+   "reply": "Your favourite colour is teal.",
+   "gold": "amber",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j032",
+   "kind": "wrong",
+   "lang": "en",
+   "reply": "You live in Aveiro.",
+   "gold": "Matola",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j033",
+   "kind": "wrong",
+   "lang": "pt",
+   "reply": "O teu cão chama-se Kika.",
+   "gold": "Bolt",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j034",
+   "kind": "wrong",
+   "lang": "en",
+   "reply": "You bought two cows.",
+   "gold": "4",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j035",
+   "kind": "wrong",
+   "lang": "en",
+   "reply": "The total was $1,900.",
+   "gold": "$2,500",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j036",
+   "kind": "decline_answerable",
+   "lang": "en",
+   "reply": "I don't have a record of your favourite colour.",
+   "gold": "amber",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j037",
+   "kind": "decline_answerable",
+   "lang": "pt",
+   "reply": "Não sei onde moras.",
+   "gold": "Matola",
+   "abstention": false,
+   "correct": false
+  },
+  {
+   "id": "j038",
+   "kind": "numberword",
+   "lang": "en",
+   "reply": "You did that four times.",
+   "gold": "4",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j039",
+   "kind": "numberword",
+   "lang": "pt",
+   "reply": "Fizeste isso quatro vezes.",
+   "gold": "4",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j040",
+   "kind": "numberword",
+   "lang": "en",
+   "reply": "It was ten cows.",
+   "gold": "10",
+   "abstention": false,
+   "correct": true
+  },
+  {
+   "id": "j041",
+   "kind": "decline_pure",
+   "lang": "en",
+   "reply": "I don't know — nothing in our conversations mentions where you were born.",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j042",
+   "kind": "decline_pure",
+   "lang": "en",
+   "reply": "There is no record of your brother's name in my memory.",
+   "gold": "Nuno",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j043",
+   "kind": "decline_pure",
+   "lang": "pt",
+   "reply": "Não sei; não menciona isso em nenhuma conversa.",
+   "gold": "Nuno",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j044",
+   "kind": "decline_pure",
+   "lang": "en",
+   "reply": "I can't find that in our history, so I won't guess.",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j045",
+   "kind": "decline_pure",
+   "lang": "en",
+   "reply": "That was not mentioned. If you tell me, I will remember it.",
+   "gold": "Nuno",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j046",
+   "kind": "decline_pure",
+   "lang": "en",
+   "reply": "Not specified anywhere in our chats.",
+   "gold": "12 March",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j047",
+   "kind": "decline_pure",
+   "lang": "en",
+   "reply": "I have no information about that.",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j048",
+   "kind": "decline_pure",
+   "lang": "en",
+   "reply": "Unable to find any mention of a birthday.",
+   "gold": "12 March",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j049",
+   "kind": "decline_invent",
+   "lang": "en",
+   "reply": "I don't know for sure, but it's probably Chimoio.",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j050",
+   "kind": "decline_invent",
+   "lang": "en",
+   "reply": "Nothing is mentioned, however I think your brother is Nuno.",
+   "gold": "Nuno",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j051",
+   "kind": "decline_invent",
+   "lang": "pt",
+   "reply": "Não sei ao certo, mas talvez seja Chimoio.",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j052",
+   "kind": "decline_invent",
+   "lang": "en",
+   "reply": "It isn't mentioned, but my guess would be 12 March.",
+   "gold": "12 March",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j053",
+   "kind": "decline_invent",
+   "lang": "en",
+   "reply": "I can't find it; perhaps Aveiro?",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j054",
+   "kind": "decline_invent",
+   "lang": "en",
+   "reply": "Not in my records — likely Nuno though.",
+   "gold": "Nuno",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j055",
+   "kind": "decline_invent",
+   "lang": "en",
+   "reply": "No record of that. It might be Chimoio.",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j056",
+   "kind": "decline_invent",
+   "lang": "en",
+   "reply": "I do not know, but I believe it was in March.",
+   "gold": "12 March",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j057",
+   "kind": "assert_on_abs",
+   "lang": "en",
+   "reply": "You were born in Chimoio.",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j058",
+   "kind": "assert_on_abs",
+   "lang": "en",
+   "reply": "Your brother is Nuno.",
+   "gold": "Nuno",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j059",
+   "kind": "assert_on_abs",
+   "lang": "pt",
+   "reply": "O teu irmão chama-se Nuno.",
+   "gold": "Nuno",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j060",
+   "kind": "assert_on_abs",
+   "lang": "en",
+   "reply": "It was 12 March.",
+   "gold": "12 March",
+   "abstention": true,
+   "correct": false
+  },
+  {
+   "id": "j061",
+   "kind": "decline_unlisted",
+   "lang": "en",
+   "reply": "Our conversations don't say where you were born, so I'd rather not guess.",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j062",
+   "kind": "decline_unlisted",
+   "lang": "en",
+   "reply": "That detail never came up between us.",
+   "gold": "Nuno",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j063",
+   "kind": "decline_unlisted",
+   "lang": "en",
+   "reply": "I have nothing on that.",
+   "gold": "12 March",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j064",
+   "kind": "decline_unlisted",
+   "lang": "pt",
+   "reply": "Isso nunca foi falado entre nós.",
+   "gold": "Nuno",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j065",
+   "kind": "decline_unlisted",
+   "lang": "en",
+   "reply": "I'd be guessing — you never told me.",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": true
+  },
+  {
+   "id": "j066",
+   "kind": "decline_unlisted",
+   "lang": "pt",
+   "reply": "Sem registo disso.",
+   "gold": "Chimoio",
+   "abstention": true,
+   "correct": true
+  }
+ ]
+}

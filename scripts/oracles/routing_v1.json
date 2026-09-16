@@ -1,0 +1,1507 @@
+{
+ "_doc": "Phase 79.1 sealed ROUTING set — 84 real-shaped PT/EN turns across the classes the router decides on (recall of a ledger attribute, fact statement, tool named, tool implied, chatter/greeting, feedback, plan request, plan cancel, directive, world question). `class` is the author's label (used only to report agreement per class); the REFERENCE route per turn is recorded ONCE by gemma4:12b with `scripts/bench_router_agreement.py --record` (same prompt, catalog and directives as production; learned exemplars fixed to none) and committed before any candidate model or bypass is measured. Agreement is measured against the reference, never against the author's label.",
+ "turns": [
+  {
+   "id": "r001",
+   "lang": "en",
+   "class": "recall",
+   "text": "What is my name?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 11574.3
+  },
+  {
+   "id": "r002",
+   "lang": "pt",
+   "class": "recall",
+   "text": "Como me chamo?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1395.5
+  },
+  {
+   "id": "r003",
+   "lang": "en",
+   "class": "recall",
+   "text": "Where do I live these days?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1379.9
+  },
+  {
+   "id": "r004",
+   "lang": "pt",
+   "class": "recall",
+   "text": "Qual é a minha cor favorita?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1566.1
+  },
+  {
+   "id": "r005",
+   "lang": "en",
+   "class": "recall",
+   "text": "What's my dog called?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1375.7
+  },
+  {
+   "id": "r006",
+   "lang": "pt",
+   "class": "recall",
+   "text": "Lembras-te do nome do meu irmão?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1575.9
+  },
+  {
+   "id": "r007",
+   "lang": "en",
+   "class": "recall",
+   "text": "Which programming language do I prefer?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1368.6
+  },
+  {
+   "id": "r008",
+   "lang": "pt",
+   "class": "recall",
+   "text": "Onde é que eu trabalho?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1579.4
+  },
+  {
+   "id": "r009",
+   "lang": "en",
+   "class": "recall_past",
+   "text": "Where did I live before I moved?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1365.9
+  },
+  {
+   "id": "r010",
+   "lang": "pt",
+   "class": "recall_past",
+   "text": "Qual era a minha cor favorita antes?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1574.3
+  },
+  {
+   "id": "r011",
+   "lang": "en",
+   "class": "fact",
+   "text": "My favourite colour is amber.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1719.1
+  },
+  {
+   "id": "r012",
+   "lang": "pt",
+   "class": "fact",
+   "text": "A minha bebida favorita é chá de gengibre.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 2099.2
+  },
+  {
+   "id": "r013",
+   "lang": "en",
+   "class": "fact",
+   "text": "Remember that I live in Matola now.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": true,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1752.8
+  },
+  {
+   "id": "r014",
+   "lang": "pt",
+   "class": "fact",
+   "text": "Fica a saber que o meu cão se chama Bolt.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1705.5
+  },
+  {
+   "id": "r015",
+   "lang": "en",
+   "class": "fact",
+   "text": "I work as a nurse at the district hospital.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1710.5
+  },
+  {
+   "id": "r016",
+   "lang": "pt",
+   "class": "fact",
+   "text": "Mudei-me para a Aveiro o mês passado.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1698.8
+  },
+  {
+   "id": "r017",
+   "lang": "en",
+   "class": "fact",
+   "text": "My sister's name is Rute.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1710.7
+  },
+  {
+   "id": "r018",
+   "lang": "pt",
+   "class": "fact",
+   "text": "O meu time do coração é o Ferroviário.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1705.0
+  },
+  {
+   "id": "r019",
+   "lang": "en",
+   "class": "tool_named",
+   "text": "Use memory_zoom to inspect the memory overview.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_zoom"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1573.9
+  },
+  {
+   "id": "r020",
+   "lang": "pt",
+   "class": "tool_named",
+   "text": "Usa a memory_search para procurar o que disse sobre o carro.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1562.3
+  },
+  {
+   "id": "r021",
+   "lang": "en",
+   "class": "tool_named",
+   "text": "Run list_files on the workspace.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "list_files"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1479.1
+  },
+  {
+   "id": "r022",
+   "lang": "pt",
+   "class": "tool_named",
+   "text": "Cria um widget de tabela chamado Links.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "create_widget"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1568.0
+  },
+  {
+   "id": "r023",
+   "lang": "en",
+   "class": "tool_implied",
+   "text": "What files are in the workspace right now?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "list_files"
+    ],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1557.0
+  },
+  {
+   "id": "r024",
+   "lang": "pt",
+   "class": "tool_implied",
+   "text": "Que ficheiros há na pasta de trabalho?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "list_files"
+    ],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1575.6
+  },
+  {
+   "id": "r025",
+   "lang": "en",
+   "class": "tool_implied",
+   "text": "What time is it now?",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1853.8
+  },
+  {
+   "id": "r026",
+   "lang": "pt",
+   "class": "tool_implied",
+   "text": "Que horas são em Lisboa neste momento?",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1851.3
+  },
+  {
+   "id": "r027",
+   "lang": "en",
+   "class": "tool_implied",
+   "text": "Save a note called shopping.txt with milk and eggs.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "write_file"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1571.9
+  },
+  {
+   "id": "r028",
+   "lang": "pt",
+   "class": "tool_implied",
+   "text": "Grava um ficheiro notas.txt com a lista de compras.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "write_file"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1575.1
+  },
+  {
+   "id": "r029",
+   "lang": "en",
+   "class": "tool_implied",
+   "text": "Show me what's in README.txt.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "read_file"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1574.2
+  },
+  {
+   "id": "r030",
+   "lang": "pt",
+   "class": "tool_implied",
+   "text": "Mostra-me o conteúdo do README.txt.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "read_file"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1620.2
+  },
+  {
+   "id": "r031",
+   "lang": "en",
+   "class": "tool_implied",
+   "text": "Search the web for today's weather in Valencia.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "brave_web_search"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 2224.9
+  },
+  {
+   "id": "r032",
+   "lang": "pt",
+   "class": "tool_implied",
+   "text": "Procura na internet o preço do dólar hoje.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "brave_web_search"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 2236.8
+  },
+  {
+   "id": "r033",
+   "lang": "en",
+   "class": "chatter",
+   "text": "Thanks, that's helpful.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "feedback",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1457.0
+  },
+  {
+   "id": "r034",
+   "lang": "pt",
+   "class": "chatter",
+   "text": "Obrigado, era só isso.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "feedback",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1454.4
+  },
+  {
+   "id": "r035",
+   "lang": "en",
+   "class": "chatter",
+   "text": "Good morning!",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "greeting",
+    "needs_memory": false,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 2107.6
+  },
+  {
+   "id": "r036",
+   "lang": "pt",
+   "class": "chatter",
+   "text": "Bom dia, tudo bem?",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "greeting",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1867.9
+  },
+  {
+   "id": "r037",
+   "lang": "en",
+   "class": "chatter",
+   "text": "ok",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1491.6
+  },
+  {
+   "id": "r038",
+   "lang": "pt",
+   "class": "chatter",
+   "text": "Está bem, até logo.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1478.1
+  },
+  {
+   "id": "r039",
+   "lang": "en",
+   "class": "chatter",
+   "text": "Haha, that's funny.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "feedback",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1452.6
+  },
+  {
+   "id": "r040",
+   "lang": "pt",
+   "class": "chatter",
+   "text": "Boa noite!",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "greeting",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1889.2
+  },
+  {
+   "id": "r041",
+   "lang": "en",
+   "class": "feedback_pos",
+   "text": "Perfect, exactly what I needed.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "feedback",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1454.0
+  },
+  {
+   "id": "r042",
+   "lang": "pt",
+   "class": "feedback_pos",
+   "text": "Excelente, era mesmo isso.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "feedback",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1434.0
+  },
+  {
+   "id": "r043",
+   "lang": "en",
+   "class": "feedback_neg",
+   "text": "That's wrong, the file you created is empty.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "feedback",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1712.5
+  },
+  {
+   "id": "r044",
+   "lang": "pt",
+   "class": "feedback_neg",
+   "text": "Não era isso, o widget ficou sem nada.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [],
+    "conversation_act": "feedback",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1508.7
+  },
+  {
+   "id": "r045",
+   "lang": "en",
+   "class": "feedback_neg",
+   "text": "You didn't do what I asked.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "feedback",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1326.0
+  },
+  {
+   "id": "r046",
+   "lang": "pt",
+   "class": "feedback_neg",
+   "text": "Isso está errado, o meu nome não é esse.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "feedback",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1713.8
+  },
+  {
+   "id": "r047",
+   "lang": "en",
+   "class": "plan",
+   "text": "Plan how you would organise my notes into three files, but do not create anything yet.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "plan_task"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1574.4
+  },
+  {
+   "id": "r048",
+   "lang": "pt",
+   "class": "plan",
+   "text": "Planeia como organizarias as minhas notas em três ficheiros, mas não cries nada ainda.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1495.1
+  },
+  {
+   "id": "r049",
+   "lang": "en",
+   "class": "plan",
+   "text": "Let's set up a link vault widget; propose the steps first.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "plan_task"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1583.9
+  },
+  {
+   "id": "r050",
+   "lang": "pt",
+   "class": "plan",
+   "text": "Vamos criar um cofre de links; propõe os passos primeiro.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "plan_task"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1567.5
+  },
+  {
+   "id": "r051",
+   "lang": "en",
+   "class": "plan_cancel",
+   "text": "Actually, cancel that plan.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1306.9
+  },
+  {
+   "id": "r052",
+   "lang": "pt",
+   "class": "plan_cancel",
+   "text": "Afinal, cancela esse plano.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1311.2
+  },
+  {
+   "id": "r053",
+   "lang": "en",
+   "class": "approval",
+   "text": "Yes, go ahead.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1455.2
+  },
+  {
+   "id": "r054",
+   "lang": "pt",
+   "class": "approval",
+   "text": "Sim, podes avançar.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1465.3
+  },
+  {
+   "id": "r055",
+   "lang": "en",
+   "class": "decline",
+   "text": "No, not now.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1477.2
+  },
+  {
+   "id": "r056",
+   "lang": "pt",
+   "class": "decline",
+   "text": "Não, deixa estar.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1452.2
+  },
+  {
+   "id": "r057",
+   "lang": "en",
+   "class": "directive",
+   "text": "From now on, end every reply with a short joke.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": "conversation_closer"
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 2092.8
+  },
+  {
+   "id": "r058",
+   "lang": "pt",
+   "class": "directive",
+   "text": "A partir de agora começa cada resposta com uma curiosidade científica.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": "conversation_opener"
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 2318.6
+  },
+  {
+   "id": "r059",
+   "lang": "en",
+   "class": "directive",
+   "text": "Always call me Trailblazer.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": "conversation_opener"
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1974.9
+  },
+  {
+   "id": "r060",
+   "lang": "pt",
+   "class": "directive_clear",
+   "text": "Podes parar de contar piadas no fim das respostas.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": "conversation_closer"
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1688.0
+  },
+  {
+   "id": "r061",
+   "lang": "en",
+   "class": "directive_clear",
+   "text": "Stop adding the quote at the end.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": "conversation_closer"
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1739.0
+  },
+  {
+   "id": "r062",
+   "lang": "en",
+   "class": "world",
+   "text": "What is the capital of Spain?",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1706.8
+  },
+  {
+   "id": "r063",
+   "lang": "pt",
+   "class": "world",
+   "text": "Quantos dias tem um ano bissexto?",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1734.2
+  },
+  {
+   "id": "r064",
+   "lang": "en",
+   "class": "world",
+   "text": "Explain what a hash map is in two sentences.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1467.9
+  },
+  {
+   "id": "r065",
+   "lang": "pt",
+   "class": "world",
+   "text": "Explica-me o que é um índice vectorial.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1723.7
+  },
+  {
+   "id": "r066",
+   "lang": "en",
+   "class": "world_current",
+   "text": "Who won the last Champions League final?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "brave_web_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1834.8
+  },
+  {
+   "id": "r067",
+   "lang": "pt",
+   "class": "world_current",
+   "text": "Qual é a cotação do metical hoje?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "brave_web_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 2262.5
+  },
+  {
+   "id": "r068",
+   "lang": "en",
+   "class": "reminder",
+   "text": "Remind me in 20 minutes to call Rui.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1883.4
+  },
+  {
+   "id": "r069",
+   "lang": "pt",
+   "class": "reminder",
+   "text": "Lembra-me amanhã às 9 de ligar ao João.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "create_widget"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": false,
+    "freshness": "current",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 2205.4
+  },
+  {
+   "id": "r070",
+   "lang": "en",
+   "class": "reflection",
+   "text": "I think I've been too hard on myself this week.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1745.6
+  },
+  {
+   "id": "r071",
+   "lang": "pt",
+   "class": "reflection",
+   "text": "Acho que tenho andado cansado demais ultimamente.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1716.8
+  },
+  {
+   "id": "r072",
+   "lang": "en",
+   "class": "emotional",
+   "text": "I'm really frustrated with this project today.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1324.3
+  },
+  {
+   "id": "r073",
+   "lang": "pt",
+   "class": "emotional",
+   "text": "Estou mesmo feliz com o resultado de hoje.",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "feedback",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1300.5
+  },
+  {
+   "id": "r074",
+   "lang": "en",
+   "class": "correction_fact",
+   "text": "Actually my dog is called Kika, not Bolt.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1375.1
+  },
+  {
+   "id": "r075",
+   "lang": "pt",
+   "class": "correction_fact",
+   "text": "Corrijo: moro em Inhambane, não em Maxixe.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1371.7
+  },
+  {
+   "id": "r076",
+   "lang": "en",
+   "class": "mixed_fact_question",
+   "text": "My name is Ana and I live in Valencia — what else do you know about me?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1378.9
+  },
+  {
+   "id": "r077",
+   "lang": "pt",
+   "class": "mixed_fact_question",
+   "text": "Chamo-me Joana e vivo na Aveiro; o que mais sabes sobre mim?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1569.0
+  },
+  {
+   "id": "r078",
+   "lang": "en",
+   "class": "tool_question_named",
+   "text": "Can you use memory_timeline to show my last ten memories?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_timeline"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1588.9
+  },
+  {
+   "id": "r079",
+   "lang": "pt",
+   "class": "tool_question_named",
+   "text": "Consegues usar o memory_search para ver o que guardaste sobre viagens?",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "instruction",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1585.5
+  },
+  {
+   "id": "r080",
+   "lang": "en",
+   "class": "meta",
+   "text": "How does your memory work?",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1858.7
+  },
+  {
+   "id": "r081",
+   "lang": "pt",
+   "class": "meta",
+   "text": "Como é que te lembras das coisas?",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "question",
+    "needs_memory": false,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 2062.5
+  },
+  {
+   "id": "r082",
+   "lang": "en",
+   "class": "link_update",
+   "text": "Here is the updated link for my car location: https://example.test/car/9",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1718.2
+  },
+  {
+   "id": "r083",
+   "lang": "pt",
+   "class": "link_update",
+   "text": "Aqui está o novo link da localização do meu carro: https://example.test/car/10",
+   "reference": {
+    "action_requested": false,
+    "requested_tools": [],
+    "conversation_act": "statement",
+    "needs_memory": true,
+    "freshness": "none",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 2070.9
+  },
+  {
+   "id": "r084",
+   "lang": "en",
+   "class": "recall_history",
+   "text": "Remind me what I told you about my job last week.",
+   "reference": {
+    "action_requested": true,
+    "requested_tools": [
+     "memory_search"
+    ],
+    "conversation_act": "question",
+    "needs_memory": true,
+    "freshness": "historical",
+    "feedback_polarity": null,
+    "directive_kind": null
+   },
+   "reference_model": "gemma4:12b",
+   "reference_ms": 1595.3
+  }
+ ],
+ "reference_model": "gemma4:12b",
+ "recorded_at": "2026-09-06T08:30:01Z"
+}

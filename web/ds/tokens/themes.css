@@ -1,0 +1,129 @@
+/* ============================================================================
+   Personal Agent — "Cowork" warm themes (light + dark)
+   A calmer, agent-forward direction: warm near-black / warm paper surfaces with
+   a coral (terracotta) accent. Teal is intentionally NOT used here — it stays
+   reserved for the HMG memory biomes so the memory reads as its own space.
+
+   Apply one class to a container to retheme every token-driven component:
+     <div class="pa-cowork-dark">  …  </div>
+     <div class="pa-cowork-light"> …  </div>
+   Values are bare "H S% L%" triplets to compose with hsl(var(--x) / a).
+   ============================================================================ */
+
+.pa-cowork-dark {
+  --background: 24 10% 8%;        /* @kind color */
+  --foreground: 40 14% 90%;       /* @kind color */
+  --card: 24 9% 11%;              /* @kind color */
+  --card-foreground: 40 14% 90%;  /* @kind color */
+  --popover: 24 10% 12%;          /* @kind color */
+  --popover-foreground: 40 14% 90%; /* @kind color */
+
+  --surface: 24 10% 8%;           /* @kind color */
+  --surface-2: 26 9% 11%;         /* @kind color */
+  --surface-3: 26 9% 14%;         /* @kind color */
+  --surface-hover: 26 9% 17%;     /* @kind color */
+
+  --primary: 16 65% 60%;          /* @kind color */
+  --primary-foreground: 24 12% 8%;  /* @kind color */
+  --accent: 16 65% 60%;           /* @kind color */
+  --accent-foreground: 24 12% 8%; /* @kind color */
+  --ring: 16 65% 60%;             /* @kind color */
+
+  --secondary: 26 8% 16%;         /* @kind color */
+  --secondary-foreground: 40 10% 78%; /* @kind color */
+  --muted: 26 8% 14%;             /* @kind color */
+  --muted-foreground: 34 8% 56%;  /* @kind color */
+  --text-dim: 34 8% 56%;          /* @kind color */
+  --border: 28 8% 20%;            /* @kind color */
+  --input: 26 8% 16%;             /* @kind color */
+
+  --destructive: 4 66% 56%;       /* @kind color */
+  --destructive-foreground: 40 30% 96%; /* @kind color */
+  --user-border: 16 60% 55%;      /* @kind color */
+
+  --sidebar-background: 24 10% 7%;   /* @kind color */
+  --sidebar-foreground: 40 10% 78%;  /* @kind color */
+  --sidebar-primary: 16 65% 60%;     /* @kind color */
+  --sidebar-primary-foreground: 24 12% 8%; /* @kind color */
+  --sidebar-accent: 26 8% 13%;       /* @kind color */
+  --sidebar-accent-foreground: 40 14% 90%; /* @kind color */
+  --sidebar-border: 28 8% 16%;       /* @kind color */
+  --sidebar-ring: 16 65% 60%;        /* @kind color */
+
+  --glass: 26 9% 11% / 0.8;          /* @kind color */
+  --glow-primary: 16 65% 60% / 0.14; /* @kind color */
+  --glow-user: 16 60% 55% / 0.1;     /* @kind color */
+
+  /* semantic accents (green success stays cool, warnings amber) */
+  --success: 145 45% 52%;         /* @kind color */
+  --warning: 38 88% 58%;          /* @kind color */
+  --status-active: 210 80% 62%;   /* @kind color */
+  --status-working: 38 88% 58%;   /* @kind color */
+  --status-done: 145 45% 52%;     /* @kind color */
+  --status-error: 4 70% 60%;      /* @kind color */
+  --thinking: 268 55% 70%;        /* @kind color */
+
+  /* diff tints */
+  --diff-add-bg: 145 45% 40% / 0.14;   /* @kind color */
+  --diff-add-fg: 145 50% 62%;          /* @kind color */
+  --diff-del-bg: 4 66% 52% / 0.14;     /* @kind color */
+  --diff-del-fg: 4 70% 66%;            /* @kind color */
+}
+
+.pa-cowork-light {
+  --background: 40 30% 97%;       /* @kind color */
+  --foreground: 26 16% 16%;       /* @kind color */
+  --card: 40 33% 99%;             /* @kind color */
+  --card-foreground: 26 16% 16%;  /* @kind color */
+  --popover: 40 33% 99%;          /* @kind color */
+  --popover-foreground: 26 16% 16%; /* @kind color */
+
+  --surface: 40 30% 97%;          /* @kind color */
+  --surface-2: 40 26% 94%;        /* @kind color */
+  --surface-3: 40 22% 90%;        /* @kind color */
+  --surface-hover: 38 24% 88%;    /* @kind color */
+
+  --primary: 15 58% 50%;          /* @kind color */
+  --primary-foreground: 40 40% 98%; /* @kind color */
+  --accent: 15 58% 50%;           /* @kind color */
+  --accent-foreground: 40 40% 98%; /* @kind color */
+  --ring: 15 58% 50%;             /* @kind color */
+
+  --secondary: 40 24% 91%;        /* @kind color */
+  --secondary-foreground: 26 14% 28%; /* @kind color */
+  --muted: 40 22% 92%;            /* @kind color */
+  --muted-foreground: 30 8% 42%;  /* @kind color */
+  --text-dim: 30 8% 42%;          /* @kind color */
+  --border: 38 18% 84%;           /* @kind color */
+  --input: 38 20% 90%;            /* @kind color */
+
+  --destructive: 4 64% 50%;       /* @kind color */
+  --destructive-foreground: 40 40% 98%; /* @kind color */
+  --user-border: 15 55% 52%;      /* @kind color */
+
+  --sidebar-background: 40 28% 95%;  /* @kind color */
+  --sidebar-foreground: 26 14% 28%;  /* @kind color */
+  --sidebar-primary: 15 58% 50%;     /* @kind color */
+  --sidebar-primary-foreground: 40 40% 98%; /* @kind color */
+  --sidebar-accent: 40 24% 90%;      /* @kind color */
+  --sidebar-accent-foreground: 26 16% 16%; /* @kind color */
+  --sidebar-border: 38 18% 86%;      /* @kind color */
+  --sidebar-ring: 15 58% 50%;        /* @kind color */
+
+  --glass: 40 30% 97% / 0.8;         /* @kind color */
+  --glow-primary: 15 58% 50% / 0.12; /* @kind color */
+  --glow-user: 15 55% 52% / 0.1;     /* @kind color */
+
+  --success: 145 50% 38%;         /* @kind color */
+  --warning: 34 80% 46%;          /* @kind color */
+  --status-active: 212 76% 50%;   /* @kind color */
+  --status-working: 34 80% 48%;   /* @kind color */
+  --status-done: 145 50% 38%;     /* @kind color */
+  --status-error: 4 64% 50%;      /* @kind color */
+  --thinking: 268 45% 52%;        /* @kind color */
+
+  --diff-add-bg: 145 50% 40% / 0.12;   /* @kind color */
+  --diff-add-fg: 145 55% 32%;          /* @kind color */
+  --diff-del-bg: 4 64% 50% / 0.12;     /* @kind color */
+  --diff-del-fg: 4 66% 46%;            /* @kind color */
+}

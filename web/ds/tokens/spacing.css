@@ -1,0 +1,53 @@
+/* ============================================================================
+   Personal Agent — Spacing, radius, shadow, motion tokens
+   ============================================================================ */
+:root {
+  /* ---- Spacing scale (4px base, matches Tailwind usage in the app) ---- */
+  --space-0: 0px;
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;    /* default panel/card padding */
+  --space-4: 16px;    /* chat gutter, input padding */
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* ---- Radius — base --radius is 0.75rem; shadcn derives md/sm from it ---- */
+  --radius: 0.75rem;                    /* 12px — lg */
+  --radius-lg: var(--radius);           /* 12px — cards, chips groups */
+  --radius-md: calc(var(--radius) - 2px); /* 10px — buttons, controls */
+  --radius-sm: calc(var(--radius) - 4px); /* 8px  — small controls */
+  --radius-xl: 1rem;                    /* 16px — message bubbles (rounded-2xl-ish) */
+  --radius-2xl: 1.25rem;                /* 20px — input container, logo tile */
+  --radius-full: 9999px;                /* pills, status dots, avatars */
+
+  /* ---- Panel widths (layout constants from the app) ---- */
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 48px;
+  --rightpanel-default: 420px;
+  --rightpanel-min: 300px;
+  --rightpanel-max: 860px;
+  --chat-measure: 48rem;   /* max-w-3xl message column */
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 1px 2px 0 hsl(228 20% 3% / 0.4);
+  --shadow-md: 0 4px 12px hsl(228 20% 3% / 0.45);
+  --shadow-lg: 0 10px 30px hsl(228 20% 3% / 0.55);
+  --shadow-xl: 0 20px 50px hsl(228 20% 2% / 0.6);
+
+  /* ---- Glow (teal primary + blue user) — the app's signature lighting ---- */
+  --glow-primary-shadow: 0 0 20px hsl(var(--glow-primary)), 0 0 40px hsl(var(--glow-primary));
+  --glow-user-shadow: 0 0 15px hsl(var(--glow-user));
+
+  /* ---- Glass / blur ---- */
+  --blur-panel: 16px;
+
+  /* ---- Motion — short, ease-out, no bounce ---- */
+  --dur-fast: 0.15s;   /* @kind other */
+  --dur-base: 0.2s;    /* @kind other */
+  --dur-slow: 0.3s;    /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);  /* @kind other */
+  --ease-standard: ease-out;                  /* @kind other */
+}

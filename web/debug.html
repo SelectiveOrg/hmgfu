@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HMG-Fu — Hex Memory Grid</title>
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --border: #30363d; --text: #e6edf3;
+    --dim: #8b949e; --accent: #58a6ff; --gold: #d29922; --green: #3fb950;
+    --red: #f85149; --purple: #bc8cff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font: 14px/1.45 "Segoe UI", system-ui, sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+  header { display: flex; align-items: center; gap: 12px; padding: 8px 14px; border-bottom: 1px solid var(--border); background: var(--panel); }
+  header h1 { font-size: 15px; font-weight: 600; }
+  header h1 span { color: var(--accent); }
+  #stats { color: var(--dim); font-size: 12px; flex: 1; }
+  button { background: #21262d; color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 5px 12px; cursor: pointer; font-size: 13px; }
+  button:hover { border-color: var(--accent); }
+  button:disabled { opacity: .45; cursor: wait; }
+  #main { flex: 1; display: flex; min-height: 0; }
+  #gridwrap { flex: 1; position: relative; min-width: 0; }
+  canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+  #inspector { position: absolute; left: 10px; bottom: 10px; max-width: 340px; max-height: 45%; overflow-y: auto; background: rgba(22,27,34,.95); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 12px; display: none; }
+  #inspector h3 { font-size: 13px; margin-bottom: 4px; color: var(--accent); }
+  #inspector .meta { color: var(--dim); }
+  #inspector .bar { height: 4px; background: #21262d; border-radius: 2px; margin: 2px 0 6px; }
+  #inspector .bar i { display: block; height: 100%; border-radius: 2px; background: var(--accent); }
+  #legend { position: absolute; right: 10px; top: 10px; background: rgba(22,27,34,.9); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 11px; color: var(--dim); }
+  #legend b { color: var(--text); font-weight: 600; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+  #side { width: 400px; border-left: 1px solid var(--border); display: flex; flex-direction: column; background: var(--panel); }
+  #tabs { display: flex; border-bottom: 1px solid var(--border); }
+  #tabs button { flex: 1; border: none; border-radius: 0; background: none; padding: 8px; color: var(--dim); border-bottom: 2px solid transparent; }
+  #tabs button.active { color: var(--text); border-bottom-color: var(--accent); }
+  .tabpane { flex: 1; display: none; flex-direction: column; min-height: 0; }
+  .tabpane.active { display: flex; }
+  #chatlog { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+  .msg { padding: 8px 11px; border-radius: 10px; max-width: 92%; white-space: pre-wrap; word-wrap: break-word; }
+  .msg.user { background: #1f6feb33; align-self: flex-end; }
+  .msg.bot { background: #21262d; align-self: flex-start; }
+  .msg.sys { color: var(--dim); font-size: 12px; align-self: center; text-align: center; }
+  #chatform { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--border); }
+  #chatinput { flex: 1; background: #0d1117; border: 1px solid var(--border); border-radius: 6px; color: var(--text); padding: 8px 10px; font-size: 14px; }
+  #tracepane, #dreampane { overflow-y: auto; padding: 12px; font-size: 12px; }
+  .trace-item { border: 1px solid var(--border); border-radius: 6px; padding: 7px 9px; margin-bottom: 7px; cursor: pointer; }
+  .trace-item:hover { border-color: var(--accent); }
+  .trace-item .score { color: var(--gold); font-weight: 600; }
+  .trace-item .reason { color: var(--dim); }
+  .report { border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; margin-bottom: 8px; }
+  .report .when { color: var(--dim); font-size: 11px; }
+  .report .insight { color: var(--purple); }
+  pre#ctx { white-space: pre-wrap; color: var(--dim); background: #0d1117; border: 1px solid var(--border); border-radius: 6px; padding: 8px; margin-top: 8px; font-size: 11px; font-family: Consolas, monospace; }
+</style>
+</head>
+<body>
+<header>
+  <h1>HMG-Fu <span>Hex Memory Grid</span></h1>
+  <div id="stats">loading…</div>
+  <button id="dreambtn" title="Run the full dream loop">🌙 Dream</button>
+  <button id="refreshbtn" title="Reload the grid">⟳</button>
+</header>
+<div id="main">
+  <div id="gridwrap">
+    <canvas id="grid"></canvas>
+    <div id="legend">
+      <b>Layers</b><br>
+      <span class="dot" style="background:#8b949e"></span>L0 raw<br>
+      <span class="dot" style="background:#58a6ff"></span>L1 session<br>
+      <span class="dot" style="background:#3fb950"></span>L2 project<br>
+      <span class="dot" style="background:#d29922"></span>L3 identity<br>
+      <span class="dot" style="background:#f85149"></span>L4 world<br>
+      <span class="dot" style="background:#bc8cff"></span>L5 pattern<br>
+      <b>Edges</b><br>
+      <span style="color:#3d444d">──</span> Fu edge &nbsp;
+      <span style="color:#bc8cff">╌╌</span> wormhole<br>
+      <span style="color:#f85149">──</span> tension &gt; 0.4<br>
+      <span style="color:var(--dim)">size = density · glow = energy<br>drag to pan · wheel to zoom (macro→micro)</span>
+    </div>
+    <div id="inspector"></div>
+  </div>
+  <div id="side">
+    <div id="tabs">
+      <button class="active" data-tab="chat">Chat</button>
+      <button data-tab="trace">Memory trace</button>
+      <button data-tab="dream">Dream reports</button>
+    </div>
+    <div class="tabpane active" id="pane-chat">
+      <div id="chatlog"><div class="msg sys">Talk to gemma4:12b — every turn retrieves from and writes to the hex grid.</div></div>
+      <form id="chatform">
+        <input id="chatinput" placeholder="Say something memorable…" autocomplete="off">
+        <button type="submit" id="sendbtn">Send</button>
+      </form>
+    </div>
+    <div class="tabpane" id="pane-trace">
+      <div id="tracepane"><div class="msg sys">After a chat turn, the memories that were activated — and the Fu path that carried each one — appear here ("where the AI walked").</div></div>
+    </div>
+    <div class="tabpane" id="pane-dream">
+      <div id="dreampane"></div>
+    </div>
+  </div>
+</div>
+<script>
+"use strict";
+const LAYER_COLORS = { L0_raw:"#8b949e", L1_session:"#58a6ff", L2_project:"#3fb950",
+  L3_identity:"#d29922", L4_world_model:"#f85149", L5_deep_pattern:"#bc8cff" };
+const HEX = 26;
+let points = [], edges = [], byId = {};
+let cam = { x: 0, y: 0, zoom: 1 };
+let highlight = new Set();
+let selected = null;
+
+const canvas = document.getElementById("grid");
+const ctx2d = canvas.getContext("2d");
+
+function axialToPixel(q, r) {
+  return { x: HEX * (1.5 * q), y: HEX * (Math.sqrt(3) * (r + q / 2)) };
+}
+function resize() {
+  canvas.width = canvas.clientWidth * devicePixelRatio;
+  canvas.height = canvas.clientHeight * devicePixelRatio;
+  draw();
+}
+window.addEventListener("resize", resize);
+
+function worldToScreen(p) {
+  return { x: (p.x - cam.x) * cam.zoom + canvas.width / 2,
+           y: (p.y - cam.y) * cam.zoom + canvas.height / 2 };
+}
+
+function hexPath(cx, cy, size) {
+  ctx2d.beginPath();
+  for (let i = 0; i < 6; i++) {
+    const a = Math.PI / 180 * (60 * i);
+    const x = cx + size * Math.cos(a), y = cy + size * Math.sin(a);
+    i === 0 ? ctx2d.moveTo(x, y) : ctx2d.lineTo(x, y);
+  }
+  ctx2d.closePath();
+}
+
+let rafId = 0;
+function schedule() { cancelAnimationFrame(rafId); rafId = requestAnimationFrame(draw); }
+function draw() {
+  ctx2d.clearRect(0, 0, canvas.width, canvas.height);
+  // edges first
+  for (const e of edges) {
+    const a = byId[e.from_id], b = byId[e.to_id];
+    if (!a || !b) continue;
+    const pa = worldToScreen(axialToPixel(a.hex.q, a.hex.r));
+    const pb = worldToScreen(axialToPixel(b.hex.q, b.hex.r));
+    if ((pa.x < 0 && pb.x < 0) || (pa.x > canvas.width && pb.x > canvas.width) ||
+        (pa.y < 0 && pb.y < 0) || (pa.y > canvas.height && pb.y > canvas.height)) continue;
+    ctx2d.lineWidth = Math.max(0.4, e.kappa * 2.4) * cam.zoom;
+    if (e.relation_type === "wormhole") {
+      ctx2d.strokeStyle = "#bc8cff"; ctx2d.setLineDash([6, 5]);
+    } else if (e.tension > 0.4) {
+      ctx2d.strokeStyle = "#f8514977"; ctx2d.setLineDash([]);
+    } else {
+      ctx2d.strokeStyle = highlight.has(e.id) ? "#d29922" : "#3d444d";
+      ctx2d.setLineDash([]);
+    }
+    ctx2d.beginPath(); ctx2d.moveTo(pa.x, pa.y); ctx2d.lineTo(pb.x, pb.y); ctx2d.stroke();
+  }
+  ctx2d.setLineDash([]);
+  // points
+  for (const p of points) {
+    const pos = worldToScreen(axialToPixel(p.hex.q, p.hex.r));
+    if (pos.x < -60 || pos.x > canvas.width + 60 || pos.y < -60 || pos.y > canvas.height + 60) continue;
+    const size = (HEX * 0.55 + HEX * 0.4 * p.density) * cam.zoom;
+    if (p.energy > 0.15) {
+      ctx2d.save();
+      ctx2d.shadowColor = LAYER_COLORS[p.layer] || "#8b949e";
+      ctx2d.shadowBlur = 18 * p.energy * cam.zoom;
+      hexPath(pos.x, pos.y, size);
+      ctx2d.fillStyle = "#0000"; ctx2d.fill();
+      ctx2d.restore();
+    }
+    hexPath(pos.x, pos.y, size);
+    const color = LAYER_COLORS[p.layer] || "#8b949e";
+    ctx2d.fillStyle = p.status === "dormant" ? "#21262d" :
+                      p.status === "superseded" ? "#3d1d1d" : color + "cc";
+    ctx2d.fill();
+    ctx2d.lineWidth = (highlight.has(p.id) ? 2.4 : selected === p.id ? 2.2 : 1) * cam.zoom;
+    ctx2d.strokeStyle = highlight.has(p.id) ? "#d29922" : selected === p.id ? "#fff" :
+                        p.type === "macro" ? "#fff9" : "#0d1117";
+    ctx2d.stroke();
+    if (cam.zoom > 0.75) {
+      ctx2d.fillStyle = "#e6edf3";
+      ctx2d.font = `${10 * cam.zoom}px Segoe UI`;
+      ctx2d.textAlign = "center";
+      const label = (p.type === "macro" ? "◈ " : "") + (p.title || "").slice(0, 16);
+      ctx2d.fillText(label, pos.x, pos.y + size + 11 * cam.zoom);
+    }
+  }
+}
+
+// pan & zoom (vision doc: macro → micro navigation)
+let dragging = false, lastPos = null;
+canvas.addEventListener("mousedown", e => { dragging = true; lastPos = { x: e.clientX, y: e.clientY }; });
+window.addEventListener("mouseup", () => dragging = false);
+window.addEventListener("mousemove", e => {
+  if (!dragging) return;
+  cam.x -= (e.clientX - lastPos.x) * devicePixelRatio / cam.zoom;
+  cam.y -= (e.clientY - lastPos.y) * devicePixelRatio / cam.zoom;
+  lastPos = { x: e.clientX, y: e.clientY };
+  schedule();
+});
+canvas.addEventListener("wheel", e => {
+  e.preventDefault();
+  cam.zoom = Math.min(4, Math.max(0.15, cam.zoom * (e.deltaY < 0 ? 1.12 : 0.89)));
+  schedule();
+}, { passive: false });
+canvas.addEventListener("click", e => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = (e.clientX - rect.left) * devicePixelRatio, my = (e.clientY - rect.top) * devicePixelRatio;
+  let best = null, bestDist = 1e9;
+  for (const p of points) {
+    const pos = worldToScreen(axialToPixel(p.hex.q, p.hex.r));
+    const d = Math.hypot(pos.x - mx, pos.y - my);
+    if (d < HEX * cam.zoom && d < bestDist) { best = p; bestDist = d; }
+  }
+  selected = best ? best.id : null;
+  showInspector(best);
+  draw();
+});
+
+function bar(v, color) {
+  return `<div class="bar"><i style="width:${Math.round(v*100)}%;background:${color||"var(--accent)"}"></i></div>`;
+}
+function esc(s) { return (s || "").replace(/[&<>]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;" }[c])); }
+
+function showInspector(p) {
+  const el = document.getElementById("inspector");
+  if (!p) { el.style.display = "none"; return; }
+  el.style.display = "block";
+  el.innerHTML = `
+    <h3>${esc(p.title) || "(untitled)"} </h3>
+    <div class="meta">${p.type} · ${p.layer} · ${p.status} · src ${p.source} · extractor ${p.extractor}</div>
+    <p style="margin:6px 0">${esc(p.summary || p.content.slice(0, 180))}</p>
+    density ρ ${p.density.toFixed(2)} ${bar(p.density, "#d29922")}
+    energy ${p.energy.toFixed(2)} ${bar(p.energy, "#3fb950")}
+    stability ${p.stability.toFixed(2)} ${bar(p.stability, "#58a6ff")}
+    <div class="meta">entities: ${esc(p.entities.join(", ")) || "—"}<br>
+    topics: ${esc(p.topics.join(", ")) || "—"}<br>
+    hex (${p.hex.q}, ${p.hex.r}, ${p.hex.s}) · accessed ${p.access_count}×</div>`;
+}
+
+let fitted = false;
+function fitView() {
+  const act = points.filter(p => p.status === "active");
+  if (!act.length) return;
+  const px = act.map(p => axialToPixel(p.hex.q, p.hex.r));
+  const xs = px.map(p => p.x), ys = px.map(p => p.y);
+  cam.x = (Math.min(...xs) + Math.max(...xs)) / 2;
+  cam.y = (Math.min(...ys) + Math.max(...ys)) / 2;
+  const span = Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys), 1);
+  cam.zoom = Math.min(2, Math.max(0.15, Math.min(canvas.width, canvas.height) * 0.85 / span));
+}
+async function loadGraph() {
+  const res = await fetch("/api/graph");
+  const data = await res.json();
+  points = data.points; edges = data.edges;
+  byId = Object.fromEntries(points.map(p => [p.id, p]));
+  if (!fitted) { fitted = true; fitView(); }
+  const s = data.stats;
+  document.getElementById("stats").textContent =
+    `${s.active} active · ${s.dormant} dormant · ${s.edges} edges · ${s.wormholes} wormholes · ${s.macros} macros`;
+  draw();
+}
+
+// --- tabs -----------------------------------------------------------------
+document.querySelectorAll("#tabs button").forEach(btn => btn.addEventListener("click", () => {
+  document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("active", b === btn));
+  document.querySelectorAll(".tabpane").forEach(p =>
+    p.classList.toggle("active", p.id === "pane-" + btn.dataset.tab));
+  if (btn.dataset.tab === "dream") loadReports();
+}));
+
+// --- chat -----------------------------------------------------------------
+const chatlog = document.getElementById("chatlog");
+function addMsg(cls, text) {
+  const div = document.createElement("div");
+  div.className = "msg " + cls;
+  div.textContent = text;
+  chatlog.appendChild(div);
+  chatlog.scrollTop = chatlog.scrollHeight;
+  return div;
+}
+document.getElementById("chatform").addEventListener("submit", async e => {
+  e.preventDefault();
+  const input = document.getElementById("chatinput");
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = "";
+  addMsg("user", text);
+  const pending = addMsg("sys", "thinking (gemma4:12b)…");
+  document.getElementById("sendbtn").disabled = true;
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text }),
+    });
+    if (!res.ok) throw new Error(await res.text());
+    const data = await res.json();
+    pending.remove();
+    addMsg("bot", data.response);
+    addMsg("sys", `${data.retrieved.length} memories · retrieval ${data.retrieval_ms} ms` +
+      (data.mini_dream ? " · mini-dream ran" : ""));
+    renderTrace(data);
+    highlight = new Set();
+    for (const r of data.retrieved) {
+      highlight.add(r.point.id);
+      if (r.edge) highlight.add(r.edge.id);
+    }
+    await loadGraph();
+  } catch (err) {
+    pending.textContent = "error: " + err.message;
+  } finally {
+    document.getElementById("sendbtn").disabled = false;
+  }
+});
+
+function renderTrace(data) {
+  const pane = document.getElementById("tracepane");
+  const items = data.retrieved.map(r => `
+    <div class="trace-item" data-id="${r.point.id}">
+      <span class="score">${r.score.toFixed(2)}</span>
+      <b>${esc(r.point.title || r.point.summary || "").slice(0, 60)}</b><br>
+      <span class="reason">${esc(r.reason)}</span>
+    </div>`).join("");
+  pane.innerHTML = (items || '<div class="msg sys">no memories activated</div>') +
+    `<b>Injected context:</b><pre id="ctx">${esc(data.injected_context)}</pre>`;
+  pane.querySelectorAll(".trace-item").forEach(el => el.addEventListener("click", () => {
+    selected = el.dataset.id;
+    const p = byId[selected];
+    if (p) {
+      const pos = axialToPixel(p.hex.q, p.hex.r);
+      cam.x = pos.x; cam.y = pos.y; cam.zoom = Math.max(cam.zoom, 1.4);
+      showInspector(p); draw();
+    }
+  }));
+}
+
+// --- dream ------------------------------------------------------------------
+document.getElementById("dreambtn").addEventListener("click", async () => {
+  const btn = document.getElementById("dreambtn");
+  btn.disabled = true; btn.textContent = "🌙 dreaming…";
+  try {
+    const res = await fetch("/api/dream", { method: "POST" });
+    const data = await res.json();
+    addMsg("sys", "dream loop: " + data.report.summary);
+    await loadGraph();
+    loadReports();
+  } finally {
+    btn.disabled = false; btn.textContent = "🌙 Dream";
+  }
+});
+
+async function loadReports() {
+  const res = await fetch("/api/reports");
+  const data = await res.json();
+  document.getElementById("dreampane").innerHTML = data.reports.map(r => `
+    <div class="report">
+      <div class="when">${new Date(r.created_at).toLocaleString()}</div>
+      <div>${esc(r.summary)}</div>
+      ${r.insights.map(i => `<div class="insight">💡 ${esc(i)}</div>`).join("")}
+    </div>`).join("") || '<div class="msg sys">no dream reports yet</div>';
+}
+
+document.getElementById("refreshbtn").addEventListener("click", loadGraph);
+resize();
+loadGraph();
+</script>
+</body>
+</html>

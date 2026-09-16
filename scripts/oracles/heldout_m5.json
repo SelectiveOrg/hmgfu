@@ -1,0 +1,25 @@
+{
+ "_doc": "Phase 77.3 held-out set — one read path over assertions. Sealed BEFORE the code (the read path still renders from canonical_facts at sealing time); run once with scripts/run_heldout.py --set m5 before and after 77.3 and reported as-is. Case type 'facts': messages applied to a fresh FactStore; expect.active = exact active dict (or active_subset); render_absent/contains on render_lines(); history_contains on render_history_lines(). Families: retraction (a clear/negation must retire the assertion the rendered line comes from), cascade (a named negation retires the wrong value everywhere), entity (two pets = two entities, both rendered), validity, modality, supersession (history view), precision (the predicate-as-name false positive found in the 77.3 probe), restatement.",
+ "shell": [],
+ "turns": [],
+ "facts": [
+  {"id": "negation_clears_and_retracts", "family": "retraction", "messages": ["My dog is Rex.", "I don't have a dog called Rex."], "expect": {"active": {}, "render_absent": ["Rex"]}},
+  {"id": "clear_then_reassert", "family": "retraction", "messages": ["My dog is Rex.", "I don't have a dog called Rex.", "My dog is Max."], "expect": {"active": {"pet.dog.name": "Max"}, "render_absent": ["Rex"], "render_contains": ["Max"]}},
+  {"id": "negation_pt", "family": "retraction", "messages": ["O meu cão chama-se Bento.", "Já não tenho um cão chamado Bento."], "expect": {"active": {}, "render_absent": ["Bento"]}},
+  {"id": "named_negation_cascade", "family": "cascade", "messages": ["My dog is Bento.", "My dog is Teca, not Bento."], "expect": {"active": {"pet.dog.name": "Teca"}, "render_absent": ["Bento"], "render_contains": ["Teca"]}},
+  {"id": "named_negation_cascade_pt", "family": "cascade", "messages": ["O meu cão chama-se Bento.", "O meu cão é a Teca, não o Bento."], "expect": {"active_subset": {"pet.dog.name": "Teca"}, "render_absent": ["Bento"]}},
+  {"id": "two_cats_two_entities", "family": "entity", "messages": ["My cat is Luna and my cat is Sol. They are two different cats."], "expect": {"render_contains": ["Luna", "Sol"]}},
+  {"id": "one_cat_corrected_not_two", "family": "entity", "messages": ["My cat is Luna.", "My cat is Sol."], "expect": {"active": {"pet.cat.name": "Sol"}, "render_absent": ["Luna"]}},
+  {"id": "validity_since_pt", "family": "validity", "messages": ["Desde 2023 eu moro em Chimoio."], "expect": {"active": {"identity.location": "Chimoio"}, "render_contains": ["Chimoio"]}},
+  {"id": "validity_past_year_not_current", "family": "validity", "messages": ["In 2010 I lived in Lisbon."], "expect": {"active": {}, "render_absent": ["Lisbon"]}},
+  {"id": "hypothetical_not_asserted", "family": "modality", "messages": ["If I lived in Paris I would be happier."], "expect": {"active": {}, "render_absent": ["Paris"]}},
+  {"id": "citation_not_fact", "family": "modality", "messages": ["My friend says 'my name is Oscar'."], "expect": {"active": {}, "render_absent": ["Oscar"]}},
+  {"id": "fiction_then_real", "family": "modality", "messages": ["For a story I am writing: my name is Oscar. Anyway, my real name is Nadia Costa."], "expect": {"active": {"identity.name": "Nadia Costa"}, "render_absent": ["Oscar"]}},
+  {"id": "move_history_view", "family": "supersession", "messages": ["I live in Lisbon.", "I live in Chimoio now."], "expect": {"active": {"identity.location": "Chimoio"}, "render_absent": ["Lisbon"], "history_contains": ["Lisbon"]}},
+  {"id": "color_correction_history", "family": "supersession", "messages": ["My favourite color is teal.", "Actually my favourite color is amber."], "expect": {"active": {"pref.color": "amber"}, "render_absent": ["teal"], "history_contains": ["teal"]}},
+  {"id": "predicate_is_not_the_name", "family": "precision", "messages": ["My dog is Rex.", "My dog Rex is 4 years old."], "expect": {"active": {"pet.dog.name": "Rex"}, "render_absent": ["4 years old"]}},
+  {"id": "breed_sentence_writes_nothing_wrong", "family": "precision", "messages": ["My dog is Rex.", "Rex is a beagle."], "expect": {"active_subset": {"pet.dog.name": "Rex"}, "render_absent": ["beagle"]}},
+  {"id": "restatement_no_duplicate", "family": "restatement", "messages": ["My name is Nadia Costa.", "My name is Nadia Costa."], "expect": {"active": {"identity.name": "Nadia Costa"}}},
+  {"id": "two_facts_one_sentence", "family": "restatement", "messages": ["My name is Ana and I live in Valencia."], "expect": {"active_subset": {"identity.name": "Ana", "identity.location": "Valencia"}, "render_contains": ["Ana", "Valencia"]}}
+ ]
+}

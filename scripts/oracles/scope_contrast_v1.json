@@ -1,0 +1,44 @@
+{
+  "_doc": "Phase 91.Z contrast set. Authored BEFORE any correction, from the criteria in ROADMAP 91.Z3. Every NEGATIVE is paired with a POSITIVE in the SAME construction: a negative demonstrates protection only if its positive is actually recognised, otherwise the pair is VACUOUS and proves nothing. Pairs vary word order (value-first vs attribute-first), length, clause nesting and language, and cover an OPEN slot as well as closed ones. Includes the cases from reports/codex_review_91y/REVIEW.md and the three legitimate assertions whose coverage Y lost. Run: .venv/Scripts/python.exe scripts/run_write_set.py --set scripts/oracles/scope_contrast_v1.json   (no --mapper: this isolates the regex production path). 'expect': {} means write NOTHING and leave the prior value intact.",
+  "items": [
+    {"id": "c101", "pair": "p1_en_value_first", "polarity": "positive", "lang": "en", "prior": ["My dog is called Rex."], "text": "Green is my dog.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "c102", "pair": "p1_en_value_first", "polarity": "negative", "lang": "en", "prior": ["My dog is called Rex."], "text": "I deny that Green is my dog.", "expect": {}},
+    {"id": "c103", "pair": "p1_en_value_first", "polarity": "negative", "lang": "en", "prior": ["My dog is called Rex."], "text": "I never said that Green is my dog.", "expect": {}},
+    {"id": "c104", "pair": "p1_en_value_first", "polarity": "negative", "lang": "en", "prior": ["My dog is called Rex."], "text": "I doubt that Green is my dog.", "expect": {}},
+
+    {"id": "c201", "pair": "p2_en_attr_first", "polarity": "positive", "lang": "en", "prior": ["My dog is called Rex."], "text": "My dog is called Green.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "c202", "pair": "p2_en_attr_first", "polarity": "negative", "lang": "en", "prior": ["My dog is called Rex."], "text": "I deny that my dog is called Green.", "expect": {}},
+    {"id": "c203", "pair": "p2_en_attr_first", "polarity": "negative", "lang": "en", "prior": ["My dog is called Rex."], "text": "I doubt that my dog is called Green.", "expect": {}},
+    {"id": "c204", "pair": "p2_en_attr_first", "polarity": "negative", "lang": "en", "prior": ["My dog is called Rex."], "text": "I never said that my dog is called Green.", "expect": {}},
+
+    {"id": "c301", "pair": "p3_en_long_governor", "polarity": "positive", "lang": "en", "prior": ["My dog is called Rex."], "text": "I am telling you that Green is my dog.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "c302", "pair": "p3_en_long_governor", "polarity": "positive", "lang": "en", "prior": ["My dog is called Rex."], "text": "I know that Green is my dog.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "c303", "pair": "p3_en_long_governor", "polarity": "positive", "lang": "en", "prior": ["My dog is called Rex."], "text": "I can confirm that Green is my dog.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "c304", "pair": "p3_en_long_governor", "polarity": "negative", "lang": "en", "prior": ["My dog is called Rex."], "text": "I never said to any of you that Green is my dog.", "expect": {}},
+    {"id": "c305", "pair": "p3_en_long_governor", "polarity": "negative", "lang": "en", "prior": ["My dog is called Rex."], "text": "I have never once told anybody here that Green is my dog.", "expect": {}},
+
+    {"id": "c401", "pair": "p4_en_nested", "polarity": "positive", "lang": "en", "prior": ["My favorite color is red."], "text": "Blue is my favorite color.", "expect": {"pref.color": "blue"}},
+    {"id": "c402", "pair": "p4_en_nested", "polarity": "positive", "lang": "en", "prior": ["My favorite color is red."], "text": "I confirm that blue is my favorite color.", "expect": {"pref.color": "blue"}},
+    {"id": "c403", "pair": "p4_en_nested", "polarity": "negative", "lang": "en", "prior": ["My favorite color is red."], "text": "I confirm that I deny that blue is my favorite color.", "expect": {}},
+    {"id": "c404", "pair": "p4_en_nested", "polarity": "negative", "lang": "en", "prior": ["My favorite color is red."], "text": "I say that I doubt that blue is my favorite color.", "expect": {}},
+    {"id": "c405", "pair": "p4_en_nested", "polarity": "negative", "lang": "en", "prior": ["My favorite color is red."], "text": "I say she claimed that blue is my favorite color.", "expect": {}},
+    {"id": "c406", "pair": "p4_en_nested", "polarity": "negative", "lang": "en", "prior": ["My favorite color is red."], "text": "I say that maybe blue is my favorite color.", "expect": {}},
+
+    {"id": "c501", "pair": "p5_en_open_slot", "polarity": "positive", "lang": "en", "prior": [], "text": "My favorite song is Blue Moon Over The Silver Lake.", "expect": {"open.favorite_song": "Blue Moon Over The Silver Lake"}},
+    {"id": "c502", "pair": "p5_en_open_slot", "polarity": "negative", "lang": "en", "prior": [], "text": "I deny that Blue Moon Over The Silver Lake is my favorite song.", "expect": {}},
+    {"id": "c503", "pair": "p5_en_open_slot", "polarity": "negative", "lang": "en", "prior": [], "text": "I never said that my favorite song is Blue Moon Over The Silver Lake.", "expect": {}},
+
+    {"id": "c601", "pair": "p6_pt_chama_se", "polarity": "positive", "lang": "pt", "prior": ["O meu cão chama-se Rex."], "text": "O meu cão chama-se Green.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "c602", "pair": "p6_pt_chama_se", "polarity": "negative", "lang": "pt", "prior": ["O meu cão chama-se Rex."], "text": "Eu nunca disse que o meu cão chama-se Green.", "expect": {}},
+    {"id": "c603", "pair": "p6_pt_chama_se", "polarity": "negative", "lang": "pt", "prior": ["O meu cão chama-se Rex."], "text": "Nego que o meu cão chama-se Green.", "expect": {}},
+    {"id": "c604", "pair": "p6_pt_chama_se", "polarity": "negative", "lang": "pt", "prior": ["O meu cão chama-se Rex."], "text": "Duvido que o meu cão chama-se Green.", "expect": {}},
+
+    {"id": "c701", "pair": "p7_pt_pref", "polarity": "positive", "lang": "pt", "prior": ["A minha cor preferida é vermelho."], "text": "A minha cor preferida é azul.", "expect": {"pref.color": "azul"}},
+    {"id": "c702", "pair": "p7_pt_pref", "polarity": "negative", "lang": "pt", "prior": ["A minha cor preferida é vermelho."], "text": "Eu nunca disse que a minha cor preferida é azul.", "expect": {}},
+    {"id": "c703", "pair": "p7_pt_pref", "polarity": "negative", "lang": "pt", "prior": ["A minha cor preferida é vermelho."], "text": "Nego que a minha cor preferida é azul.", "expect": {}},
+
+    {"id": "c801", "pair": "p8_en_report", "polarity": "positive", "lang": "en", "prior": ["My dog is called Rex."], "text": "I should mention that Green is my dog.", "expect": {"pet.dog.name": "Green"}},
+    {"id": "c802", "pair": "p8_en_report", "polarity": "negative", "lang": "en", "prior": ["My dog is called Rex."], "text": "My neighbour mentioned that Green is my dog.", "expect": {}},
+    {"id": "c803", "pair": "p8_en_report", "polarity": "negative", "lang": "en", "prior": ["My dog is called Rex."], "text": "My neighbour mentioned that my dog is called Green.", "expect": {}}
+  ]
+}

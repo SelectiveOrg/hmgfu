@@ -1,0 +1,43 @@
+{
+ "_doc": "Phase 90.M3 DEV set (diagnostic, never reserved): does information the ledger does NOT write survive in the episodes, and is it recovered in ANOTHER session with the right STATUS? Each case says one thing in session A and asks a question in session B on the same memory. Criteria fixed here, before any answer. `expect_status` is what the reply must convey: `fact` = the value is the user's current state; `wish` = the value is something the user wants or proposes, and the reply must not present it as the current state; `activity` = something being worked on now, which must not be presented as the user's main project; `absent` = the reply must not offer the value at all. `must_not_say_as_current` lists values the reply may never present as the user's current state.",
+ "cases": [
+  {"id": "s01", "class": "fact", "lang": "en", "say": "My main project is Kuvala.", "ask": "what is my main project?",
+   "value": "Kuvala", "expect_status": "fact", "must_not_say_as_current": []},
+  {"id": "s02", "class": "fact", "lang": "pt", "say": "O meu projeto principal é o Kuvala.", "ask": "qual é o meu projeto principal?",
+   "value": "Kuvala", "expect_status": "fact", "must_not_say_as_current": []},
+
+  {"id": "s03", "class": "intention", "lang": "en", "say": "I want to work on Mapiko.", "ask": "what is my main project?",
+   "value": "Mapiko", "expect_status": "wish", "must_not_say_as_current": ["Mapiko"]},
+  {"id": "s04", "class": "intention", "lang": "pt", "say": "Quero trabalhar no Mapiko.", "ask": "qual é o meu projeto principal?",
+   "value": "Mapiko", "expect_status": "wish", "must_not_say_as_current": ["Mapiko"]},
+  {"id": "s05", "class": "intention", "lang": "en", "say": "I want to work on Mapiko.", "ask": "what do I want to work on?",
+   "value": "Mapiko", "expect_status": "wish", "must_not_say_as_current": []},
+
+  {"id": "s06", "class": "proposal", "lang": "en", "say": "We should work on Mapiko.", "ask": "what is my main project?",
+   "value": "Mapiko", "expect_status": "wish", "must_not_say_as_current": ["Mapiko"]},
+  {"id": "s07", "class": "proposal", "lang": "pt", "say": "Devíamos trabalhar no Mapiko.", "ask": "o que propus fazer?",
+   "value": "Mapiko", "expect_status": "wish", "must_not_say_as_current": []},
+
+  {"id": "s08", "class": "activity", "lang": "en", "say": "We are working on HMG.", "ask": "what are we working on?",
+   "value": "HMG", "expect_status": "activity", "must_not_say_as_current": []},
+  {"id": "s09", "class": "activity", "lang": "pt", "say": "Estamos a trabalhar no HMG.", "ask": "qual é o meu projeto principal?",
+   "value": "HMG", "expect_status": "activity", "must_not_say_as_current": []},
+
+  {"id": "s10", "class": "mixed", "lang": "en", "say": "I want to work on Mapiko, but I currently work at Kuvala.",
+   "ask": "where do I work?", "value": "Kuvala", "expect_status": "fact", "must_not_say_as_current": ["Mapiko"]},
+  {"id": "s11", "class": "mixed", "lang": "pt", "say": "Quero trabalhar no Mapiko, mas atualmente trabalho na Kuvala.",
+   "ask": "onde é que eu trabalho?", "value": "Kuvala", "expect_status": "fact", "must_not_say_as_current": ["Mapiko"]},
+  {"id": "s12", "class": "mixed", "lang": "en", "say": "I want to work on Mapiko, but I currently work at Kuvala.",
+   "ask": "what do I want to work on?", "value": "Mapiko", "expect_status": "wish", "must_not_say_as_current": []},
+  {"id": "s13", "class": "mixed", "lang": "en", "say": "I plan to move to Aveiro, but I live in Valencia.",
+   "ask": "where do I live?", "value": "Valencia", "expect_status": "fact", "must_not_say_as_current": ["Aveiro"]},
+  {"id": "s14", "class": "mixed", "lang": "pt", "say": "Vou mudar de casa, mas moro em Valencia.",
+   "ask": "onde é que eu moro?", "value": "Valencia", "expect_status": "fact", "must_not_say_as_current": []},
+
+  {"id": "s15", "class": "past_vs_current", "lang": "en", "say": "In 2019 I lived in Lisbon, but I live in Valencia now.",
+   "ask": "where do I live?", "value": "Valencia", "expect_status": "fact", "must_not_say_as_current": ["Lisbon"]},
+
+  {"id": "s16", "class": "no_evidence", "lang": "en", "say": "My favourite colour is teal.", "ask": "what is my main project?",
+   "value": "", "expect_status": "absent", "must_not_say_as_current": ["teal"]}
+ ]
+}

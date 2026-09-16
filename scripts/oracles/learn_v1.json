@@ -1,0 +1,186 @@
+{
+ "_doc": "Phase 90.O DEV set (development/diagnostic — NEVER a validation set; the reserved counterpart is authored later, once, against the frozen candidate). The scenario the goal fixes: TEACH -> CORRECT -> CHANGE SUBJECT -> NEW SESSION -> ASK IN OTHER WORDS. Every conversation therefore has at least one teaching turn, one correction, one unrelated turn that pushes the taught value out of the recent window, and a final question that is a PARAPHRASE — it never reuses the wording of the turn that taught the value. Criteria are fixed here, before any run: `allowed` = what the reply may state, `forbidden_as_current` = values it must never present as the user's current state (a superseded value, a third party's value, a negated value, an intention), `expected_ledger` = the canon after the turns (prefix match on the value; an empty object means the ledger must stay untouched for that key family), `abstain` = whether refusing to answer is the correct behaviour. All values are synthetic. PT and EN, with third parties, negations and ambiguities.",
+ "value_match": "prefix",
+ "conversations": [
+  {
+   "id": "l01_teach_correct_paraphrase_en",
+   "family": "correction_then_paraphrase",
+   "lang": "en",
+   "turns": [
+    "My main project is Kuvala.",
+    "Actually, my main project is Mapiko now.",
+    "By the way, the weather here has been awful all week."
+   ],
+   "question": "which project am I focused on these days?",
+   "allowed": ["Mapiko"],
+   "forbidden_as_current": ["Kuvala"],
+   "expected_ledger": {"project.main": "Mapiko"},
+   "abstain": false
+  },
+  {
+   "id": "l02_teach_correct_paraphrase_pt",
+   "family": "correction_then_paraphrase",
+   "lang": "pt",
+   "turns": [
+    "O meu projeto principal é o Kuvala.",
+    "Na verdade, agora o meu projeto principal é o Mapiko.",
+    "Já agora, esta semana o trânsito tem estado impossível."
+   ],
+   "question": "em que projeto é que ando concentrado ultimamente?",
+   "allowed": ["Mapiko"],
+   "forbidden_as_current": ["Kuvala"],
+   "expected_ledger": {"project.main": "Mapiko"},
+   "abstain": false
+  },
+  {
+   "id": "l03_location_correction_paraphrase_en",
+   "family": "correction_then_paraphrase",
+   "lang": "en",
+   "turns": [
+    "I live in Aveiro.",
+    "Sorry, that was wrong — I live in Valencia.",
+    "Anyway, I finally finished that book about submarines."
+   ],
+   "question": "what city am I based in?",
+   "allowed": ["Valencia"],
+   "forbidden_as_current": ["Aveiro"],
+   "expected_ledger": {"identity.location": "Valencia"},
+   "abstain": false
+  },
+  {
+   "id": "l04_third_party_not_mine_en",
+   "family": "third_party",
+   "lang": "en",
+   "turns": [
+    "My favourite drink is ginger beer.",
+    "My colleague Ana's favourite drink is mazurca.",
+    "Changing the subject: I rewired the kitchen lights yesterday."
+   ],
+   "question": "what do I like to drink?",
+   "allowed": ["ginger beer"],
+   "forbidden_as_current": ["mazurca"],
+   "expected_ledger": {"pref.drink": "ginger beer"},
+   "abstain": false
+  },
+  {
+   "id": "l05_third_party_not_mine_pt",
+   "family": "third_party",
+   "lang": "pt",
+   "turns": [
+    "O meu carro é um Kia Sportage.",
+    "O carro do meu irmão é um Toyota Hilux.",
+    "Mudando de assunto: ontem plantei três mangueiras no quintal."
+   ],
+   "question": "que carro é que eu conduzo?",
+   "allowed": ["Kia", "Sportage"],
+   "forbidden_as_current": ["Toyota", "Hilux"],
+   "expected_ledger": {"asset.car": "Kia"},
+   "abstain": false
+  },
+  {
+   "id": "l06_negation_en",
+   "family": "negation",
+   "lang": "en",
+   "turns": [
+    "My favourite colour is teal.",
+    "My favourite colour is not amber.",
+    "On another note, the flight to Nampula was delayed again."
+   ],
+   "question": "which colour do I like best?",
+   "allowed": ["teal"],
+   "forbidden_as_current": ["amber"],
+   "expected_ledger": {"pref.color": "teal"},
+   "abstain": false
+  },
+  {
+   "id": "l07_negation_pt",
+   "family": "negation",
+   "lang": "pt",
+   "turns": [
+    "O meu prato preferido é matapa.",
+    "Não gosto nada de caril de amendoim.",
+    "Outra coisa: comprei uma bicicleta em segunda mão."
+   ],
+   "question": "qual é a comida de que eu mais gosto?",
+   "allowed": ["matapa"],
+   "forbidden_as_current": ["caril", "amendoim"],
+   "expected_ledger": {"pref.food": "matapa"},
+   "abstain": false
+  },
+  {
+   "id": "l08_intention_is_not_a_fact_en",
+   "family": "intention_vs_fact",
+   "lang": "en",
+   "turns": [
+    "I work at Kuvala.",
+    "I want to move to Mapiko next year.",
+    "Separately, my sister is visiting in December."
+   ],
+   "question": "where am I employed at the moment?",
+   "allowed": ["Kuvala"],
+   "forbidden_as_current": ["Mapiko"],
+   "expected_ledger": {"identity.company": "Kuvala"},
+   "abstain": false
+  },
+  {
+   "id": "l09_proposal_is_not_a_fact_pt",
+   "family": "intention_vs_fact",
+   "lang": "pt",
+   "turns": [
+    "Trabalho na Kuvala.",
+    "Devíamos começar a trabalhar no Mapiko.",
+    "À parte disso, o meu computador está a ficar lento."
+   ],
+   "question": "onde é que eu trabalho neste momento?",
+   "allowed": ["Kuvala"],
+   "forbidden_as_current": ["Mapiko"],
+   "expected_ledger": {"identity.company": "Kuvala"},
+   "abstain": false
+  },
+  {
+   "id": "l10_past_vs_present_en",
+   "family": "time",
+   "lang": "en",
+   "turns": [
+    "Until 2021 I lived in Quelimane.",
+    "I have lived in Tete since 2022.",
+    "By the way, I started running again in the mornings."
+   ],
+   "question": "where is my home these days?",
+   "allowed": ["Tete"],
+   "forbidden_as_current": ["Quelimane"],
+   "expected_ledger": {"identity.location": "Tete"},
+   "abstain": false
+  },
+  {
+   "id": "l11_ambiguous_never_taught_en",
+   "family": "ambiguity",
+   "lang": "en",
+   "turns": [
+    "My main project is Kuvala.",
+    "I read an article about a startup called Zambeze.",
+    "Anyway, the power was out for two hours last night."
+   ],
+   "question": "what is my brother's name?",
+   "allowed": [],
+   "forbidden_as_current": ["Zambeze", "Kuvala"],
+   "expected_ledger": {},
+   "abstain": true
+  },
+  {
+   "id": "l12_ambiguous_third_party_pt",
+   "family": "ambiguity",
+   "lang": "pt",
+   "turns": [
+    "A minha colega Zélia mudou-se para a Aveiro.",
+    "Eu continuo em Valencia.",
+    "Mudando de assunto: comprei bilhetes para o concerto de sábado."
+   ],
+   "question": "em que cidade é que eu vivo?",
+   "allowed": ["Valencia"],
+   "forbidden_as_current": ["Aveiro"],
+   "expected_ledger": {"identity.location": "Valencia"},
+   "abstain": false
+  }
+ ]
+}
